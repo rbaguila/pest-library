@@ -1,0 +1,214 @@
+<resources>
+    <string name="app_name">Pest Library</string>
+    <string name="title_activity_main">Project SARAi</string>
+    <string name="browse_activity_main">Browse Pest</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_rice_bar">Rice</string>
+    <string name="title_corn_bar">Corn</string>
+    <string name="view_more">View More</string>
+    <string name="title_activity_rice">Rice Pest</string>
+    <string name="title_activity_corn">Corn Pest</string>
+    <string name="title_activity_no_data">No Data</string>
+    <string name="title_item">Pest</string>
+    <string name="drawer_open">Open</string>
+    <string name="drawer_close">Close</string>
+
+    <!--Pest Details-->
+
+    <!--Rice Pest-->
+    <string-array name="BlackArmywormadult">
+        <item>Black Armyworm adult</item>
+        <item>African Armyworm, Black Armyworm, Nutgrass Armyworm, True Armyworm, Hail Worm, Mystery Armyworm, Rain Worm</item>
+        <item>Harabas</item>
+        <item>Spodoptera exempta (Walker)/Mythimna separata Walker/Spodoptera mauritia Boisduval</item>
+        <item>Many animals, birds and insects prey on the African armyworm at different stages of its life cycle. These natural enemies should be encouraged by maintaining natural surroundings with plenty of breeding places for them, including trees and shrubs. Night birds and bats feed on the African armyworm moths, and lacewings, wasps, parasitic wasps and spiders eat the caterpillars; Avoid burning and overgrazing of grasslands which are the natural habitat and food store of the caterpillars. Burning often causes outbreaks because as soon as temperatures rise, eggs are laid in large quantities on the fresh new grass.</item>
+    </string-array>
+
+    <string-array name="BlackArmywormlarva">
+        <item>Black Armyworm larva</item>
+        <item>African Armyworm, Black Armyworm, Nutgrass Armyworm, True Armyworm, Hail Worm, Mystery Armyworm, Rain Worm</item>
+        <item>Harabas</item>
+        <item>Spodoptera exempta (Walker)/Mythimna separata Walker/Spodoptera mauritia Boisduval</item>
+        <item>Many animals, birds and insects prey on the African armyworm at different stages of its life cycle. These natural enemies should be encouraged by maintaining natural surroundings with plenty of breeding places for them, including trees and shrubs. Night birds and bats feed on the African armyworm moths, and lacewings, wasps, parasitic wasps and spiders eat the caterpillars; Avoid burning and overgrazing of grasslands which are the natural habitat and food store of the caterpillars. Burning often causes outbreaks because as soon as temperatures rise, eggs are laid in large quantities on the fresh new grass.</item>
+    </string-array>
+
+    <string-array name="CommonCutwormadult">
+        <item>Common Cutworm adult</item>
+        <item>Common Cutworm, Grass Cutworm, Vegetable Cutworm, Tobacco Cutworm, Tobacco Caterpillar, Taro Caterpillar</item>
+        <item></item>
+        <item>Spodoptera litura (Fabricius)</item>
+        <item>Seedbeds should be established far from large areas of weeds, remove weeds from areas outside of fields, and plow all uncultivated land. In insecticides, sprays are more effective than granules. High dosages are required to kill large armyworm and cutworm larvae. Spraying should be done late in the afternoon before the larvae leave their resting places to climb up the plants. Because damage is normally concentrated in discrete areas of a rice field, only areas where damage occurs should be sprayed.</item>
+    </string-array>
+
+    <string-array name="CommonCutwormlarva">
+        <item>Common Cutworm larva</item>
+        <item>Common Cutworm, Grass Cutworm, Vegetable Cutworm, Tobacco Cutworm, Tobacco Caterpillar, Taro Caterpillar</item>
+        <item></item>
+        <item>Spodoptera litura (Fabricius)</item>
+        <item>Seedbeds should be established far from large areas of weeds, remove weeds from areas outside of fields, and plow all uncultivated land. In insecticides, sprays are more effective than granules. High dosages are required to kill large armyworm and cutworm larvae. Spraying should be done late in the afternoon before the larvae leave their resting places to climb up the plants. Because damage is normally concentrated in discrete areas of a rice field, only areas where damage occurs should be sprayed.</item>
+    </string-array>
+
+    <string-array name="EarcuttingCaterpillaradult">
+        <item>Ear-cutting Caterpillar adult</item>
+        <item>Ear-cutting caterpillar, Oriental Armyworm, Northern Armyworm</item>
+        <item></item>
+        <item>Mythimna separata (Walker)</item>
+        <item>Weeding, inter-row cultivations, removal of crop residues from fields after harvesting, deep autumn plowing, optimal dates of early sowing, cultivation of resistant varieties, insecticide treatments of crops, release of such entomophages as Trichogramma spp.</item>
+    </string-array>
+
+    <string-array name="EarcuttingCaterpillarlarva">
+        <item>Ear-cutting Caterpillar larva</item>
+        <item>Ear-cutting caterpillar, Oriental Armyworm, Northern Armyworm</item>
+        <item></item>
+        <item>Mythimna separata (Walker)</item>
+        <item>Weeding, inter-row cultivations, removal of crop residues from fields after harvesting, deep autumn plowing, optimal dates of early sowing, cultivation of resistant varieties, insecticide treatments of crops, release of such entomophages as Trichogramma spp.</item>
+    </string-array>
+
+    <string-array name="GreenhornedCaterpillaradult">
+        <item>Greenhorned Caterpillar adult</item>
+        <item>Green Horned Caterpillar (larva), Common Evening Brown (adult)</item>
+        <item></item>
+        <item>Melanitis leda ismene Cramer</item>
+        <item></item>
+    </string-array>
+
+    <string-array name="GreenhornedCaterpillarlarva">
+        <item>Greenhorned Caterpillar larva</item>
+        <item>Green Horned Caterpillar (larva), Common Evening Brown (adult)</item>
+        <item></item>
+        <item>Melanitis leda ismene Cramer</item>
+        <item></item>
+    </string-array>
+
+    <string-array name="RiceCasewormadult">
+        <item>Rice Caseworm adult</item>
+        <item>Green Horned Caterpillar (larva), Common Evening Brown (adult)</item>
+        <item></item>
+        <item>Melanitis leda ismene Cramer</item>
+        <item></item>
+    </string-array>
+
+    <string-array name="RiceGreenSemilooperadult">
+        <item>Rice Green Semilooper adult</item>
+        <item>Green Semilooper</item>
+        <item></item>
+        <item>Naranga aenescens (Moore)</item>
+        <item></item>
+    </string-array>
+
+    <string-array name="RiceGreenSemilooperlarva">
+        <item>Rice Green Semilooper larva</item>
+        <item>Green Semilooper</item>
+        <item></item>
+        <item>Naranga aenescens (Moore)</item>
+        <item></item>
+    </string-array>
+
+    <string-array name="RiceLeaffolderadult">
+        <item>Rice Leaffolder adult</item>
+        <item>Rice Leaffolder</item>
+        <item></item>
+        <item>Cnaphalocrocis medinalis (Guenée)</item>
+        <item>Careful use of nitrogenous fertilizer in split applications is recommended. Removal of grassy weeds from rice fields and surrounding borders prevents the buildup of rice leaffolders on alternate hosts. However, chemical control is the only practical method to control increasing leaffolder infestation during crop growth. Numerous insecticides that have been identified for control are most effective as foliar sprays. But foliar sprays have to be repeated because they are often washed off by frequent rains. Granular insecticides broadcast into water are ineffective. Since leaffolders can attack the crop during any growth stage, fields should be monitored weekly.</item>
+    </string-array>
+
+    <string-array name="RiceLeaffolderlarva">
+        <item>Rice Leaffolder larva</item>
+        <item>Rice Leaffolder</item>
+        <item></item>
+        <item>Cnaphalocrocis medinalis (Guenée)</item>
+        <item>Careful use of nitrogenous fertilizer in split applications is recommended. Removal of grassy weeds from rice fields and surrounding borders prevents the buildup of rice leaffolders on alternate hosts. However, chemical control is the only practical method to control increasing leaffolder infestation during crop growth. Numerous insecticides that have been identified for control are most effective as foliar sprays. But foliar sprays have to be repeated because they are often washed off by frequent rains. Granular insecticides broadcast into water are ineffective. Since leaffolders can attack the crop during any growth stage, fields should be monitored weekly.</item>
+    </string-array>
+
+    <string-array name="RiceSkipperadult">
+        <item>Rice Skipper adult</item>
+        <item>Rice Skipper, Small Branded Swift, Black Branded Swift, Lesser Millet Skipper</item>
+        <item></item>
+        <item>Pelopidas mathias (Fabricius)</item>
+        <item></item>
+    </string-array>
+
+    <string-array name="RiceSkipperlarva">
+        <item>Rice Skipper larva</item>
+        <item>Rice Skipper, Small Branded Swift, Black Branded Swift, Lesser Millet Skipper</item>
+        <item></item>
+        <item>Pelopidas mathias (Fabricius)</item>
+        <item></item>
+    </string-array>
+
+    <string-array name="WhiteStemborer">
+        <item>White Stemborer</item>
+        <item>White Stemborer</item>
+        <item>Aksip</item>
+        <item>Scirpophaga innotata (Walker)</item>
+        <item>Clipping the seedlings before transplanting greatly reduces the carryover of eggs from the seedbed to the transplanted fields. However, stem borers are difficult to control with insecticides. After hatching, the larvae are exposed only for a few hours before they penetrate a tiller or enter the plant. Successful control involves repeated foliar applications with spray volumes more than 400 liters/ha.</item>
+    </string-array>
+
+    <string-array name="YellowStemboreradult">
+        <item>Yellow Stemborer adult</item>
+        <item>Yellow Stemborer</item>
+        <item>Aksip</item>
+        <item>Scirpophaga incertulas (Walker)</item>
+        <item>Clipping the seedlings before transplanting greatly reduces the carryover of eggs from the seedbed to the transplanted fields. However, stem borers are difficult to control with insecticides. After hatching, the larvae are exposed only for a few hours before they penetrate a tiller or enter the plant. Successful control involves repeated foliar applications with spray volumes more than 400 liters/ha.</item>
+    </string-array>
+
+    <string-array name="YellowStemborerlarva">
+        <item>Yellow Stemborer larva</item>
+        <item>Yellow Stemborer</item>
+        <item>Aksip</item>
+        <item>Scirpophaga incertulas (Walker)</item>
+        <item>Clipping the seedlings before transplanting greatly reduces the carryover of eggs from the seedbed to the transplanted fields. However, stem borers are difficult to control with insecticides. After hatching, the larvae are exposed only for a few hours before they penetrate a tiller or enter the plant. Successful control involves repeated foliar applications with spray volumes more than 400 liters/ha.</item>
+    </string-array>
+
+
+    <!--Corn Pest-->
+    <string-array name="CornSemilooperadult">
+        <item>Corn Semilooper adult</item>
+        <item>Corn Semilooper, Tomato Looper, Green Gardern Looper (larva); Golden Twin Spot (adult)</item>
+        <item></item>
+        <item>Chrysodeixis chalcites Esper</item>
+        <item></item>
+    </string-array>
+
+    <string-array name="CornSemilooperlarva">
+        <item>Corn Semilooper larva</item>
+        <item>Corn Semilooper, Tomato Looper, Green Gardern Looper (larva); Golden Twin Spot (adult)</item>
+        <item></item>
+        <item>Chrysodeixis chalcites Esper</item>
+        <item></item>
+    </string-array>
+
+    <string-array name="AsianCornboreradult">
+        <item>Asian Cornborer adult</item>
+        <item>Asian/Oriental Cornborer</item>
+        <item></item>
+        <item>Ostrinia furnacalis Guenee</item>
+        <item></item>
+    </string-array>
+
+    <string-array name="CornEarwormadult">
+        <item>Corn Earworm adult</item>
+        <item>Corn Earworm, Cotton Bollwormm, Tobacco Budworm (larva); Scarce Bordered Straw (adult)</item>
+        <item></item>
+        <item>Helicoverpa armigera Hubner</item>
+        <item></item>
+    </string-array>
+
+    <string-array name="CornEarwormlarva">
+        <item>Corn Earworm larva</item>
+        <item>Corn Earworm, Cotton Bollwormm, Tobacco Budworm (larva); Scarce Bordered Straw (adult)</item>
+        <item></item>
+        <item>Helicoverpa armigera Hubner</item>
+        <item></item>
+    </string-array>
+
+    <string-array name="CornFleaBeetle">
+        <item>Corn Flea Beetle</item>
+        <item>Corn Flea Beetle, Clover Flea Beetle</item>
+        <item></item>
+        <item>Chaetocnema pulicaria</item>
+        <item>Cut off their food supply by delaying transplanting or planting by a couple weeks if possible. Corn flea beetle feeding may be reduced with the use of insecticidal seed treatments and foliar insecticides.</item>
+    </string-array>
+
+    <string name="link_site">To see more info, please visit our <a href="http://www.sarai.ph">site</a></string>
+</resources>

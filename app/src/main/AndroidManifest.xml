@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.roinand.pestlibrary">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:largeHeap="true">
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".BrowseActivity"
+            android:label="@string/browse_activity_main"
+            android:parentActivityName=".MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.roinand.pestlibrary.MainActivity" />
+        </activity>
+        <activity
+            android:name=".RiceActivity"
+            android:label="@string/title_activity_rice"
+            android:parentActivityName=".BrowseActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.roinand.pestlibrary.BrowseActivity" />
+        </activity>
+        <activity
+            android:name=".CornActivity"
+            android:label="@string/title_activity_corn"
+            android:parentActivityName=".BrowseActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.roinand.pestlibrary.BrowseActivity" />
+        </activity>
+        <activity
+            android:name=".ItemTrackActivity"
+            android:label="@string/title_item"
+            android:parentActivityName=".BrowseActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.roinand.pestlibrary.BrowseActivity" />
+        </activity>
+        <activity
+            android:name=".NoDataActivity"
+            android:label="@string/title_activity_no_data"
+            android:parentActivityName=".BrowseActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.roinand.pestlibrary.BrowseActivity" />
+        </activity>
+    </application>
+
+</manifest>
