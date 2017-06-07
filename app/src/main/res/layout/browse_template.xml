@@ -11,7 +11,7 @@
     <ImageView
         android:id="@+id/pestlib_banner"
         android:layout_width="match_parent"
-        android:layout_height="140dp"
+        android:layout_height="120dp"
         android:layout_below="@id/app_bar"
         android:scaleType="centerCrop"
         android:src="@drawable/pest_library_banner" />

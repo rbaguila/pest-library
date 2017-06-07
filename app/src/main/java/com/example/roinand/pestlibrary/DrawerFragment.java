@@ -50,7 +50,7 @@ public class DrawerFragment extends Fragment implements CustomDrawerAdapter.Clic
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
+        // Inflate the layout for this fragment (set the layout to be used)
         View layout = inflater.inflate(R.layout.fragment_drawer, container, false);
         recyclerView = (RecyclerView) layout.findViewById(R.id.drawer_list);
 
@@ -120,7 +120,7 @@ public class DrawerFragment extends Fragment implements CustomDrawerAdapter.Clic
 
         //Home
         if(position == 0){
-            startActivity(new Intent(getActivity(), BrowseActivity.class));
+            startActivity(new Intent(getActivity(), MainActivity.class));
         }
         //Rice
         else if(position == 1){

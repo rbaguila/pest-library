@@ -10,7 +10,7 @@
     <ImageView
         android:id="@+id/item_screenshot"
         android:layout_width="160dp"
-        android:layout_height="100dp"
+        android:layout_height="95dp"
         android:scaleType="centerCrop" />
 
     <TextView
@@ -18,5 +18,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:text="DUMMY"
-        android:layout_margin="8dp"/>
+        android:layout_margin="4dp"
+        android:textAlignment="center"
+        android:textSize="13dp" />
 </LinearLayout>
