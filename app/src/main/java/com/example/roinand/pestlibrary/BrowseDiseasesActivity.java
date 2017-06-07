@@ -12,8 +12,8 @@ import android.view.MenuItem;
 import android.view.View;
 
 public class BrowseDiseasesActivity extends AppCompatActivity implements ItemAdapter.ClickListener{
-    private RecyclerView riceRecycler;
-    private ItemAdapter riceAdapter;
+    private RecyclerView driceRecycler; //for diseases
+    private ItemAdapter driceAdapter;
 
     private RecyclerView cornRecycler;
     private ItemAdapter cornAdapter;
@@ -32,21 +32,21 @@ public class BrowseDiseasesActivity extends AppCompatActivity implements ItemAda
         drawerFragment.setUp(R.id.fragment_drawer, (DrawerLayout) findViewById(R.id.drawer_layout), toolbar);
 
 
-        riceRecycler = (RecyclerView) findViewById(R.id.rice_items);
-        riceRecycler.setHasFixedSize(true);
-        LinearLayoutManager riceLinearLayout = new LinearLayoutManager(this);
-        riceLinearLayout.setOrientation(LinearLayoutManager.HORIZONTAL);
-        riceRecycler.setLayoutManager(riceLinearLayout);
-        riceAdapter = new ItemAdapter(this, new ItemData(this).getRiceItemData());
-        riceAdapter.setClickListenerRice(this);
-        riceRecycler.setAdapter(riceAdapter);
+        driceRecycler = (RecyclerView) findViewById(R.id.rice_items);
+        driceRecycler.setHasFixedSize(true);
+        LinearLayoutManager driceLinearLayout = new LinearLayoutManager(this);
+        driceLinearLayout.setOrientation(LinearLayoutManager.HORIZONTAL);
+        driceRecycler.setLayoutManager(driceLinearLayout);
+        driceAdapter = new ItemAdapter(this, new ItemData(this).getDriceItemData(), 2);
+        driceAdapter.setClickListenerRice(this);
+        driceRecycler.setAdapter(driceAdapter);
 
         cornRecycler = (RecyclerView) findViewById(R.id.corn_items);
         cornRecycler.setHasFixedSize(true);
         LinearLayoutManager cornLinearLayout = new LinearLayoutManager(this);
         cornLinearLayout.setOrientation(LinearLayoutManager.HORIZONTAL);
         cornRecycler.setLayoutManager(cornLinearLayout);
-        cornAdapter = new ItemAdapter(this, new ItemData(this).getCornItemData());
+        cornAdapter = new ItemAdapter(this, new ItemData(this).getCornItemData(), 1);
         cornAdapter.setClickListenerCorn(this);
         cornRecycler.setAdapter(cornAdapter);
     }

@@ -9,10 +9,13 @@ import java.util.List;
 public class ItemData {
     public Context context;
     public int[] riceIcons;
+    public int[] driceIcons;
     public int[] cornIcons;
     public String[] riceNames;
+    public String[] driceNames;
     public String[] cornNames;
     public String[] riceCommonNames;
+    public String[] driceCommonNames;
     public String[] cornCommonNames;
 
     public ItemData(Context context){
@@ -84,6 +87,29 @@ public class ItemData {
         };
     }
 
+    public void initDriceData(){
+        driceIcons = new int[]{
+                R.drawable.drice_bacterialleafblight,
+                R.drawable.drice_bacterialleafstreak,
+                R.drawable.drice_bakanae,
+                R.drawable.drice_brownspot
+        };
+
+        driceNames = new String[]{
+                context.getResources().getStringArray(R.array.BacterialLeafBlight)[0],
+                context.getResources().getStringArray(R.array.BacterialLeafStreak)[0],
+                context.getResources().getStringArray(R.array.Bakanae)[0],
+                context.getResources().getStringArray(R.array.BrownSpot)[0]
+        };
+
+        driceCommonNames = new String[]{
+                context.getResources().getStringArray(R.array.BacterialLeafBlight)[1],
+                context.getResources().getStringArray(R.array.BacterialLeafStreak)[1],
+                context.getResources().getStringArray(R.array.Bakanae)[1],
+                context.getResources().getStringArray(R.array.BrownSpot)[1]
+        };
+    }
+
     public void initCornData(){
         cornIcons = new int[]{
             R.drawable.corn_cornsemilooperadult,
@@ -126,6 +152,19 @@ public class ItemData {
         return data;
     }
 
+    public List<Item> getDriceItemData(){
+        initDriceData();
+        List<Item> data = new ArrayList<>();
+
+        for (int i=0; i<driceNames.length && i<driceIcons.length; i++) {
+            Item current = new Item();
+            current.imageId = driceIcons[i];
+            current.diseaseName = driceNames[i];
+            data.add(current);
+        }
+        return data;
+    }
+
     public List<Item> getCornItemData(){
         initCornData();
         List<Item> data = new ArrayList<>();
@@ -143,11 +182,25 @@ public class ItemData {
         initRiceData();
         List<ItemAll> data = new ArrayList<>();
 
-        for (int i=0; i<riceNames.length && i<riceIcons.length; i++) {
+        for (int i=0; i<driceNames.length && i<driceIcons.length; i++) {
             ItemAll current = new ItemAll();
             current.imageId = riceIcons[i];
             current.pestName = riceNames[i];
             current.commonNames = riceCommonNames[i];
+            data.add(current);
+        }
+        return data;
+    }
+
+    public List<ItemAll> getAllDriceItemData() {
+        initDriceData();
+        List<ItemAll> data = new ArrayList<>();
+
+        for (int i=0; i<driceNames.length && i<driceIcons.length; i++) {
+            ItemAll current = new ItemAll();
+            current.imageId = driceIcons[i];
+            current.diseaseName = driceNames[i];
+            current.commonNames = driceCommonNames[i];
             data.add(current);
         }
         return data;

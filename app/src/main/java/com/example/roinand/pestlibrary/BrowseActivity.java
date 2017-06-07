@@ -40,7 +40,7 @@ public class BrowseActivity extends AppCompatActivity implements ItemAdapter.Cli
         LinearLayoutManager riceLinearLayout = new LinearLayoutManager(this);
         riceLinearLayout.setOrientation(LinearLayoutManager.HORIZONTAL);
         riceRecycler.setLayoutManager(riceLinearLayout);
-        riceAdapter = new ItemAdapter(this, new ItemData(this).getRiceItemData());
+        riceAdapter = new ItemAdapter(this, new ItemData(this).getRiceItemData(), 1);
         riceAdapter.setClickListenerRice(this);
         riceRecycler.setAdapter(riceAdapter);
 
@@ -49,7 +49,7 @@ public class BrowseActivity extends AppCompatActivity implements ItemAdapter.Cli
         LinearLayoutManager cornLinearLayout = new LinearLayoutManager(this);
         cornLinearLayout.setOrientation(LinearLayoutManager.HORIZONTAL);
         cornRecycler.setLayoutManager(cornLinearLayout);
-        cornAdapter = new ItemAdapter(this, new ItemData(this).getCornItemData());
+        cornAdapter = new ItemAdapter(this, new ItemData(this).getCornItemData(), 1);
         cornAdapter.setClickListenerCorn(this);
         cornRecycler.setAdapter(cornAdapter);
     }

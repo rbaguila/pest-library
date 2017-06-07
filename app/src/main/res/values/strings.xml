@@ -211,5 +211,32 @@
         <item>Cut off their food supply by delaying transplanting or planting by a couple weeks if possible. Corn flea beetle feeding may be reduced with the use of insecticidal seed treatments and foliar insecticides.</item>
     </string-array>
 
+    <!--Diseases Details-->
+
+    <!--Rice Diseases-->
+    <string-array name="BacterialLeafBlight">
+        <item>Bacterial Leaf Blight</item>
+        <item>Bacterial Leaf Blight</item>
+        <item>Xanthomonas oryzae pv. oryzae</item>
+    </string-array>
+
+    <string-array name="BacterialLeafStreak">
+        <item>Bacterial Leaf Streak</item>
+        <item>Bacterial Leaf Streak</item>
+        <item>Xanthomonas oryzae pv. oryzicola</item>
+    </string-array>
+
+    <string-array name="Bakanae">
+        <item>Bakanae</item>
+        <item>Bakanae</item>
+        <item>Fusarium moniliforme/Gibberella fujikuroi</item>
+    </string-array>
+
+    <string-array name="BrownSpot">
+        <item>Brown Spot</item>
+        <item>Helminthosporium Leaf Spot</item>
+        <item>Helminthosporium oryzae/Cochliobolus miyabeanus</item>
+    </string-array>
+
     <string name="link_site">To see more info, please visit our <a href="http://www.sarai.ph">site</a></string>
 </resources>

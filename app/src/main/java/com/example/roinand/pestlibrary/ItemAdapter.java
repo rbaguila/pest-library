@@ -16,16 +16,17 @@ import java.util.List;
  */
 public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ItemViewHolder> {
     List<Item> data = Collections.emptyList();
+    private int type;
     private LayoutInflater inflater;
 
     private ClickListener clickListenerRice;
     private ClickListener clickListenerCorn;
 
-    public ItemAdapter (Context context, List<Item> data) {
+    public ItemAdapter (Context context, List<Item> data, int type) {
         inflater = LayoutInflater.from(context);
         this.data = data;
+        this.type = type;
     }
-
 
     public void setClickListenerRice (ClickListener clickListenerRice) {
         this.clickListenerRice = clickListenerRice;
@@ -46,7 +47,8 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ItemViewHolder
     @Override
     public void onBindViewHolder(ItemViewHolder holder, int position) {
         Item current = data.get(position);
-        holder.name.setText(current.pestName);
+        if (type == 1) holder.name.setText(current.pestName);
+        else if (type == 2) holder.name.setText(current.diseaseName);
         holder.screenshot.setImageResource(current.imageId);
     }
 
