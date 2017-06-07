@@ -62,7 +62,7 @@
             android:layout_height="36dp"
             android:layout_margin="8dp"
             android:background="@color/colorPrimaryDark"
-            android:onClick="browsePest"
+            android:onClick="browseDiseases"
             android:text="@string/browse_activity_main2"
             android:textAllCaps="true"
             android:textColor="#E8F5E9"

@@ -4,9 +4,8 @@ import android.content.Context;
 
 import java.util.ArrayList;
 import java.util.List;
-/**
- * Created by User on 7/25/2016.
- */
+
+
 public class ItemData {
     public Context context;
     public int[] riceIcons;

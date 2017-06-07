@@ -27,6 +27,14 @@
                 android:value="com.example.roinand.pestlibrary.MainActivity" />
         </activity>
         <activity
+            android:name=".BrowseDiseasesActivity"
+            android:label="@string/browse_activity_main2"
+            android:parentActivityName=".MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.roinand.pestlibrary.MainActivity" />
+        </activity>
+        <activity
             android:name=".RiceActivity"
             android:label="@string/title_activity_rice"
             android:parentActivityName=".BrowseActivity" >
