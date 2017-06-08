@@ -21,6 +21,9 @@ public class BrowseActivity extends AppCompatActivity implements ItemAdapter.Cli
     private RecyclerView cornRecycler;
     private ItemAdapter cornAdapter;
 
+    private RecyclerView bananaRecycler;
+    private ItemAdapter bananaAdapter;
+
     private Toolbar toolbar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,6 +55,15 @@ public class BrowseActivity extends AppCompatActivity implements ItemAdapter.Cli
         cornAdapter = new ItemAdapter(this, new ItemData(this).getCornItemData(), 1);
         cornAdapter.setClickListenerCorn(this);
         cornRecycler.setAdapter(cornAdapter);
+
+        bananaRecycler = (RecyclerView) findViewById(R.id.banana_items);
+        bananaRecycler.setHasFixedSize(true);
+        LinearLayoutManager bananaLinearLayout = new LinearLayoutManager(this);
+        bananaLinearLayout.setOrientation(LinearLayoutManager.HORIZONTAL);
+        bananaRecycler.setLayoutManager(bananaLinearLayout);
+        bananaAdapter = new ItemAdapter(this, new ItemData(this).getBananaItemData(), 1);
+        bananaAdapter.setClickListenerBanana(this);
+        bananaRecycler.setAdapter(bananaAdapter);
     }
 
     @Override
@@ -85,6 +97,10 @@ public class BrowseActivity extends AppCompatActivity implements ItemAdapter.Cli
         startActivity(new Intent(this, CornActivity.class));
     }
 
+    public void redirectBanana(View view){
+        startActivity(new Intent(this, BananaActivity.class));
+    }
+
     @Override
     public void itemClickRice(View view, String name) {
         Intent intent = new Intent(this, ItemTrackActivity.class);
@@ -98,6 +114,14 @@ public class BrowseActivity extends AppCompatActivity implements ItemAdapter.Cli
         Intent intent = new Intent(this, ItemTrackActivity.class);
         intent.putExtra("pestName", name);
         intent.putExtra("type", "corn_");
+        startActivity(intent);
+    }
+
+    @Override
+    public void itemClickBanana(View view, String name) {
+        Intent intent = new Intent(this, ItemTrackActivity.class);
+        intent.putExtra("pestName", name);
+        intent.putExtra("type", "ban_");
         startActivity(intent);
     }
 }

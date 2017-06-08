@@ -6,11 +6,13 @@
     <string name="action_settings">Settings</string>
     <string name="title_rice_bar">Rice</string>
     <string name="title_corn_bar">Corn</string>
+    <string name="title_banana_bar">Banana</string>
     <string name="view_more">View More</string>
     <string name="title_activity_rice">Rice Pests</string>
     <string name="title_activity_rice2">Rice Diseases</string>
     <string name="title_activity_corn">Corn Pests</string>
     <string name="title_activity_corn2">Corn Diseases</string>
+    <string name="title_activity_banana">Banana Pests</string>
     <string name="title_activity_no_data">No Data</string>
     <string name="title_item">Information</string>
     <string name="drawer_open">Open</string>
@@ -236,6 +238,45 @@
         <item>Stunting, wilting on the plant and linear lesions on the leaves with wavy edges caused by Stewart\'s Wilt. Corn flea beetle is a very tiny (1.8 mm), black, shiny beetles with elongated hind legs, which are used for jumping when disturbed.</item>
         <item>Cut off their food supply by delaying transplanting or planting by a couple weeks if possible. Corn flea beetle feeding may be reduced with the use of insecticidal seed treatments and foliar insecticides.</item>
     </string-array>
+
+    <!--banana pests-->
+
+    <string-array name="BananaAphids">
+        <item>Banana Aphids</item>
+        <item>Banana Aphids</item>
+        <item>Banana Aphids</item>
+        <item>Pentalonia nigronervosa</item>
+        <item>Like most aphids, the banana aphid is a phloem feeder that uses its long stylets to pierce plant tissues to suck the sap directly from the vessels. This can cause plants to become deformed; the leaves become curled and shriveled, and in some cases galls are formed on the leaves. Nymphs: Like most other aphid species, the banana aphid has four nymphal stages. Newborn nymphs are oval at first and become slightly elongated. They are reddish brown, with four segmented antennae, and measure 1/250 inch in length. The second stage nymphs are similar in appearance and measure approximately 7/250 inch long. The third nymphal stage individuals are light brown, measuring about 9/250 inch in length; the compound eyes are more noticeable beginning with this stage, and the nymphs have five-segmented antennae. The fourth stage nymphs have six-segmented antennae, are light brown in color, and are 1/25 inch long. The first, second, third, and fourth nymphal stages last 2 to 4, 3 to 4, 2 to 4, and 2 to 4 days, respectively. Adults: Adult banana aphids are small to medium sized aphids (1/25 to 1/12 inch), shiny, reddish to dark brown or almost black. They have six-segmented antennae that are as long as the body. Alates have prominent, dark (brown or black) wing veins. Adults start producing young one day after reaching maturity. They can give birth to 4 aphids per day with an average production of 14 offspring per female.</item>
+        <item>Aphids can be killed by their natural enemies, or with sprays of registered insecticides, or with insecticidal soaps or liquid dish washing detergents and vegetable oils. Ants protect the aphids from their enemies, and ants feed upon the sweet honeydew that aphids produce. Control tips: (1) Inspect alternate hosts for aphids - eliminate populations of banana aphids that are living on non-banana hosts within the vicinity of your bananas; (2) Inspect banana plants for aphids - scout banana plants at least twice per month for aphid colonies; (3) Control ants - control ants if possible and lawful, ants aggressively protect aphids from natural enemies; (4) Invite beneficial animals and insects - strive to foster a conducive environment for beneficial, aphid-feeding or -parasitizing insects such as lady beetles; (5) Destroy wild bananas in the area - eliminate wild of unattended patches of bananas, large populations of banana aphids can grow on them and the wild patches when infected can serve as a serious and constant source of disease for farms and residential neighborhoods; (6) Control weeds around bananas - maintain good weed control around the banana patch; (7) Diversify the banana farm - grow a range of different plants or crops; (8) Prune the mats - keep banana mats pruned of all unwanted suckers; (9) Spray for aphid control.</item>
+    </string-array>
+
+    <string-array name="LaceBug">
+        <item>Lace Bug</item>
+        <item>Lace Bug</item>
+        <item>Lace Bug</item>
+        <item>Stephanitis typicus</item>
+        <item>Leaves have abnormal colours, abnormal leaf fall, internal feeding, necrotic areas, and wilting. Adult lace bugs have beautifully sculptured wings that resemble an intricate, lacy network. There are also lacy extensions at each side on the front part of the body and an expanded, lacy hood that extends over the head. Some species are almost entirely white while others are marked with black or brown. They range in size from 1/8 to 3/16 inch. Nymphs do not have wings but usually have spines on the back.</item>
+        <item>To manage lace bugs, remove leaflets harboring the insects and destroy them. For chemical method, spraying one these can help: Malathion 50 EC @ 2 ml/lt, Dimethoate 30 EC @1 ml/lt, Methyl demeton 25 EC @1 ml/lt, Phosphamidon 40 SL @1.25 ml/lt, Monocrotophos 36 WSC @1 ml/lt, Methomyl 25 EC @2 ml/lit, 3% Neem oil.</item>
+    </string-array>
+
+    <string-array name="ScaleInsects">
+        <item>Scale Insects</item>
+        <item>Scale Insects</item>
+        <item>Scale Insects</item>
+        <item>Chrysomphalus aonidium Hemiberlesia lataneae</item>
+        <item>Whether armored or soft, scale insects are often found on the undersides of leaves or on branches. Each species of scale has specific plants they are associated with. The scale blends in well, so the actual insect may not be very apparent. When scales feed underneath the leaves, yellow spots often appear on the tops of the foliage. Over time, the plant can become more chlorotic-looking, and new plant growth can be stunted. And if you’re dealing with soft scale, another symptom is the appearance of sooty mold. (Be aware, however, that sooty mold can also be caused by whiteflies and aphids.) Scale insects vary dramatically in appearance; from very small organisms (1–2 mm) that grow beneath wax covers (some shaped like oyster shells, others like mussel shells), to shiny pearl-like objects (about 5 mm), to creatures covered with mealy wax. Adult female scales are almost always immobile (aside from mealybugs) and permanently attached to the plant they have parasitized. They secrete a waxycoating for defense; this coating causes them to resemble reptilian scales or fish scales, hence their common name.</item>
+        <item>To get rid of scale insects prune and dispose of infested branches, twigs and leaves. When scale numbers are low they may be rubbed or picked off of plants by hand. Dabbing individual pests with an alcohol-soaked cotton swab or neem-based leaf shine will also work when infestations are light. Commercially available beneficial insects, such as ladybugs and lacewing, are natural predators of the young larval or “crawler” stage. Organic pesticides, like insecticidal soap and d-Limonene can also be used to kill the larvae. However, these products have very little persistence in the environment, so several applications during egg-hatching will be required for effective control. Azamax contains azadirachtin, the key insecticidal ingredient found in neem oil. This concentrated spray is approved for organic use and offers multiple modes of action, making it virtually impossible for pest resistance to develop. Best of all, it’s non-toxic to honey bees and many other beneficial insects. Horticultural oils and other safe, oil-based insecticides work by smothering insects and will control all pest stages, including adults which are protected from most other insecticides by their armor coverings. Fast-acting botanical insecticides should be used as a last resort. Derived from plants which have insecticidal properties, these natural pesticides have fewer harmful side effects than synthetic chemicals and break down more quickly in the environment.</item>
+    </string-array>
+
+    <string-array name="Thrips">
+        <item>Thrips</item>
+        <item>Flower Thrips</item>
+        <item>Thrips</item>
+        <item>Chaetanaphothrips signipennis Thrips florum</item>
+        <item>Leaves are rolled or folded while fruits have malformed skin. Female macropterous; body colour brown, legs yellowish, antennal segment III yellow; fore wing brown with base paler. Antennae 7-segmented (rarely with 8 segments), III and IV slightly constricted at apex with short forked sensorium; segment VII short. Head wider than long, with 2 pairs of ocellar setae; pair III stout and arising just outside anterior margins of ocellar triangle; postocular setae pairs I and III shorter than ocellar setae pair III, pair II very small. Pronotum with 2 pairs of long posteroangular setae, posterior margin with 3 pairs of setae. Mesonotum with no lines of sculpture around anterior campaniform sensilla. Metanotum with lines of sculpture longitudinal medially, but transverse at anterior; median setae arising at anterior margin, campaniform sensilla present. Fore wing first vein with 3 setae on distal half, second vein with about 14 closely set setae; clavus with 5 marginal setae, the subapical seta longer than the apical seta. Tergite II with 4 lateral marginal setae; tergites V–VIII with ctenidia present laterally, on VIII posteromesad to spiracles; posterior margin of VIII with comb complete medially but microtrichia small and irregular and sometimes arising in groups; pleurotergites without discal setae. Sternite II with 2 pairs of marginal setae, III–VII with 3 pairs, median pair on VII arising in front of margin; sternite II with 1 to 4 discal setae, III–VII with discal setae varying in number from 6 to 14 in a regular transverse row. Male similar to female in structure, but smaller and paler; tergite VIII with no marginal comb; tergite IX with median S1 setae longer than S2 and arising closer to S2 than to each other; sternites III–VII with transverse pore plate anterior to row of about 8 discal setae.</item>
+        <item>Due to their small sizes and high rates of reproduction, thrips are difficult to control using classical biological control. All predators must be small and slender enough to penetrate the crevices where thrips hide while feeding, and then prey extensively on eggs and larvae. Only two families of parasitoid Hymenoptera are known to parasitize eggs and larvae, the Eulophidae and the Trichogrammatidae. Other biocontrol agents of adults and larvae include aphid wasps, anthocorid bugs of genus Orius, and phytoseiid mites. For this reason, many growers are occasionally forced to make limited use of pesticides to control thrips populations in the field and in greenhouses. Another effective strategy for pest thrips are biological insecticides, including Beauveria bassiana or Verticillium lecanii. These demonstrate a clear effect on eggs, larvae and adults of thrips. Insecticidal soap spray is effective against thrips. It is commercially available or can be made of certain types of household soap. Scientists in Japan report that significant reductions in larva and adult melon thripes occur when plants are illuminated with red light.</item>
+    </string-array>
+
 
     <!--Diseases Details-->
 

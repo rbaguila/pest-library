@@ -97,4 +97,12 @@ public class BrowseDiseasesActivity extends AppCompatActivity implements ItemAda
         intent.putExtra("type", "dcorn_");
         startActivity(intent);
     }
+
+    @Override
+    public void itemClickBanana(View view, String name) {
+        Intent intent = new Intent(this, ItemTrackActivity.class);
+        intent.putExtra("pestName", name);
+        intent.putExtra("type", "dban_");
+        startActivity(intent);
+    }
 }

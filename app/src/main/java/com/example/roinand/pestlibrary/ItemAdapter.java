@@ -21,6 +21,7 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ItemViewHolder
 
     private ClickListener clickListenerRice;
     private ClickListener clickListenerCorn;
+    private ClickListener clickListenerBanana;
 
     public ItemAdapter (Context context, List<Item> data, int type) {
         inflater = LayoutInflater.from(context);
@@ -34,6 +35,10 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ItemViewHolder
 
     public void setClickListenerCorn (ClickListener clickListenerCorn) {
         this.clickListenerCorn = clickListenerCorn;
+    }
+
+    public void setClickListenerBanana (ClickListener clickListenerBanana) {
+        this.clickListenerBanana = clickListenerBanana;
     }
 
 
@@ -78,11 +83,16 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ItemViewHolder
             if (clickListenerCorn != null) {
                 clickListenerCorn.itemClickCorn(v, name.getText().toString());
             }
+
+            if (clickListenerBanana != null) {
+                clickListenerBanana.itemClickBanana(v, name.getText().toString());
+            }
         }
     }
 
     public interface ClickListener {
         public void itemClickRice (View view, String name);
         public void itemClickCorn (View view, String name);
+        public void itemClickBanana (View view, String name);
     }
 }

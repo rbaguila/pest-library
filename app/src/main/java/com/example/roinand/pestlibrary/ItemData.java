@@ -8,17 +8,26 @@ import java.util.List;
 
 public class ItemData {
     public Context context;
+    //pests
     public int[] riceIcons;
-    public int[] driceIcons;
-    public int[] cornIcons;
-    public int[] dcornIcons;
     public String[] riceNames;
-    public String[] driceNames;
-    public String[] cornNames;
-    public String[] dcornNames;
     public String[] riceCommonNames;
-    public String[] driceCommonNames;
+
+    public int[] cornIcons;
+    public String[] cornNames;
     public String[] cornCommonNames;
+
+    public int[] bananaIcons;
+    public String[] bananaNames;
+    public String[] bananaCommonNames;
+
+    //diseases
+    public int[] driceIcons;
+    public String[] driceNames;
+    public String[] driceCommonNames;
+
+    public int[] dcornIcons;
+    public String[] dcornNames;
     public String[] dcornCommonNames;
 
     public ItemData(Context context){
@@ -165,6 +174,29 @@ public class ItemData {
         };
     }
 
+    public void initBananaData(){
+        bananaIcons = new int[]{
+                R.drawable.ban_bananaaphids,
+                R.drawable.ban_lacebug,
+                R.drawable.ban_scaleinsects,
+                R.drawable.ban_thrips
+        };
+
+        bananaNames = new String[]{
+                context.getResources().getStringArray(R.array.BananaAphids)[0],
+                context.getResources().getStringArray(R.array.LaceBug)[0],
+                context.getResources().getStringArray(R.array.ScaleInsects)[0],
+                context.getResources().getStringArray(R.array.Thrips)[0]
+        };
+
+        bananaCommonNames = new String[]{
+                context.getResources().getStringArray(R.array.BananaAphids)[1],
+                context.getResources().getStringArray(R.array.LaceBug)[1],
+                context.getResources().getStringArray(R.array.ScaleInsects)[1],
+                context.getResources().getStringArray(R.array.Thrips)[1]
+        };
+    }
+
     public List<Item> getRiceItemData(){
         initRiceData();
         List<Item> data = new ArrayList<>();
@@ -212,6 +244,19 @@ public class ItemData {
             Item current = new Item();
             current.imageId = dcornIcons[i];
             current.diseaseName = dcornNames[i];
+            data.add(current);
+        }
+        return data;
+    }
+
+    public List<Item> getBananaItemData(){
+        initBananaData();
+        List<Item> data = new ArrayList<>();
+
+        for (int i=0; i<bananaNames.length && i<bananaIcons.length; i++) {
+            Item current = new Item();
+            current.imageId = bananaIcons[i];
+            current.pestName = bananaNames[i];
             data.add(current);
         }
         return data;
@@ -268,6 +313,20 @@ public class ItemData {
             current.imageId = dcornIcons[i];
             current.diseaseName = dcornNames[i];
             current.commonNames = dcornCommonNames[i];
+            data.add(current);
+        }
+        return data;
+    }
+
+    public List<ItemAll> getAllBananaItemData() {
+        initBananaData();
+        List<ItemAll> data = new ArrayList<>();
+
+        for (int i=0; i<bananaNames.length && i<bananaIcons.length; i++) {
+            ItemAll current = new ItemAll();
+            current.imageId = bananaIcons[i];
+            current.pestName = bananaNames[i];
+            current.commonNames = bananaCommonNames[i];
             data.add(current);
         }
         return data;
