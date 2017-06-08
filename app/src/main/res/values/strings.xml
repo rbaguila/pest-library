@@ -11,7 +11,7 @@
     <string name="title_activity_rice2">Rice Diseases</string>
     <string name="title_activity_corn">Corn Pests</string>
     <string name="title_activity_no_data">No Data</string>
-    <string name="title_item">Pest</string>
+    <string name="title_item">Info</string>
     <string name="drawer_open">Open</string>
     <string name="drawer_close">Close</string>
 
@@ -218,25 +218,33 @@
     <string-array name="BacterialLeafBlight">
         <item>Bacterial Leaf Blight</item>
         <item>Bacterial Leaf Blight</item>
+        <item></item>
         <item>Xanthomonas oryzae pv. oryzae</item>
+        <item>Use of resistant varieties together with modified cultural practices to disrupt the disease cycle and proper deployment of resistant varieties in the field. Use balanced amounts of plant nutrients, especially nitrogen. Keep fields clean. Remove weed hosts and plow under rice stubble, straw, rice ratoons and volunteer seedlings, which can serve as hosts of bacteria.</item>
     </string-array>
 
     <string-array name="BacterialLeafStreak">
         <item>Bacterial Leaf Streak</item>
         <item>Bacterial Leaf Streak</item>
+        <item></item>
         <item>Xanthomonas oryzae pv. oryzicola</item>
+        <item>Use of resistant to the disease varieties of rice. Treat seeds with hot water. Keep fields clean—remove weed hosts and plow under rice stubble, straw, rice ratoons, and volunteer seedlings, which may be infected by the bacteria. Use balanced amounts of plant nutrients, especially nitrogen.</item>
     </string-array>
 
     <string-array name="Bakanae">
         <item>Bakanae</item>
         <item>Bakanae</item>
+        <item>Bakanae</item>
         <item>Fusarium moniliforme/Gibberella fujikuroi</item>
+        <item>Use of Resistant varieties, Seed treatment with recommended fungicides, Gather and burn infected plants or deep plowing to bury and submerge infected stubbles can help reduce sources of inocula.</item>
     </string-array>
 
     <string-array name="BrownSpot">
         <item>Brown Spot</item>
         <item>Helminthosporium Leaf Spot</item>
+        <item>Brown Spot</item>
         <item>Helminthosporium oryzae/Cochliobolus miyabeanus</item>
+        <item>Plant resistant varieties, Use only healthy or clean seeds for planting or treat seeds with recommended fungicides if necessary, Apply muriate of potash to correct the soil deficiency, Spray with recommended fungicides.</item>
     </string-array>
 
     <string name="link_site">To see more info, please visit our <a href="http://www.sarai.ph">site</a></string>

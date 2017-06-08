@@ -32,20 +32,20 @@ public class ItemTrackActivity extends AppCompatActivity{
     }
 
 
-    public String getStringArrayName(String pest){
-        return pest.replaceAll("[\\s-]","");
+    public String getStringArrayName(String name){
+        return name.replaceAll("[\\s-]","");
     }
 
     public void setActivityContents(String stringArrayName){
-        String pestType = getIntent().getStringExtra("pestType");
-        ((ImageView) findViewById(R.id.pest_image)).setImageResource(getResources().getIdentifier(pestType + stringArrayName.toLowerCase(),"drawable", getPackageName()));
+        String itemType = getIntent().getStringExtra("type");
+        ((ImageView) findViewById(R.id.item_image)).setImageResource(getResources().getIdentifier(itemType + stringArrayName.toLowerCase(),"drawable", getPackageName()));
 
-        String[] pestDetails = getResources().getStringArray(getResources().getIdentifier(stringArrayName,"array", getPackageName()));
-        ((TextView) findViewById(R.id.pest_name)).setText(pestDetails[0].equals("")? "Not available" : pestDetails[0]);
-        ((TextView) findViewById(R.id.pest_common_name)).setText(pestDetails[1].equals("")? "Not available" : pestDetails[1]);
-        ((TextView) findViewById(R.id.pest_filipino_name)).setText(pestDetails[2].equals("")? "Not available" : pestDetails[2]);
-        ((TextView) findViewById(R.id.pest_scientific_name)).setText(pestDetails[3].equals("")? "Not available" : pestDetails[3]);
-        ((TextView) findViewById(R.id.pest_management_practice)).setText(pestDetails[4].equals("")? "Not available" : pestDetails[4]);
+        String[] details = getResources().getStringArray(getResources().getIdentifier(stringArrayName,"array", getPackageName()));
+        ((TextView) findViewById(R.id.item_name)).setText(details[0].equals("")? "Not available" : details[0]);
+        ((TextView) findViewById(R.id.item_common_name)).setText(details[1].equals("")? "Not available" : details[1]);
+        ((TextView) findViewById(R.id.item_filipino_name)).setText(details[2].equals("")? "Not available" : details[2]);
+        ((TextView) findViewById(R.id.item_scientific_name)).setText(details[3].equals("")? "Not available" : details[3]);
+        ((TextView) findViewById(R.id.item_management_practice)).setText(details[4].equals("")? "Not available" : details[4]);
 
         ((TextView) findViewById(R.id.visit_site)).setMovementMethod(LinkMovementMethod.getInstance());
     }

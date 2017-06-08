@@ -70,7 +70,7 @@ public class CornActivity extends AppCompatActivity implements ItemAllAdapter.Cl
     public void itemClick(View view, String name) {
         Intent intent = new Intent(this, ItemTrackActivity.class);
         intent.putExtra("pestName", name);
-        intent.putExtra("pestType", "corn_");
+        intent.putExtra("type", "corn_");
         startActivity(intent);
     }
 }

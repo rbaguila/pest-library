@@ -67,7 +67,7 @@ public class RiceActivity extends AppCompatActivity implements ItemAllAdapter.Cl
     public void itemClick(View view, String name) {
         Intent intent = new Intent(this, ItemTrackActivity.class);
         intent.putExtra("pestName", name);
-        intent.putExtra("pestType", "rice_");
+        intent.putExtra("type", "rice_");
         startActivity(intent);
     }
 }

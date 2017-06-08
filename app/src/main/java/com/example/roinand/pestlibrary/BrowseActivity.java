@@ -89,7 +89,7 @@ public class BrowseActivity extends AppCompatActivity implements ItemAdapter.Cli
     public void itemClickRice(View view, String name) {
         Intent intent = new Intent(this, ItemTrackActivity.class);
         intent.putExtra("pestName", name);
-        intent.putExtra("pestType", "rice_");
+        intent.putExtra("type", "rice_");
         startActivity(intent);
     }
 
@@ -97,7 +97,7 @@ public class BrowseActivity extends AppCompatActivity implements ItemAdapter.Cli
     public void itemClickCorn(View view, String name) {
         Intent intent = new Intent(this, ItemTrackActivity.class);
         intent.putExtra("pestName", name);
-        intent.putExtra("pestType", "corn_");
+        intent.putExtra("type", "corn_");
         startActivity(intent);
     }
 }

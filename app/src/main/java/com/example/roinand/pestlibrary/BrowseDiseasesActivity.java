@@ -86,7 +86,7 @@ public class BrowseDiseasesActivity extends AppCompatActivity implements ItemAda
     public void itemClickRice(View view, String name) {
         Intent intent = new Intent(this, ItemTrackActivity.class);
         intent.putExtra("pestName", name);
-        intent.putExtra("pestType", "rice_");
+        intent.putExtra("type", "drice_");
         startActivity(intent);
     }
 
@@ -94,7 +94,7 @@ public class BrowseDiseasesActivity extends AppCompatActivity implements ItemAda
     public void itemClickCorn(View view, String name) {
         Intent intent = new Intent(this, ItemTrackActivity.class);
         intent.putExtra("pestName", name);
-        intent.putExtra("pestType", "corn_");
+        intent.putExtra("type", "dcorn_");
         startActivity(intent);
     }
 }
