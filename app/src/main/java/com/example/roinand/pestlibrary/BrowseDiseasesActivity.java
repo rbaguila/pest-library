@@ -15,8 +15,8 @@ public class BrowseDiseasesActivity extends AppCompatActivity implements ItemAda
     private RecyclerView driceRecycler; //for diseases
     private ItemAdapter driceAdapter;
 
-    private RecyclerView cornRecycler;
-    private ItemAdapter cornAdapter;
+    private RecyclerView dcornRecycler;
+    private ItemAdapter dcornAdapter;
 
     private Toolbar toolbar;
     @Override
@@ -41,14 +41,14 @@ public class BrowseDiseasesActivity extends AppCompatActivity implements ItemAda
         driceAdapter.setClickListenerRice(this);
         driceRecycler.setAdapter(driceAdapter);
 
-        cornRecycler = (RecyclerView) findViewById(R.id.corn_items);
-        cornRecycler.setHasFixedSize(true);
-        LinearLayoutManager cornLinearLayout = new LinearLayoutManager(this);
-        cornLinearLayout.setOrientation(LinearLayoutManager.HORIZONTAL);
-        cornRecycler.setLayoutManager(cornLinearLayout);
-        cornAdapter = new ItemAdapter(this, new ItemData(this).getCornItemData(), 1);
-        cornAdapter.setClickListenerCorn(this);
-        cornRecycler.setAdapter(cornAdapter);
+        dcornRecycler = (RecyclerView) findViewById(R.id.corn_items);
+        dcornRecycler.setHasFixedSize(true);
+        LinearLayoutManager dcornLinearLayout = new LinearLayoutManager(this);
+        dcornLinearLayout.setOrientation(LinearLayoutManager.HORIZONTAL);
+        dcornRecycler.setLayoutManager(dcornLinearLayout);
+        dcornAdapter = new ItemAdapter(this, new ItemData(this).getDcornItemData(), 2);
+        dcornAdapter.setClickListenerCorn(this);
+        dcornRecycler.setAdapter(dcornAdapter);
     }
 
     @Override
@@ -79,7 +79,7 @@ public class BrowseDiseasesActivity extends AppCompatActivity implements ItemAda
     }
 
     public void redirectCorn(View view){
-        startActivity(new Intent(this, CornActivity.class));
+        startActivity(new Intent(this, DcornActivity.class));
     }
 
     @Override

@@ -10,8 +10,9 @@
     <string name="title_activity_rice">Rice Pests</string>
     <string name="title_activity_rice2">Rice Diseases</string>
     <string name="title_activity_corn">Corn Pests</string>
+    <string name="title_activity_corn2">Corn Diseases</string>
     <string name="title_activity_no_data">No Data</string>
-    <string name="title_item">Info</string>
+    <string name="title_item">Information</string>
     <string name="drawer_open">Open</string>
     <string name="drawer_close">Close</string>
 
@@ -245,6 +246,39 @@
         <item>Brown Spot</item>
         <item>Helminthosporium oryzae/Cochliobolus miyabeanus</item>
         <item>Plant resistant varieties, Use only healthy or clean seeds for planting or treat seeds with recommended fungicides if necessary, Apply muriate of potash to correct the soil deficiency, Spray with recommended fungicides.</item>
+    </string-array>
+
+    <!--Corn Diseases-->
+    <string-array name="CornRust">
+        <item>Corn Rust</item>
+        <item>Corn Rust</item>
+        <item></item>
+        <item>Puccinia polysora</item>
+        <item>Plow deep to bury scleotia. Some producers avoid disease or minimize its effects by not planting late or by using shorter season hybrids. By doing so, they have a more mature and resistant crop in the field when rust spores arrive and sometimes disease can be completely avoided.</item>
+    </string-array>
+
+    <string-array name="CornSmut">
+        <item>Corn Smut</item>
+        <item>Corn Smut</item>
+        <item></item>
+        <item>Ustilago maydis</item>
+        <item>Use of resistant varieties. Avoid mechanical injury of plants. Proper nutritional management.</item>
+    </string-array>
+
+    <string-array name="DownyMildew">
+        <item>Downy Mildew</item>
+        <item>Downy Mildew</item>
+        <item></item>
+        <item>Peronosclerospora philippinensis</item>
+        <item>Reduce nitrogen fertilizer. Plant resistant varieties. Eliminate infected plants. Maintain weed-free field. Use recommended fungicide.</item>
+    </string-array>
+
+    <string-array name="StalkRot">
+        <item>Stalk Rot</item>
+        <item>Stalk Rot</item>
+        <item></item>
+        <item>Stenocarpella macrospora</item>
+        <item>Cultivate to improve soil condition. Proper nutritional management.</item>
     </string-array>
 
     <string name="link_site">To see more info, please visit our <a href="http://www.sarai.ph">site</a></string>

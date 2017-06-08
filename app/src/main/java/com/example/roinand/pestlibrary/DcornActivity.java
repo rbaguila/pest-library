@@ -12,15 +12,17 @@ import android.view.MenuItem;
 import android.view.View;
 
 
-public class DriceActivity extends AppCompatActivity implements ItemAllAdapter.ClickListener{
-    private RecyclerView riceRecycler;
-    private ItemAllAdapter riceAdapter;
+public class DcornActivity extends AppCompatActivity implements ItemAllAdapter.ClickListener{
+
+    private RecyclerView cornRecycler;
+    private ItemAllAdapter cornAdapter;
 
     private Toolbar toolbar;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_drice);
+        setContentView(R.layout.activity_dcorn);
 
         toolbar = (Toolbar) findViewById(R.id.app_bar);
         setSupportActionBar(toolbar);
@@ -29,20 +31,21 @@ public class DriceActivity extends AppCompatActivity implements ItemAllAdapter.C
                 getSupportFragmentManager().findFragmentById(R.id.fragment_drawer);
         drawerFragment.setUp(R.id.fragment_drawer, (DrawerLayout) findViewById(R.id.drawer_layout), toolbar);
 
-        riceRecycler = (RecyclerView) findViewById(R.id.pest_items_all);
-        riceRecycler.setHasFixedSize(true);
-        LinearLayoutManager riceLinearLayout = new LinearLayoutManager(this);
-        riceLinearLayout.setOrientation(LinearLayoutManager.VERTICAL);
-        riceRecycler.setLayoutManager(riceLinearLayout);
-        riceAdapter = new ItemAllAdapter(this, new ItemData(this).getAllDriceItemData(), 2);
-        riceAdapter.setClickListener(this);
-        riceRecycler.setAdapter(riceAdapter);
+        cornRecycler = (RecyclerView) findViewById(R.id.pest_items_all);
+        cornRecycler.setHasFixedSize(true);
+        LinearLayoutManager cornLinearLayout = new LinearLayoutManager(this);
+        cornLinearLayout.setOrientation(LinearLayoutManager.VERTICAL);
+        cornRecycler.setLayoutManager(cornLinearLayout);
+        cornAdapter = new ItemAllAdapter(this, new ItemData(this).getAllDcornItemData(), 2);
+        cornAdapter.setClickListener(this);
+        cornRecycler.setAdapter(cornAdapter);
     }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_rice, menu);
+        getMenuInflater().inflate(R.menu.menu_corn, menu);
         return false;
     }
 
@@ -65,7 +68,7 @@ public class DriceActivity extends AppCompatActivity implements ItemAllAdapter.C
     public void itemClick(View view, String name) {
         Intent intent = new Intent(this, ItemTrackActivity.class);
         intent.putExtra("pestName", name);
-        intent.putExtra("type", "drice_");
+        intent.putExtra("type", "dcorn_");
         startActivity(intent);
     }
 }
