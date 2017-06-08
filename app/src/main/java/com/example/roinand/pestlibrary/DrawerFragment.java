@@ -66,8 +66,8 @@ public class DrawerFragment extends Fragment implements CustomDrawerAdapter.Clic
     //Getting data for the adapter
     public static List<CustomDrawerItem> getData () {
         List<CustomDrawerItem> data = new ArrayList<>();
-        int[] icons = {R.drawable.home_icon, R.drawable.rice_icon, R.drawable.corn_icon};
-        String[] titles = {"HOME", "RICE", "CORN"};
+        int[] icons = {R.drawable.home_icon, R.drawable.pest_icon, R.drawable.plant_icon};
+        String[] titles = {"HOME", "PESTS", "DISEASES"};
 
         for (int i=0; i<titles.length && i<icons.length; i++) {
             CustomDrawerItem current = new CustomDrawerItem();
@@ -124,11 +124,11 @@ public class DrawerFragment extends Fragment implements CustomDrawerAdapter.Clic
         }
         //Rice
         else if(position == 1){
-            startActivity(new Intent(getActivity(), RiceActivity.class));
+            startActivity(new Intent(getActivity(), BrowseActivity.class));
         }
         //Corn
         else if(position == 2){
-            startActivity(new Intent(getActivity(), CornActivity.class));
+            startActivity(new Intent(getActivity(), BrowseDiseasesActivity.class));
         }
     }
 }
