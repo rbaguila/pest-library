@@ -45,7 +45,8 @@ public class ItemTrackActivity extends AppCompatActivity{
         ((TextView) findViewById(R.id.item_common_name)).setText(details[1].equals("")? "Not available" : details[1]);
         ((TextView) findViewById(R.id.item_filipino_name)).setText(details[2].equals("")? "Not available" : details[2]);
         ((TextView) findViewById(R.id.item_scientific_name)).setText(details[3].equals("")? "Not available" : details[3]);
-        ((TextView) findViewById(R.id.item_management_practice)).setText(details[4].equals("")? "Not available" : details[4]);
+        ((TextView) findViewById(R.id.item_identification_signs)).setText(details[4].equals("")? "Not available" : details[4]);
+        ((TextView) findViewById(R.id.item_management_practice)).setText(details[5].equals("")? "Not available" : details[5]);
 
         ((TextView) findViewById(R.id.visit_site)).setMovementMethod(LinkMovementMethod.getInstance());
     }
