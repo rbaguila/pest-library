@@ -38,7 +38,7 @@ public class CornActivity extends AppCompatActivity implements ItemAllAdapter.Cl
         LinearLayoutManager cornLinearLayout = new LinearLayoutManager(this);
         cornLinearLayout.setOrientation(LinearLayoutManager.VERTICAL);
         cornRecycler.setLayoutManager(cornLinearLayout);
-        cornAdapter = new ItemAllAdapter(this, new ItemData(this).getAllCornItemData());
+        cornAdapter = new ItemAllAdapter(this, new ItemData(this).getAllCornItemData(), 1);
         cornAdapter.setClickListener(this);
         cornRecycler.setAdapter(cornAdapter);
     }

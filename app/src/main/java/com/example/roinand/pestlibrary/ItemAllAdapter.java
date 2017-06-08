@@ -17,12 +17,14 @@ import java.util.List;
 public class ItemAllAdapter extends RecyclerView.Adapter<ItemAllAdapter.AllItemViewHolder> {
     List<ItemAll> data = Collections.emptyList();
     private LayoutInflater inflater;
+    private int type;
 
     private ClickListener clickListener;
 
-    public ItemAllAdapter (Context context, List<ItemAll> data) {
+    public ItemAllAdapter (Context context, List<ItemAll> data, int type) {
         inflater = LayoutInflater.from(context);
         this.data = data;
+        this.type = type;
     }
 
     public void setClickListener (ClickListener clickListener) {
@@ -40,7 +42,8 @@ public class ItemAllAdapter extends RecyclerView.Adapter<ItemAllAdapter.AllItemV
     public void onBindViewHolder(AllItemViewHolder holder, int position) {
         ItemAll current = data.get(position);
         holder.screenshot.setImageResource(current.imageId);
-        holder.name.setText(current.pestName);
+        if (type == 1) holder.name.setText(current.pestName);
+        else if (type == 2) holder.name.setText(current.diseaseName);
         holder.commonNames.setText(current.commonNames);
     }
 

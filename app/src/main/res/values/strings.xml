@@ -7,8 +7,9 @@
     <string name="title_rice_bar">Rice</string>
     <string name="title_corn_bar">Corn</string>
     <string name="view_more">View More</string>
-    <string name="title_activity_rice">Rice Pest</string>
-    <string name="title_activity_corn">Corn Pest</string>
+    <string name="title_activity_rice">Rice Pests</string>
+    <string name="title_activity_rice2">Rice Diseases</string>
+    <string name="title_activity_corn">Corn Pests</string>
     <string name="title_activity_no_data">No Data</string>
     <string name="title_item">Pest</string>
     <string name="drawer_open">Open</string>

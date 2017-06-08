@@ -182,7 +182,7 @@ public class ItemData {
         initRiceData();
         List<ItemAll> data = new ArrayList<>();
 
-        for (int i=0; i<driceNames.length && i<driceIcons.length; i++) {
+        for (int i=0; i<riceNames.length && i<riceIcons.length; i++) {
             ItemAll current = new ItemAll();
             current.imageId = riceIcons[i];
             current.pestName = riceNames[i];

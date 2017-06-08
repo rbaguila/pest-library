@@ -75,7 +75,7 @@ public class BrowseDiseasesActivity extends AppCompatActivity implements ItemAda
     }
 
     public void redirectRice(View view){
-        startActivity(new Intent(this, RiceActivity.class));
+        startActivity(new Intent(this, DriceActivity.class));
     }
 
     public void redirectCorn(View view){

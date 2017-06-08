@@ -14,7 +14,7 @@ import android.view.View;
 /**
  * Created by User on 7/23/2016.
  */
-public class RiceActivity extends AppCompatActivity implements ItemAllAdapter.ClickListener{
+public class DriceActivity extends AppCompatActivity implements ItemAllAdapter.ClickListener{
     private RecyclerView riceRecycler;
     private ItemAllAdapter riceAdapter;
 
@@ -22,7 +22,7 @@ public class RiceActivity extends AppCompatActivity implements ItemAllAdapter.Cl
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_rice);
+        setContentView(R.layout.activity_drice);
 
         toolbar = (Toolbar) findViewById(R.id.app_bar);
         setSupportActionBar(toolbar);
@@ -36,7 +36,7 @@ public class RiceActivity extends AppCompatActivity implements ItemAllAdapter.Cl
         LinearLayoutManager riceLinearLayout = new LinearLayoutManager(this);
         riceLinearLayout.setOrientation(LinearLayoutManager.VERTICAL);
         riceRecycler.setLayoutManager(riceLinearLayout);
-        riceAdapter = new ItemAllAdapter(this, new ItemData(this).getAllRiceItemData(), 1);
+        riceAdapter = new ItemAllAdapter(this, new ItemData(this).getAllDriceItemData(), 2);
         riceAdapter.setClickListener(this);
         riceRecycler.setAdapter(riceAdapter);
     }
