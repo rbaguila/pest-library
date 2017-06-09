@@ -29,6 +29,10 @@ public class ItemData {
     public String[] coffeeNames;
     public String[] coffeeCommonNames;
 
+    public int[] cocoIcons;
+    public String[] cocoNames;
+    public String[] cocoCommonNames;
+
     //diseases
     public int[] driceIcons;
     public String[] driceNames;
@@ -326,6 +330,29 @@ public class ItemData {
         };
     }
 
+    public void initCocoData(){
+        cocoIcons = new int[]{
+                R.drawable.coco_coconutleafbeetle,
+                R.drawable.coco_coconutscaleinsect,
+                R.drawable.coco_falsespidermite,
+                R.drawable.coco_rhinocerosbeetle
+        };
+
+        cocoNames = new String[]{
+                context.getResources().getStringArray(R.array.CoconutLeafBeetle)[0],
+                context.getResources().getStringArray(R.array.CoconutScaleInsect)[0],
+                context.getResources().getStringArray(R.array.FalseSpiderMite)[0],
+                context.getResources().getStringArray(R.array.RhinocerosBeetle)[0]
+        };
+
+        cocoCommonNames = new String[]{
+                context.getResources().getStringArray(R.array.CoconutLeafBeetle)[1],
+                context.getResources().getStringArray(R.array.CoconutScaleInsect)[1],
+                context.getResources().getStringArray(R.array.FalseSpiderMite)[1],
+                context.getResources().getStringArray(R.array.RhinocerosBeetle)[1]
+        };
+    }
+
     public List<Item> getRiceItemData(){
         initRiceData();
         List<Item> data = new ArrayList<>();
@@ -470,6 +497,19 @@ public class ItemData {
         return data;
     }
 
+    public List<Item> getCocoItemData(){
+        initCocoData();
+        List<Item> data = new ArrayList<>();
+
+        for (int i=0; i<cocoNames.length && i<cocoIcons.length; i++) {
+            Item current = new Item();
+            current.imageId = cocoIcons[i];
+            current.pestName = cocoNames[i];
+            data.add(current);
+        }
+        return data;
+    }
+
     public List<ItemAll> getAllDriceItemData() {
         initDriceData();
         List<ItemAll> data = new ArrayList<>();
@@ -591,6 +631,20 @@ public class ItemData {
             current.imageId = dcoffeeIcons[i];
             current.diseaseName = dcoffeeNames[i];
             current.commonNames = dcoffeeCommonNames[i];
+            data.add(current);
+        }
+        return data;
+    }
+
+    public List<ItemAll> getAllCocoItemData() {
+        initCocoData();
+        List<ItemAll> data = new ArrayList<>();
+
+        for (int i=0; i<cocoNames.length && i<cocoIcons.length; i++) {
+            ItemAll current = new ItemAll();
+            current.imageId = cocoIcons[i];
+            current.pestName = cocoNames[i];
+            current.commonNames = cocoCommonNames[i];
             data.add(current);
         }
         return data;

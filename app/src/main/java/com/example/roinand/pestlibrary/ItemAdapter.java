@@ -24,6 +24,7 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ItemViewHolder
     private ClickListener clickListenerBanana;
     private ClickListener clickListenerCacao;
     private ClickListener clickListenerCoffee;
+    private ClickListener clickListenerCoco;
 
     public ItemAdapter (Context context, List<Item> data, int type) {
         inflater = LayoutInflater.from(context);
@@ -49,6 +50,10 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ItemViewHolder
 
     public void setClickListenerCoffee (ClickListener clickListenerCoffee) {
         this.clickListenerCoffee = clickListenerCoffee;
+    }
+
+    public void setClickListenerCoco (ClickListener clickListenerCoco) {
+        this.clickListenerCoco = clickListenerCoco;
     }
 
 
@@ -105,6 +110,10 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ItemViewHolder
             if (clickListenerCoffee != null) {
                 clickListenerCoffee.itemClickCoffee(v, name.getText().toString());
             }
+
+            if (clickListenerCoco != null) {
+                clickListenerCoco.itemClickCoco(v, name.getText().toString());
+            }
         }
     }
 
@@ -114,5 +123,6 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ItemViewHolder
         public void itemClickBanana (View view, String name);
         public void itemClickCacao (View view, String name);
         public void itemClickCoffee (View view, String name);
+        public void itemClickCoco (View view, String name);
     }
 }

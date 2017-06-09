@@ -169,4 +169,12 @@ public class BrowseDiseasesActivity extends AppCompatActivity implements ItemAda
         intent.putExtra("type", "dcoff_");
         startActivity(intent);
     }
+
+    @Override
+    public void itemClickCoco(View view, String name) {
+        Intent intent = new Intent(this, ItemTrackActivity.class);
+        intent.putExtra("pestName", name);
+        intent.putExtra("type", "dcoco_");
+        startActivity(intent);
+    }
 }

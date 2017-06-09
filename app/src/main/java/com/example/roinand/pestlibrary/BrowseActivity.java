@@ -30,6 +30,9 @@ public class BrowseActivity extends AppCompatActivity implements ItemAdapter.Cli
     private RecyclerView coffeeRecycler;
     private ItemAdapter coffeeAdapter;
 
+    private RecyclerView cocoRecycler;
+    private ItemAdapter cocoAdapter;
+
     private Toolbar toolbar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -88,6 +91,15 @@ public class BrowseActivity extends AppCompatActivity implements ItemAdapter.Cli
         coffeeAdapter = new ItemAdapter(this, new ItemData(this).getCoffeeItemData(), 1);
         coffeeAdapter.setClickListenerCoffee(this);
         coffeeRecycler.setAdapter(coffeeAdapter);
+
+        cocoRecycler = (RecyclerView) findViewById(R.id.coco_items);
+        cocoRecycler.setHasFixedSize(true);
+        LinearLayoutManager cocoLinearLayout = new LinearLayoutManager(this);
+        cocoLinearLayout.setOrientation(LinearLayoutManager.HORIZONTAL);
+        cocoRecycler.setLayoutManager(cocoLinearLayout);
+        cocoAdapter = new ItemAdapter(this, new ItemData(this).getCocoItemData(), 1);
+        cocoAdapter.setClickListenerCoco(this);
+        cocoRecycler.setAdapter(cocoAdapter);
     }
 
     @Override
@@ -133,6 +145,10 @@ public class BrowseActivity extends AppCompatActivity implements ItemAdapter.Cli
         startActivity(new Intent(this, CoffeeActivity.class));
     }
 
+    public void redirectCoco(View view){
+        startActivity(new Intent(this, CocoActivity.class));
+    }
+
     @Override
     public void itemClickRice(View view, String name) {
         Intent intent = new Intent(this, ItemTrackActivity.class);
@@ -170,6 +186,14 @@ public class BrowseActivity extends AppCompatActivity implements ItemAdapter.Cli
         Intent intent = new Intent(this, ItemTrackActivity.class);
         intent.putExtra("pestName", name);
         intent.putExtra("type", "coff_");
+        startActivity(intent);
+    }
+
+    @Override
+    public void itemClickCoco(View view, String name) {
+        Intent intent = new Intent(this, ItemTrackActivity.class);
+        intent.putExtra("pestName", name);
+        intent.putExtra("type", "coco_");
         startActivity(intent);
     }
 }
