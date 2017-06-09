@@ -27,6 +27,9 @@ public class BrowseDiseasesActivity extends AppCompatActivity implements ItemAda
     private RecyclerView dcoffeeRecycler;
     private ItemAdapter dcoffeeAdapter;
 
+    private RecyclerView dcocoRecycler;
+    private ItemAdapter dcocoAdapter;
+
     private Toolbar toolbar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -85,6 +88,15 @@ public class BrowseDiseasesActivity extends AppCompatActivity implements ItemAda
         dcoffeeAdapter = new ItemAdapter(this, new ItemData(this).getDcoffeeItemData(), 2);
         dcoffeeAdapter.setClickListenerCoffee(this);
         dcoffeeRecycler.setAdapter(dcoffeeAdapter);
+
+        dcocoRecycler = (RecyclerView) findViewById(R.id.coco_items);
+        dcocoRecycler.setHasFixedSize(true);
+        LinearLayoutManager dcocoLinearLayout = new LinearLayoutManager(this);
+        dcocoLinearLayout.setOrientation(LinearLayoutManager.HORIZONTAL);
+        dcocoRecycler.setLayoutManager(dcocoLinearLayout);
+        dcocoAdapter = new ItemAdapter(this, new ItemData(this).getDcocoItemData(), 2);
+        dcocoAdapter.setClickListenerCoco(this);
+        dcocoRecycler.setAdapter(dcocoAdapter);
     }
 
     @Override
@@ -128,6 +140,10 @@ public class BrowseDiseasesActivity extends AppCompatActivity implements ItemAda
 
     public void redirectCoffee(View view){
         startActivity(new Intent(this, DcoffeeActivity.class));
+    }
+
+    public void redirectCoco(View view){
+        startActivity(new Intent(this, DcocoActivity.class));
     }
 
     @Override
