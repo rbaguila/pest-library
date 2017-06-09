@@ -24,6 +24,9 @@ public class BrowseDiseasesActivity extends AppCompatActivity implements ItemAda
     private RecyclerView dcacaoRecycler;
     private ItemAdapter dcacaoAdapter;
 
+    private RecyclerView dcoffeeRecycler;
+    private ItemAdapter dcoffeeAdapter;
+
     private Toolbar toolbar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -73,6 +76,15 @@ public class BrowseDiseasesActivity extends AppCompatActivity implements ItemAda
         dcacaoAdapter = new ItemAdapter(this, new ItemData(this).getDcacaoItemData(), 2);
         dcacaoAdapter.setClickListenerCacao(this);
         dcacaoRecycler.setAdapter(dcacaoAdapter);
+
+        dcoffeeRecycler = (RecyclerView) findViewById(R.id.coffee_items);
+        dcoffeeRecycler.setHasFixedSize(true);
+        LinearLayoutManager dcoffeeLinearLayout = new LinearLayoutManager(this);
+        dcoffeeLinearLayout.setOrientation(LinearLayoutManager.HORIZONTAL);
+        dcoffeeRecycler.setLayoutManager(dcoffeeLinearLayout);
+        dcoffeeAdapter = new ItemAdapter(this, new ItemData(this).getDcoffeeItemData(), 2);
+        dcoffeeAdapter.setClickListenerCoffee(this);
+        dcoffeeRecycler.setAdapter(dcoffeeAdapter);
     }
 
     @Override
@@ -114,6 +126,10 @@ public class BrowseDiseasesActivity extends AppCompatActivity implements ItemAda
         startActivity(new Intent(this, DcacaoActivity.class));
     }
 
+    public void redirectCoffee(View view){
+        startActivity(new Intent(this, DcoffeeActivity.class));
+    }
+
     @Override
     public void itemClickRice(View view, String name) {
         Intent intent = new Intent(this, ItemTrackActivity.class);
@@ -143,6 +159,14 @@ public class BrowseDiseasesActivity extends AppCompatActivity implements ItemAda
         Intent intent = new Intent(this, ItemTrackActivity.class);
         intent.putExtra("pestName", name);
         intent.putExtra("type", "dcac_");
+        startActivity(intent);
+    }
+
+    @Override
+    public void itemClickCoffee(View view, String name) {
+        Intent intent = new Intent(this, ItemTrackActivity.class);
+        intent.putExtra("pestName", name);
+        intent.putExtra("type", "dcoff_");
         startActivity(intent);
     }
 }

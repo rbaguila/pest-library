@@ -25,6 +25,10 @@ public class ItemData {
     public String[] cacaoNames;
     public String[] cacaoCommonNames;
 
+    public int[] coffeeIcons;
+    public String[] coffeeNames;
+    public String[] coffeeCommonNames;
+
     //diseases
     public int[] driceIcons;
     public String[] driceNames;
@@ -41,6 +45,10 @@ public class ItemData {
     public int[] dcacaoIcons;
     public String[] dcacaoNames;
     public String[] dcacaoCommonNames;
+
+    public int[] dcoffeeIcons;
+    public String[] dcoffeeNames;
+    public String[] dcoffeeCommonNames;
 
     public ItemData(Context context){
         this.context = context;
@@ -272,6 +280,52 @@ public class ItemData {
         };
     }
 
+    public void initCoffeeData(){
+        coffeeIcons = new int[]{
+                R.drawable.coff_coffeeberryborer,
+                R.drawable.coff_coffeemealybug,
+                R.drawable.coff_coffeestemborer,
+                R.drawable.coff_greenscale
+        };
+
+        coffeeNames = new String[]{
+                context.getResources().getStringArray(R.array.CoffeeBerryBorer)[0],
+                context.getResources().getStringArray(R.array.CoffeeMealybug)[0],
+                context.getResources().getStringArray(R.array.CoffeeStemBorer)[0],
+                context.getResources().getStringArray(R.array.GreenScale)[0]
+        };
+
+        coffeeCommonNames = new String[]{
+                context.getResources().getStringArray(R.array.CoffeeBerryBorer)[1],
+                context.getResources().getStringArray(R.array.CoffeeMealybug)[1],
+                context.getResources().getStringArray(R.array.CoffeeStemBorer)[1],
+                context.getResources().getStringArray(R.array.GreenScale)[1]
+        };
+    }
+
+    public void initDcoffeeData(){
+        dcoffeeIcons = new int[]{
+                R.drawable.dcoff_browneyespot,
+                R.drawable.dcoff_coffeerust,
+                R.drawable.dcoff_dieback,
+                R.drawable.dcoff_pinkdisease
+        };
+
+        dcoffeeNames = new String[]{
+                context.getResources().getStringArray(R.array.BrownEyeSpot)[0],
+                context.getResources().getStringArray(R.array.CoffeeRust)[0],
+                context.getResources().getStringArray(R.array.Dieback)[0],
+                context.getResources().getStringArray(R.array.PinkDisease)[0]
+        };
+
+        dcoffeeCommonNames = new String[]{
+                context.getResources().getStringArray(R.array.BrownEyeSpot)[1],
+                context.getResources().getStringArray(R.array.CoffeeRust)[1],
+                context.getResources().getStringArray(R.array.Dieback)[1],
+                context.getResources().getStringArray(R.array.PinkDisease)[1]
+        };
+    }
+
     public List<Item> getRiceItemData(){
         initRiceData();
         List<Item> data = new ArrayList<>();
@@ -371,6 +425,32 @@ public class ItemData {
             Item current = new Item();
             current.imageId = dcacaoIcons[i];
             current.diseaseName = dcacaoNames[i];
+            data.add(current);
+        }
+        return data;
+    }
+
+    public List<Item> getCoffeeItemData(){
+        initCoffeeData();
+        List<Item> data = new ArrayList<>();
+
+        for (int i=0; i<coffeeNames.length && i<coffeeIcons.length; i++) {
+            Item current = new Item();
+            current.imageId = coffeeIcons[i];
+            current.pestName = coffeeNames[i];
+            data.add(current);
+        }
+        return data;
+    }
+
+    public List<Item> getDcoffeeItemData(){
+        initDcoffeeData();
+        List<Item> data = new ArrayList<>();
+
+        for (int i=0; i<dcoffeeNames.length && i<dcoffeeIcons.length; i++) {
+            Item current = new Item();
+            current.imageId = dcoffeeIcons[i];
+            current.diseaseName = dcoffeeNames[i];
             data.add(current);
         }
         return data;
@@ -483,6 +563,34 @@ public class ItemData {
             current.imageId = dcacaoIcons[i];
             current.diseaseName = dcacaoNames[i];
             current.commonNames = dcacaoCommonNames[i];
+            data.add(current);
+        }
+        return data;
+    }
+
+    public List<ItemAll> getAllCoffeeItemData() {
+        initCoffeeData();
+        List<ItemAll> data = new ArrayList<>();
+
+        for (int i=0; i<coffeeNames.length && i<coffeeIcons.length; i++) {
+            ItemAll current = new ItemAll();
+            current.imageId = coffeeIcons[i];
+            current.pestName = coffeeNames[i];
+            current.commonNames = coffeeCommonNames[i];
+            data.add(current);
+        }
+        return data;
+    }
+
+    public List<ItemAll> getAllDcoffeeItemData() {
+        initDcoffeeData();
+        List<ItemAll> data = new ArrayList<>();
+
+        for (int i=0; i<dcoffeeNames.length && i<dcoffeeIcons.length; i++) {
+            ItemAll current = new ItemAll();
+            current.imageId = dcoffeeIcons[i];
+            current.diseaseName = dcoffeeNames[i];
+            current.commonNames = dcoffeeCommonNames[i];
             data.add(current);
         }
         return data;

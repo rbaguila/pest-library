@@ -90,10 +90,25 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.roinand.pestlibrary.BrowseActivity" />
         </activity>
-
         <activity
             android:name=".DcacaoActivity"
             android:label="@string/title_activity_cacao2"
+            android:parentActivityName=".BrowseDiseasesActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.roinand.pestlibrary.BrowseDiseasesActivity" />
+        </activity>
+        <activity
+            android:name=".CoffeeActivity"
+            android:label="@string/title_activity_coffee"
+            android:parentActivityName=".BrowseActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.roinand.pestlibrary.BrowseActivity" />
+        </activity>
+        <activity
+            android:name=".DcoffeeActivity"
+            android:label="@string/title_activity_coffee2"
             android:parentActivityName=".BrowseDiseasesActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"

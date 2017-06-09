@@ -8,6 +8,7 @@
     <string name="title_corn_bar">Corn</string>
     <string name="title_banana_bar">Banana</string>
     <string name="title_cacao_bar">Cacao</string>
+    <string name="title_coffee_bar">Coffee</string>
     <string name="view_more">View More</string>
     <string name="title_activity_rice">Rice Pests</string>
     <string name="title_activity_rice2">Rice Diseases</string>
@@ -17,6 +18,8 @@
     <string name="title_activity_banana2">Banana Diseases</string>
     <string name="title_activity_cacao">Cacao Pests</string>
     <string name="title_activity_cacao2">Cacao Diseases</string>
+    <string name="title_activity_coffee">Coffee Pests</string>
+    <string name="title_activity_coffee2">Coffee Diseases</string>
     <string name="title_activity_no_data">No Data</string>
     <string name="title_item">Information</string>
     <string name="drawer_open">Open</string>
@@ -319,6 +322,43 @@
         <item>Chemical control: By spraying DDT (0.1 percent) and malathion (0.1 percent) the insect population can be controlled; Biological control: Biological control includes introduction of hyperparasite, Agamermisparadecandata (stainer) which parasitizes the nymphal stage of the mosquito bug; Cultural control: Plant growing in soil having high ratio of available potash to available phosphoric acid show less infestation of this pest. Therefore, cultivation of tea plants in appropriate soil is advisable to keep the pest population under control; Mechanical control: It includes collection and destruction of adult mosquito bugs by hand net.</item>
     </string-array>
 
+    <!--coffee pests-->
+
+    <string-array name="CoffeeBerryBorer">
+        <item>Coffee Berry Borer</item>
+        <item>Coffee Berry Borer, Coffee Seed Borer</item>
+        <item>Coffee Berry Borer</item>
+        <item>Hypothenemus hampei</item>
+        <item>Fruit: internal feeding, lesions (black or brown), premature drop; Seeds: internal feeding, rot. Eggs - elliptical or ovoid in shape, milky-white and shiny when first laid, 0.5-0.8 mm long, 0.25-0.35 mm wide. Larvae - there are two larval instars for the female and one for the male. White, legless, vermiform body with fine but sparse hairs, brown hypognathous head, 3-segmented thorax and 9-segmented abdomen. Well-developed mouth parts. First instar is about 0.6-0.8 mm long, and a fully developed second instar female larva is about 2.2 mm long. Pupae - white, becoming yellow after 10 days of development. Mandibles, eyes, antennae, elytra and membraneous wings are differentiated and easily visible. Female body length 1.7 mm; male 1.2 mm. Adults - males are apterous, stunted and deformed. Females with body 1.4-1.6 mm long and 2.3 times as long as wide, entirely black. antennal funicle usually 5-segmented, antennal club with suture 1 almost straight and partly septate; suture 2 slightly procurved and marked by setae. Frons broadly convex, with a deep, long median groove, surface finely wrinkled with net-like markings. Eyes with slight indentation. Pronotum with fine, raised basal and posterolateral marginal bead, anterior margin bearing 4-8 coarse teeth of about equal size, disc convex, summit rather high, rather shiny, not reticulate, small rasp-like teeth on anterior slope abundant, 25 or more, rather small, posterior area subreticulate, with small, isolated, rather numerous granules, intermixed with some shallow punctures laterally. Elytra with declivity convex, gradual, extending almost to middle of elytra, striae scarcely impressed, strial punctures rather coarse, moderately deep, usually reticulate at centre, each with a minute, non-erect seta, interstices smooth, shining, as wide as striae, with single rows of non-granulate punctures bearing unflattened, slender scales, each at least 8 times longer than wide, spaced between rows by scale length, slightly closer within rows, discal and declival scales equal in width, without additional vestiture.</item>
+        <item>Prevention: Phytosanitary Measures - Transportation of seeds containing the H. hampei has been the main cause of its spread worldwide. A few coffee-producing countries or zones within countries are still free from this insect and in these cases stringent quarantine precautions are strongly recommended. Treatment of infested coffee berries at a temperature of approximately -15°C for 48 h provided 100 percent control of all life stages</item>
+    </string-array>
+
+    <string-array name="CoffeeMealybug">
+        <item>Coffee Mealybug</item>
+        <item>Coffee Mealybug, Oriental Cacao Mealybug, Lilac Mealybug</item>
+        <item>Coffee Mealybug</item>
+        <item>Planococcus kenyae</item>
+        <item>Fruit: external feeding, honeydew or sooty mold; Growing point: external feeding; Inflorescence: external feeding, honeydew or sooty mold; Leaves: external feeding, honeydew or sooty mold, wilting; Roots: external feeding; Stems: external feeding, honeydew or sooty mold, wilt; Vegetative organs: external feeding, mold growth. Round, soft-bodied insects that are brownish red or tan in colour, with clumped segments of pink/purple wax covering their bodies. They are 1–3 mm in size and have an indistinct black stripe on their back.</item>
+        <item>To prevent the spread of coffee mealybugs, you should: always use clean planting material, avoid sharing machinery and equipment with other gardeners unless it has been correctly cleaned down, and practice good hygiene measures by ensuring shoes, clothing, equipment (including cutting tools), machinery and vehicles are clean and free of soil and plant material before and after use.</item>
+    </string-array>
+
+    <string-array name="CoffeeStemBorer">
+        <item>Coffee Stem Borer</item>
+        <item>Coffee Stem Borer</item>
+        <item>Coffee Stem Borer</item>
+        <item>Xylotrechus quadripes</item>
+        <item>Internal feeding on roots and stem. It is fairly large dark-brown beetle of about 1cm length. Adult bears a pair of prominent antennae and characteristically, white or yellow stripes on the elytra</item>
+        <item>Cultural control: The general methods of cultural control of X. quadripes included uprooting and burning of infested trees, treating the stems during the oviposition period to kill or dislodge eggs and young larvae, the catching and killing of adults during their period of activity, and maintaining shelter belts in order to shade the coffee bushes; Biological control: The two most easily reared parasitoids found in plantations, Doryctes strioliger and Sclerodermus domesticus, were mass bred and released, but did not decrease losses. Further, experimentation showed that although the rate of parasitism could be increased by releases of parasitoids, their numbers fell as soon as releases were stopped. The work was abandoned owing to the high cost of developing a continuous mass-breeding programme.</item>
+    </string-array>
+
+    <string-array name="GreenScale">
+        <item>Green Scale</item>
+        <item>Green Scale, Coffee Scale Insect, Soft Green Scale</item>
+        <item>Green Scale</item>
+        <item>Coccus viridis</item>
+        <item>Fruit: external feeding; Leaves: honeydew or sooty mold; Stems: external feeding. Adults: The adult female is shiny pale green with a conspicuous black, irregular U-shaped internal marking that is dorsally visible to the naked eye. Two sub-marginal black eye spots are also present and can be seen with a hand lens. The outline shape may be described as elongate-oval and moderately convex. Adult scales are 2.5 to 3.25 mm. Dead scales are light brown or buff color and the black internal marking is lost. Nymphs: Nymphs, or immature green scales are oval, flat and yellowish green in color, and have six short legs. There are three nymphal stages before becoming an adult, each stage being larger and more convex than the previous stage. Eggs: Eggs are whitish green and elongate-oval and are laid singly and hatch beneath the female where they are protected. Eggs hatch from a few minutes to several hours after being laid.</item>
+        <item>Chemical control: Direct insecticidal sprays to lower leaf surfaces and new growth to give thorough coverage; Biological control: Several entomogenous fungi were observed associated with green scale on citrus, and some apparently played an important role in the natural limitations of the scale on citrus during certain seasons of the year. In Florida, these fungi include: the white-fringed fungus, Verticilium (Cephalosporium ) lecanii (Zimmerman); Aschersonia cubensis (Cuban aschersonia); the pink scale fungus, Nectria diploa; and a grayish blue fungus The white-fringed fungus is the most common and apparently causes the highest percentage of mortality. All attempts to artificially spread or inoculate the fungus to healthy green scale were unsuccessful. The green scale is often associated with ants. Controlling ant populations help to reduce levels of this pest. Ants protect the green scales from lady beetles and other predators. In turn, the ants feed on the sweet honeydew excreted by the scales. Without the ants the green scale is more vulnerable to predation by beetles; Cultural Control: Scales are usually brought into greenhouse situations with the introduction of infested plant material. All plant material going into the greenhouse should be thoroughly inspected for scales and other insects before being introduced.</item>
+    </string-array>
 
     <!--Diseases Details-->
 
@@ -450,6 +490,43 @@
         <item>Oncobasidium theobromae</item>
         <item>Leaves: abnormal colors, abnormal leaf fall, necrotic areas; Roots: necreotic streaks or lesions; Stems: dieback, discoloration of bark, internal discoloration, mould growth on lesion; Whole plant: dwarfing. Infection always occurs through young flush leaves at a growing point with the fungus growing down the stem. Seedlings have only one growing point and are killed by the infection. After the jorquette is formed, the infection may progress into the main stem and kill the plant. Once trees are mature they have thousands of growing points, all of which can be infected. The disease does not progress into the larger branches of mature trees except perhaps in the most susceptible material, within which it can spread to the trunk causing the tree to die. There are no visible symptoms during initial fungal growth within the plant.</item>
         <item>Monthly inspection and pruning of infected stems has been practised both to prevent the disease from spreading within individual plants and also to lower the inoculum level. Pruning can be effective when combined with moderate levels of resistance, but it was often ineffective when inoculum levels were high and planting material was susceptible. Pruning young seedlings can result in complete recovery, but may also lead to an uneven stand.</item>
+    </string-array>
+
+    <!--Coffee Diseases-->
+    <string-array name="BrownEyeSpot">
+        <item>Brown Eye Spot</item>
+        <item>Brown Eye Spot, Cercospora Spot</item>
+        <item>Brown Eye Spot</item>
+        <item>Mycosphaerella coffeicola</item>
+        <item>Spots occur on leaves and berries. Plants are susceptible throughout all of their developmental stages. Brown circular leaf spots, up to 15 mm in diam., sometimes with concentric rings and a yellowish halo. The centre of spot becomes grey and dark sporulation can be seen in this area.</item>
+        <item>Prevention is the most effective method of managing M. coffeicola. Risk factors for this pathogen include: prolonged (24–72 hours) humid environment, poor soil nutrition, and plant stress caused by increased planting density, herbicide injury, weeds, drought, and over irrigation. To manage humidity a farmer can prune to allow for air circulation and ensure the soil has proper drainage. In order to maintain proper plant nutrition, soil testing and a fertilization regiment are essential for combating this pathogen. Plant symptoms such as chlorosis, leaf curling, and bronzing along the edges of leaves can be used to diagnose specific nutrient deficiencies. For example if a plant has leaves bronzed along edges, cupped down-ward; new leaves dead; eventual die back of shoot tips, then it is likely the plant has a calcium deficiency. To reduce plant stress, a farmer can use herbicides to combat weeds but must be careful not to damage the plant in process. Also to minimize competition between adjacent crops, it is important to properly space coffee plants in 8 ft. by 8 ft. areas. Stress can further be minimized if post and pre-harvest damage by machinery or laborers is avoided. To avoid wilting stress plants should be properly irrigated. However, if a crop already has M. coffeicola, copper fungicide is effective. In Hawaii, farmers often spray tri-annually, using 1.5-6 lbs of fungicide per 50–100 gallons water, containing 30-80% copper hydroxide. "Sprays should coincide with dry weather and calm winds. Three spray applications per season should suffice (occurring approximately once per month), beginning at flowering. Thorough coverage of the plant canopy is very important. Large farms in Hawai‘i utilize tractor-mounted mist blowers."</item>
+    </string-array>
+
+    <string-array name="CoffeeRust">
+        <item>Coffee Rust</item>
+        <item>Coffee Rust, Coffee Leaf Rust</item>
+        <item>Coffee Rust</item>
+        <item>Hemileia vastatrix</item>
+        <item>Infections occur on the coffee leaves.The first observable symptoms are small, pale yellow spots on the upper surfaces of the leaves. As these spots gradually increase in diameter, masses of orange urediniospores (= uredospores) appear on the undersurfaces. The fungus sporulates through the stomata rather than breaking through the epidermis as most rusts do, so it does not form the pustules typical of many rusts. The powdery lesions on the undersides of the leaves can be orange-yellow to red-orange in color, and there is considerable variation from one region to another. While the lesions can develop anywhere on the leaf, they tend to be concentrated around the margins, where dew and rain droplets collect. The centers of the spots eventually dry and turn brown, while the margins of the lesions continue to expand and produce urediniospores. Early in the season, the first lesions usually appear on the lowermost leaves, and the infection slowly progresses upward in the tree. The infected leaves drop prematurely, leaving long expanses of twigs devoid of leaves. The disease is recognized by the yellow-orange powdery lesions or spots on the underside of leaves</item>
+        <item>Non-chemical control: Resistance varies with leaf age, particularly for susceptible varieties, with young leaves more susceptible than older leaves on the same plant. Plants with incomplete resistance, however, usually display the opposite response,with high resistance in young and low resistance in older leaves. Cultivars derived from Timor hybrid and the Icatu cultivar display this pattern. Light intensity also influences cultivar reactions. Leaves exposed to high light intensity are generally more susceptible to rust, varying up to 10 fold depending upon pre- and post-inoculation light intensity. It is an important consideration in setting up conditions for rust screening or evaluation. Overbearing coffee may exacerbate rust intensity. Additionally, leaves supporting rapidly growing coffee berries are more susceptible to infection than leaves that only support vegetative growth. High yielding coffee varieties are more susceptible than low yielding varieties. Chemical control: Fungicides to control of rust have been used successfully for a quite a number of years. The metallic copper fungicides have been the least expensive and most effective, with copper oxychloride formulations being the best. The dithiocarbamate protectant fungicides have been useful, but their short residual life and instability at higher temperatures and humidity have limited their widespread adoption. Their performance is better when mixed with copper fungicides. The systemic triazole sterol biosynthesis inhibitors have been effective, but high cost and occasional problems with severe defoliation (phytotoxicity) have been observed. Among the systemics, triademifon has been the best so far. The systemics have also been particularly effective when used in combination or alternately with copper fungicides, reducing the likelihood for the development of fungicide tolerant rust strains. Occasional problems with defoliation associated with the systemics, and their high cost, however, may limit their usefulness. Fungicide efficacy depends both on timing of application and complete placement or coverage of the toxicant. This latter factor is important, since redistribution by rain is very limited. Important factors are spray volume, droplet size, and coverage. In timing the application of fungicides, rainfall was generally the most important factor to consider. Sprays during the rainy season were recommended, and sometimes recommended before the onset of the rainy season. Studies showed that initial inoculum level and berry yield varied greatly from year to year, and it was necessary to include these factors in scheduling fungicide applications. Yield in coffee can vary from maximum to 10 percent of max yield, depending on cultivar and on the extent of defoliation and yield the previous year, due to rust. Only 2-3 fungicide applications were required during low yield years and 4-6 applications during high yield years. These schedules were developed empirically.</item>
+    </string-array>
+
+    <string-array name="Dieback">
+        <item>Dieback</item>
+        <item>Dieback</item>
+        <item>Dieback</item>
+        <item>Ascochyta tarda</item>
+        <item></item>
+        <item></item>
+    </string-array>
+
+    <string-array name="PinkDisease">
+        <item>Pink Disease</item>
+        <item>Pink Disease</item>
+        <item>Pink Disease</item>
+        <item>Phanerochaete salmonicolor</item>
+        <item>Initial symptoms vary with the host. On Hevea, the initial stages of infection are seen as drops of latex and a silky-white mycelial growth on the surface of brown bark. In Piper, sterile pink/white pustules of around 1 mm diameter appear on the young green stems. In Citrus, the sterile pustules may appear first, sometimes with gummosis. In Theobroma, infection is usually first seen as a sparse white mycelium (web) on the bark surface. The surface mycelium is easily overlooked, particularly where the bark is wet. The mycelium spreads mainly along the underside of the branch and sterile pink/white mycelial pustules appear through cracks in the bark and through the pores of the swollen lenticels, about 1-8 cm behind the leading edge of the infection. Hyphae penetrate the branch, causing progressive death of distal tissues. Leaves distal to the infection turn light green in the interveinal areas and then scorch brown from the margins. The affected leaves remain attached to the plant for a long time, giving an appearance similar to that of a broken branch. The characteristic pink/white or pink/orange basidiomatal encrustation develops mostly towards the underside of the branch, although it can develop around the entire circumference of the stem; it can reach 2 m in length. The crust is initially smooth, but cracks and becomes paler as it ages. Conidia are sometimes produced, on orange/red pustules scattered over the bark surface. Long black streaks of coagulated latex or gums appear on infected branches of Hevea or Theobroma, and open wounds develop as the bark cankers and splits.</item>
+        <item>Management of P. salmonicolor and Pink Disease can be very difficult given its wide host range, making cross-infection a concern. Cultural control can be implemented by pruning frequently and burning any infected branches removed. This is effective when the disease can be recognized in the earliest stages, but it is most effective when performed concurrently with fungicide application. The encrustation and conidial pustules are able to remain functional for a period of time after the infected branches have been removed from the tree. Fungicide use varies among countries affected by the disease. In India, pre- and post-monsoon application of fungicides directly on the trunk and branches of cocoa or rubber trees effectively prevented the disease, while application of a sulphur-lime slurry to tea shrubs worked best in Kalimantan in Borneo, and Validamycin A was found to be the most effective means of control on rubber trees in Vietnam. The use of fungicides prevents the basidiospores from germinating and causing infection.</item>
     </string-array>
 
     <string name="link_site">To see more info, please visit our <a href="http://www.sarai.ph">site</a></string>

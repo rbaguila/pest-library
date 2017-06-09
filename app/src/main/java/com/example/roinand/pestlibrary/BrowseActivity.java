@@ -27,6 +27,9 @@ public class BrowseActivity extends AppCompatActivity implements ItemAdapter.Cli
     private RecyclerView cacaoRecycler;
     private ItemAdapter cacaoAdapter;
 
+    private RecyclerView coffeeRecycler;
+    private ItemAdapter coffeeAdapter;
+
     private Toolbar toolbar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -76,6 +79,15 @@ public class BrowseActivity extends AppCompatActivity implements ItemAdapter.Cli
         cacaoAdapter = new ItemAdapter(this, new ItemData(this).getCacaoItemData(), 1);
         cacaoAdapter.setClickListenerCacao(this);
         cacaoRecycler.setAdapter(cacaoAdapter);
+
+        coffeeRecycler = (RecyclerView) findViewById(R.id.coffee_items);
+        coffeeRecycler.setHasFixedSize(true);
+        LinearLayoutManager coffeeLinearLayout = new LinearLayoutManager(this);
+        coffeeLinearLayout.setOrientation(LinearLayoutManager.HORIZONTAL);
+        coffeeRecycler.setLayoutManager(coffeeLinearLayout);
+        coffeeAdapter = new ItemAdapter(this, new ItemData(this).getCoffeeItemData(), 1);
+        coffeeAdapter.setClickListenerCoffee(this);
+        coffeeRecycler.setAdapter(coffeeAdapter);
     }
 
     @Override
@@ -117,6 +129,10 @@ public class BrowseActivity extends AppCompatActivity implements ItemAdapter.Cli
         startActivity(new Intent(this, CacaoActivity.class));
     }
 
+    public void redirectCoffee(View view){
+        startActivity(new Intent(this, CoffeeActivity.class));
+    }
+
     @Override
     public void itemClickRice(View view, String name) {
         Intent intent = new Intent(this, ItemTrackActivity.class);
@@ -146,6 +162,14 @@ public class BrowseActivity extends AppCompatActivity implements ItemAdapter.Cli
         Intent intent = new Intent(this, ItemTrackActivity.class);
         intent.putExtra("pestName", name);
         intent.putExtra("type", "cac_");
+        startActivity(intent);
+    }
+
+    @Override
+    public void itemClickCoffee(View view, String name) {
+        Intent intent = new Intent(this, ItemTrackActivity.class);
+        intent.putExtra("pestName", name);
+        intent.putExtra("type", "coff_");
         startActivity(intent);
     }
 }
