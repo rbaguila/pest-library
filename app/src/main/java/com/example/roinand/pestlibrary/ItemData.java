@@ -38,6 +38,10 @@ public class ItemData {
     public String[] dbananaNames;
     public String[] dbananaCommonNames;
 
+    public int[] dcacaoIcons;
+    public String[] dcacaoNames;
+    public String[] dcacaoCommonNames;
+
     public ItemData(Context context){
         this.context = context;
     }
@@ -251,6 +255,23 @@ public class ItemData {
         };
     }
 
+    public void initDcacaoData(){
+        dcacaoIcons = new int[]{
+                R.drawable.dcac_blackpodrot,
+                R.drawable.dcac_vascularstreakdieback
+        };
+
+        dcacaoNames = new String[]{
+                context.getResources().getStringArray(R.array.BlackPodRot)[0],
+                context.getResources().getStringArray(R.array.VascularStreakDieback)[0]
+        };
+
+        dcacaoCommonNames = new String[]{
+                context.getResources().getStringArray(R.array.BlackPodRot)[1],
+                context.getResources().getStringArray(R.array.VascularStreakDieback)[1]
+        };
+    }
+
     public List<Item> getRiceItemData(){
         initRiceData();
         List<Item> data = new ArrayList<>();
@@ -337,6 +358,19 @@ public class ItemData {
             Item current = new Item();
             current.imageId = cacaoIcons[i];
             current.pestName = cacaoNames[i];
+            data.add(current);
+        }
+        return data;
+    }
+
+    public List<Item> getDcacaoItemData(){
+        initDcacaoData();
+        List<Item> data = new ArrayList<>();
+
+        for (int i=0; i<dcacaoNames.length && i<dcacaoIcons.length; i++) {
+            Item current = new Item();
+            current.imageId = dcacaoIcons[i];
+            current.diseaseName = dcacaoNames[i];
             data.add(current);
         }
         return data;
@@ -435,6 +469,20 @@ public class ItemData {
             current.imageId = cacaoIcons[i];
             current.pestName = cacaoNames[i];
             current.commonNames = cacaoCommonNames[i];
+            data.add(current);
+        }
+        return data;
+    }
+
+    public List<ItemAll> getAllDcacaoItemData() {
+        initDcacaoData();
+        List<ItemAll> data = new ArrayList<>();
+
+        for (int i=0; i<dcacaoNames.length && i<dcacaoIcons.length; i++) {
+            ItemAll current = new ItemAll();
+            current.imageId = dcacaoIcons[i];
+            current.diseaseName = dcacaoNames[i];
+            current.commonNames = dcacaoCommonNames[i];
             data.add(current);
         }
         return data;

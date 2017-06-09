@@ -21,6 +21,9 @@ public class BrowseDiseasesActivity extends AppCompatActivity implements ItemAda
     private RecyclerView dbananaRecycler;
     private ItemAdapter dbananaAdapter;
 
+    private RecyclerView dcacaoRecycler;
+    private ItemAdapter dcacaoAdapter;
+
     private Toolbar toolbar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,6 +64,15 @@ public class BrowseDiseasesActivity extends AppCompatActivity implements ItemAda
         dbananaAdapter = new ItemAdapter(this, new ItemData(this).getDbananaItemData(), 2);
         dbananaAdapter.setClickListenerBanana(this);
         dbananaRecycler.setAdapter(dbananaAdapter);
+
+        dcacaoRecycler = (RecyclerView) findViewById(R.id.cacao_items);
+        dcacaoRecycler.setHasFixedSize(true);
+        LinearLayoutManager dcacaoLinearLayout = new LinearLayoutManager(this);
+        dcacaoLinearLayout.setOrientation(LinearLayoutManager.HORIZONTAL);
+        dcacaoRecycler.setLayoutManager(dcacaoLinearLayout);
+        dcacaoAdapter = new ItemAdapter(this, new ItemData(this).getDcacaoItemData(), 2);
+        dcacaoAdapter.setClickListenerCacao(this);
+        dcacaoRecycler.setAdapter(dcacaoAdapter);
     }
 
     @Override
@@ -96,6 +108,10 @@ public class BrowseDiseasesActivity extends AppCompatActivity implements ItemAda
 
     public void redirectBanana(View view){
         startActivity(new Intent(this, DbananaActivity.class));
+    }
+
+    public void redirectCacao(View view){
+        startActivity(new Intent(this, DcacaoActivity.class));
     }
 
     @Override
