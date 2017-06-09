@@ -13,6 +13,7 @@
     <string name="title_activity_corn">Corn Pests</string>
     <string name="title_activity_corn2">Corn Diseases</string>
     <string name="title_activity_banana">Banana Pests</string>
+    <string name="title_activity_banana2">Banana Diseases</string>
     <string name="title_activity_no_data">No Data</string>
     <string name="title_item">Information</string>
     <string name="drawer_open">Open</string>
@@ -352,6 +353,43 @@
         <item>Stenocarpella macrospora</item>
         <item>Affected tissues are soft and mushy and emit foul odor. Plants usually topple over or may remain standing but exhibit wilted leaves. Stenocarpella (Diplodia) ear rot is caused by Stenocarpella species and commonly found in hot, humid maize growing regions. The causal agents of Stenocarpella ear rot also cause Stenocarpella stalk rot and Macrospora leaf stripe. Stenocarpella species can produce various mycotoxins that are harmful to birds.</item>
         <item>Cultivate to improve soil condition. Proper nutritional management.</item>
+    </string-array>
+
+    <!--Banana Diseases-->
+    <string-array name="BananaFreckle">
+        <item>Banana Freckle</item>
+        <item>Banana Freckle</item>
+        <item></item>
+        <item>Phyllosticta maculata/Phyllosticta cavendishii/Phyllosticta musarum</item>
+        <item>Large and small spots are found on leaves and also on fruit. The most characteristic symptom of both types of spot is a sandpaper feel to the leaf and fruit. This is caused by the fungal structures protruding through the surface of the leaf. Both the large and small spots are dark brown to black in colour. The small spots are less than 1mm in diameter and appear sooty. They can run together to form streaks. The larger spots are up to 4mm in diameter and can also appear as streaks. Sometimes the centre of these larger spots are lighter in colour. Spots can also appear on the midrib of the leaf and on the petioles.</item>
+        <item>Some chemical treatments, which are used to control yellow Sigatoka, may provide control of freckle. Mineral oil alone is thought to be ineffective. The use of a plastic bag cover over the bunch may in the long run be the most economical control for freckle.</item>
+    </string-array>
+
+    <string-array name="BananaRust">
+        <item>Banana Rust</item>
+        <item>Banana rust, banana leaf rust</item>
+        <item></item>
+        <item>Uredo musae</item>
+        <item>Dark brown to black streaks appear on the leaves, often surrounded by yellow halos. The streaks are more numerous on the lower surface of the leaves. They are slightly raised, and feel rough to the touch due to the spore masses of the fungus. If the disease is severe, the leaves may turn yellow. Mainly the older leaves are affected. The disease is rarely important. Reports from Samoa (1981) and Philippines (1971) suggest it was serious when only benzimidazole fungicides, e.g., benomyl, were used against black Sigatoka disease. However, benomyl is no longer used, and in many countries registration has been cancelled. For instance, in Australia, it became illegal to supply or use products containing benomyl after December 2006.</item>
+        <item>This is only a minor disease, and control measures are not necessary.</item>
+    </string-array>
+
+    <string-array name="BananaStreak">
+        <item>Banana Streak</item>
+        <item>Banana streak, banana streak disease</item>
+        <item></item>
+        <item>Banana streak badnavirus</item>
+        <item>Symptoms vary depending on the strain of the virus, the variety of banana or plantain and the environment. The most common symptom is lines of yellow that run from the midrib of the leaf to the margin. These streaks are continuous or broken, and either scattered throughout the leaf or in bands. As the leaf ages, the streaks turn brown or black. Initially, the symptoms are similar to Cucumber mosaic virus.Infected plants may be smaller than normal and less vigorous, with smaller bunches. In some African countries, dieback and internal rotting of the pseudostem occurs. Differences between symptoms in different parts of the world led to them being described as distinct viruses. Molecular studies on the DNA of the viruses have confirmed the differences. Spread of the virus is in planting material, suckers primarily. Spread can also occur as plants in tissue culture if they are not tested properly. It is now known that the virus or parts of the virus can enter the DNA of certain varieties (e.g., AAB, ABB, AAAB types) and remain hidden there without showing symptoms. However, if bananas are grown under stress, such as occurs when they are growing as tissue cultures, the virus reassembles, multiplies, and symptoms appear. Spread between plants is by mealybugs, especially species of Planococcus and Pseudococcus, although how important they are is not well known.</item>
+        <item>Use only virus-free planting material, taking it from plantations that are free from banana streak disease.</item>
+    </string-array>
+
+    <string-array name="BunchyTop">
+        <item>Bunchy Top</item>
+        <item>Banana bunchy top</item>
+        <item></item>
+        <item>Banana bunchy top nanavirus</item>
+        <item>Plants with banana bunchy top (BBT) have narrow, progressively shorter leaves with little distance between them, hence the name "bunchy top". Leaf edges often roll upwards with yellow margins. The most characteristic symptoms are short, dark-green dots and dashes along the minor leaf veins, so-called "Morse-code" patterns, which form hooks curving downwards near the edge of the midrib. Hold the leaf up to the light and view from the underside. The virus is spread by an aphid, Pentalonia nigronervosa. It takes more than 4 hours of feeding on a diseased plant before aphids become infected with the virus. But once infected, the aphids continue spreading the virus until they die. Aphids live for 15-20 days. The virus is not transmitted on tools or through the soil. BBT is caused by a virus. In the past, the disease has devastated banana industries in Australia, Fiji, Samoa and Tonga. Today, it is causing much damage in Pakistan and is spreading in the DR Congo. Plants that are infected when young rarely produce a fruit bunch. When diseased suckers are planted they become severely stunted and they do not produce fruit. Plants infected at a later growth stage may produce a distorted bunch. In Pacific island countries, the failure to select healthy planting material has resulted in plantations showing 20% of plants with BBT in the first year, and major losses within 2-3 years.</item>
+        <item>Banana plants should only be transferred between countries as tissue cultures tested to ensure that they are free of all known banana viruses. Plants of many varieties of bananas, tested to internationally agreed standards, can be obtained from the INIBAP transit centre in Belgium, and from IITA, Nigeria.</item>
     </string-array>
 
     <string name="link_site">To see more info, please visit our <a href="http://www.sarai.ph">site</a></string>

@@ -18,6 +18,9 @@ public class BrowseDiseasesActivity extends AppCompatActivity implements ItemAda
     private RecyclerView dcornRecycler;
     private ItemAdapter dcornAdapter;
 
+    private RecyclerView dbananaRecycler;
+    private ItemAdapter dbananaAdapter;
+
     private Toolbar toolbar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,6 +52,15 @@ public class BrowseDiseasesActivity extends AppCompatActivity implements ItemAda
         dcornAdapter = new ItemAdapter(this, new ItemData(this).getDcornItemData(), 2);
         dcornAdapter.setClickListenerCorn(this);
         dcornRecycler.setAdapter(dcornAdapter);
+
+        dbananaRecycler = (RecyclerView) findViewById(R.id.banana_items);
+        dbananaRecycler.setHasFixedSize(true);
+        LinearLayoutManager dbananaLinearLayout = new LinearLayoutManager(this);
+        dbananaLinearLayout.setOrientation(LinearLayoutManager.HORIZONTAL);
+        dbananaRecycler.setLayoutManager(dbananaLinearLayout);
+        dbananaAdapter = new ItemAdapter(this, new ItemData(this).getDbananaItemData(), 2);
+        dbananaAdapter.setClickListenerBanana(this);
+        dbananaRecycler.setAdapter(dbananaAdapter);
     }
 
     @Override
@@ -80,6 +92,10 @@ public class BrowseDiseasesActivity extends AppCompatActivity implements ItemAda
 
     public void redirectCorn(View view){
         startActivity(new Intent(this, DcornActivity.class));
+    }
+
+    public void redirectBanana(View view){
+        startActivity(new Intent(this, DbananaActivity.class));
     }
 
     @Override
