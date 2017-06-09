@@ -21,6 +21,10 @@ public class ItemData {
     public String[] bananaNames;
     public String[] bananaCommonNames;
 
+    public int[] cacaoIcons;
+    public String[] cacaoNames;
+    public String[] cacaoCommonNames;
+
     //diseases
     public int[] driceIcons;
     public String[] driceNames;
@@ -224,6 +228,29 @@ public class ItemData {
         };
     }
 
+    public void initCacaoData(){
+        cacaoIcons = new int[]{
+                R.drawable.cac_cacaopodborer,
+                R.drawable.cac_camelliaaphids,
+                R.drawable.cac_carpentermoth,
+                R.drawable.cac_miridbug
+        };
+
+        cacaoNames = new String[]{
+                context.getResources().getStringArray(R.array.CacaoPodBorer)[0],
+                context.getResources().getStringArray(R.array.CamelliaAphids)[0],
+                context.getResources().getStringArray(R.array.CarpenterMoth)[0],
+                context.getResources().getStringArray(R.array.MiridBug)[0]
+        };
+
+        cacaoCommonNames = new String[]{
+                context.getResources().getStringArray(R.array.CacaoPodBorer)[1],
+                context.getResources().getStringArray(R.array.CamelliaAphids)[1],
+                context.getResources().getStringArray(R.array.CarpenterMoth)[1],
+                context.getResources().getStringArray(R.array.MiridBug)[1]
+        };
+    }
+
     public List<Item> getRiceItemData(){
         initRiceData();
         List<Item> data = new ArrayList<>();
@@ -297,6 +324,19 @@ public class ItemData {
             Item current = new Item();
             current.imageId = dbananaIcons[i];
             current.diseaseName = dbananaNames[i];
+            data.add(current);
+        }
+        return data;
+    }
+
+    public List<Item> getCacaoItemData(){
+        initCacaoData();
+        List<Item> data = new ArrayList<>();
+
+        for (int i=0; i<cacaoNames.length && i<cacaoIcons.length; i++) {
+            Item current = new Item();
+            current.imageId = cacaoIcons[i];
+            current.pestName = cacaoNames[i];
             data.add(current);
         }
         return data;
@@ -381,6 +421,20 @@ public class ItemData {
             current.imageId = dbananaIcons[i];
             current.diseaseName = dbananaNames[i];
             current.commonNames = dbananaCommonNames[i];
+            data.add(current);
+        }
+        return data;
+    }
+
+    public List<ItemAll> getAllCacaoItemData() {
+        initCacaoData();
+        List<ItemAll> data = new ArrayList<>();
+
+        for (int i=0; i<cacaoNames.length && i<cacaoIcons.length; i++) {
+            ItemAll current = new ItemAll();
+            current.imageId = cacaoIcons[i];
+            current.pestName = cacaoNames[i];
+            current.commonNames = cacaoCommonNames[i];
             data.add(current);
         }
         return data;

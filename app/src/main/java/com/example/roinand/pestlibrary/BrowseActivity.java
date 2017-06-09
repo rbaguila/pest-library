@@ -24,6 +24,9 @@ public class BrowseActivity extends AppCompatActivity implements ItemAdapter.Cli
     private RecyclerView bananaRecycler;
     private ItemAdapter bananaAdapter;
 
+    private RecyclerView cacaoRecycler;
+    private ItemAdapter cacaoAdapter;
+
     private Toolbar toolbar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,6 +67,15 @@ public class BrowseActivity extends AppCompatActivity implements ItemAdapter.Cli
         bananaAdapter = new ItemAdapter(this, new ItemData(this).getBananaItemData(), 1);
         bananaAdapter.setClickListenerBanana(this);
         bananaRecycler.setAdapter(bananaAdapter);
+
+        cacaoRecycler = (RecyclerView) findViewById(R.id.cacao_items);
+        cacaoRecycler.setHasFixedSize(true);
+        LinearLayoutManager cacaoLinearLayout = new LinearLayoutManager(this);
+        cacaoLinearLayout.setOrientation(LinearLayoutManager.HORIZONTAL);
+        cacaoRecycler.setLayoutManager(cacaoLinearLayout);
+        cacaoAdapter = new ItemAdapter(this, new ItemData(this).getCacaoItemData(), 1);
+        cacaoAdapter.setClickListenerCacao(this);
+        cacaoRecycler.setAdapter(cacaoAdapter);
     }
 
     @Override
@@ -101,6 +113,10 @@ public class BrowseActivity extends AppCompatActivity implements ItemAdapter.Cli
         startActivity(new Intent(this, BananaActivity.class));
     }
 
+    public void redirectCacao(View view){
+        startActivity(new Intent(this, CacaoActivity.class));
+    }
+
     @Override
     public void itemClickRice(View view, String name) {
         Intent intent = new Intent(this, ItemTrackActivity.class);
@@ -122,6 +138,14 @@ public class BrowseActivity extends AppCompatActivity implements ItemAdapter.Cli
         Intent intent = new Intent(this, ItemTrackActivity.class);
         intent.putExtra("pestName", name);
         intent.putExtra("type", "ban_");
+        startActivity(intent);
+    }
+
+    @Override
+    public void itemClickCacao(View view, String name) {
+        Intent intent = new Intent(this, ItemTrackActivity.class);
+        intent.putExtra("pestName", name);
+        intent.putExtra("type", "cac_");
         startActivity(intent);
     }
 }

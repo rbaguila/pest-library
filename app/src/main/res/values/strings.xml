@@ -7,6 +7,7 @@
     <string name="title_rice_bar">Rice</string>
     <string name="title_corn_bar">Corn</string>
     <string name="title_banana_bar">Banana</string>
+    <string name="title_cacao_bar">Cacao</string>
     <string name="view_more">View More</string>
     <string name="title_activity_rice">Rice Pests</string>
     <string name="title_activity_rice2">Rice Diseases</string>
@@ -14,6 +15,8 @@
     <string name="title_activity_corn2">Corn Diseases</string>
     <string name="title_activity_banana">Banana Pests</string>
     <string name="title_activity_banana2">Banana Diseases</string>
+    <string name="title_activity_cacao">Cacao Pests</string>
+    <string name="title_activity_cacao2">Cacao Diseases</string>
     <string name="title_activity_no_data">No Data</string>
     <string name="title_item">Information</string>
     <string name="drawer_open">Open</string>
@@ -276,6 +279,44 @@
         <item>Chaetanaphothrips signipennis Thrips florum</item>
         <item>Leaves are rolled or folded while fruits have malformed skin. Female macropterous; body colour brown, legs yellowish, antennal segment III yellow; fore wing brown with base paler. Antennae 7-segmented (rarely with 8 segments), III and IV slightly constricted at apex with short forked sensorium; segment VII short. Head wider than long, with 2 pairs of ocellar setae; pair III stout and arising just outside anterior margins of ocellar triangle; postocular setae pairs I and III shorter than ocellar setae pair III, pair II very small. Pronotum with 2 pairs of long posteroangular setae, posterior margin with 3 pairs of setae. Mesonotum with no lines of sculpture around anterior campaniform sensilla. Metanotum with lines of sculpture longitudinal medially, but transverse at anterior; median setae arising at anterior margin, campaniform sensilla present. Fore wing first vein with 3 setae on distal half, second vein with about 14 closely set setae; clavus with 5 marginal setae, the subapical seta longer than the apical seta. Tergite II with 4 lateral marginal setae; tergites V–VIII with ctenidia present laterally, on VIII posteromesad to spiracles; posterior margin of VIII with comb complete medially but microtrichia small and irregular and sometimes arising in groups; pleurotergites without discal setae. Sternite II with 2 pairs of marginal setae, III–VII with 3 pairs, median pair on VII arising in front of margin; sternite II with 1 to 4 discal setae, III–VII with discal setae varying in number from 6 to 14 in a regular transverse row. Male similar to female in structure, but smaller and paler; tergite VIII with no marginal comb; tergite IX with median S1 setae longer than S2 and arising closer to S2 than to each other; sternites III–VII with transverse pore plate anterior to row of about 8 discal setae.</item>
         <item>Due to their small sizes and high rates of reproduction, thrips are difficult to control using classical biological control. All predators must be small and slender enough to penetrate the crevices where thrips hide while feeding, and then prey extensively on eggs and larvae. Only two families of parasitoid Hymenoptera are known to parasitize eggs and larvae, the Eulophidae and the Trichogrammatidae. Other biocontrol agents of adults and larvae include aphid wasps, anthocorid bugs of genus Orius, and phytoseiid mites. For this reason, many growers are occasionally forced to make limited use of pesticides to control thrips populations in the field and in greenhouses. Another effective strategy for pest thrips are biological insecticides, including Beauveria bassiana or Verticillium lecanii. These demonstrate a clear effect on eggs, larvae and adults of thrips. Insecticidal soap spray is effective against thrips. It is commercially available or can be made of certain types of household soap. Scientists in Japan report that significant reductions in larva and adult melon thripes occur when plants are illuminated with red light.</item>
+    </string-array>
+
+    <!--cacao pests-->
+
+    <string-array name="CacaoPodBorer">
+        <item>Cacao Pod Borer</item>
+        <item>Cacao Pod Borer, Cocoa Pod Borer, Cacao Moth, Javanese Cocoa Moth</item>
+        <item>Cacao Pod Borer</item>
+        <item>Conopomorpha cramerella</item>
+        <item>External damage to the pod caused by the cocoa pod borer is seen as entry and exit holes created by the tunnelling larvae on the husk, and overall premature or uneven ripening (yellowing) of pods caused by internal feeding activity. If pods are cut open, characteristic tunnels and scarification caused by feeding commonly cause beans to stick together. Harvested beans clump together in severe infestations and may be impossible to extract from damaged pods. Adult: The adult is a small brown moth, ca 7 mm in length. It has a wingspan of about 12 mm characterized by bright yellow patches at the tips of the forewings. The moths have very long antennae which are swept backwards in their natural resting position. Moths in flight have an appearance similar to that of large, slow-flying mosquitoes. Eggs: Eggs are yellow-orange, flattened and just visible to the naked eye (ca 0.5 x 0.2 mm). Rectangular indentations cover the surface of the egg. On hatching, eggs become translucent, the shell being whitish but darkened by faeces within. Larva: First-instar larvae are translucent white in colour and ca 1 mm long. Late-instar larvae are ca 10 mm long and creamy coloured while still inside the pod, but greenish after they emerge to pupate. Pupa: Pupae lie beneath a light-brown waterproof silken membrane tightly drawn over a depression on a pod surface or leaf.</item>
+        <item>Harvesting: Rampasan; Mechanical control: Sleeving; Integrated Pest Management: The most immediate reductions in C. cramerella are likely to come about through better managed harvesting and spraying. Both of these rely on well-pruned trees kept to a height low enough to collect and/or spray all pods. See sections on Harvesting (Rampasan) and Chemical Control. Longer term control may be improved by grafting or replanting with hard-walled clones. Further releases of exotic natural enemies may provide additional partial control, if suitable parasites can be found.</item>
+    </string-array>
+
+    <string-array name="CamelliaAphids">
+        <item>Camellia Aphids</item>
+        <item>Camellia Aphid, Citrus Aphid, Black Citrus Aphid</item>
+        <item>Camellia Aphids</item>
+        <item>Toxoptera aurantii</item>
+        <item>Growing point: distortion; Inflorescence: twisting and distortion; Leaves: abnormal forms, leaves rolled or folded. Eggs are not produced by this species. Females give birth to living young. There are four nymphal stages of this aphid. The first stage is approximately 1/36 inch in length and the last about 1/17 inch. They are without wings and brownish in color. Only females are found. They are oval, shiny black, brownish-black or reddish brown in color, either with or without wings, measuring 1/25 to 1/12 inch in body length and having short black-and-white banded antennae. Winged individuals tend to have darker abdomens and be slightly thinner. The incidence of winged individuals is dependent on the population density and leaf age. Reproduction is partheneogenic or non sexual. Females start reproducing soon after becoming adults. They produce 5 to 7 live young per day, up to a total of about 50 young per female.</item>
+        <item>Non-Chemical Control: Several natural enemies of the black citrus aphid keep this pest under control. Sometimes to the extent that insecticides are usually unnecessary; Chemical Control: If chemical control becomes necessary either insecticidal oil, or a synthetic aphidicide(insecticide) may be used. Chemical control should only be applied at the first signs of damage during periods of flush growth. Flush growth (young red leaves) on coffee should be completely moistened after application of chemicals.</item>
+    </string-array>
+
+    <string-array name="CarpenterMoth">
+        <item>Carpenter Moth</item>
+        <item>Carpenter Moth, Carpenter Stemborer, Cocoa Pod and Stemborer, Coffee Leopard Moth</item>
+        <item>Carpenter Moth</item>
+        <item>Zeuzera coffeae</item>
+        <item>Growing point: internal feeding, boring; Stems: dieback, internal feeding, wilt; Whole plant: internal feeding, plant dead, dieback. The adult moths are white, medium sized with a wing expanse of 28-40 mm. Males are smaller than females. The wings are long and narrow with small black spots on the forewings and small dots on the outer margin of the hind wings. Bipectinate antennae are present in both sexes. Proboscis is absent. The abdomen is long and posterior tapering.</item>
+        <item>Control is often not practical because of the large number of host species used by the pest. It is also complicated as Z. coffeae is one of several stem-boring pests. The removal and burning of dead and dying branches and seedlings will help to reduce pest numbers. Chemical control can be effective. Swabbing the main stem with a suspension of carbaryl was effective as a prophylactic measure. However, other studies have found such measures ineffective.</item>
+    </string-array>
+
+    <string-array name="MiridBug">
+        <item>Mirid Bug</item>
+        <item>Mirid Bug, Tea Mosquito, Tea Bug</item>
+        <item>Mirid Bug</item>
+        <item>Helopeltis theivora</item>
+        <item>Fruit: abnormal shape, discoloration, internal feeding, lesions (black or brown and scab or pitting), premature drop; Growing point: dieback; Inflorescence: discoloration panicle; Leaves: abnormal colors, abnormal forms, internal feeding, necrotic areas; Stems: dieback, discoloration, internal feeding, necrosis; Whole plant: dwarfing. The adult H. theivora is small bug measuring 6-8 mm in length. The body is slender and elongated with yellowish-brown or olive green head, dark red thorax and yellow and greenish-black abdomen. Appendages are long, dark and delicate. The thorax bears a characteristic dorsal knobbed process.</item>
+        <item>Chemical control: By spraying DDT (0.1 percent) and malathion (0.1 percent) the insect population can be controlled; Biological control: Biological control includes introduction of hyperparasite, Agamermisparadecandata (stainer) which parasitizes the nymphal stage of the mosquito bug; Cultural control: Plant growing in soil having high ratio of available potash to available phosphoric acid show less infestation of this pest. Therefore, cultivation of tea plants in appropriate soil is advisable to keep the pest population under control; Mechanical control: It includes collection and destruction of adult mosquito bugs by hand net.</item>
     </string-array>
 
 
