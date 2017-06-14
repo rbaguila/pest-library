@@ -3,7 +3,7 @@
     <string name="title_activity_main">Project SARAi</string>
     <string name="browse_activity_main">Browse Pests</string>
     <string name="browse_activity_main2">Browse Diseases</string>
-    <string name="action_settings">About</string>
+    <string name="action_settings">About Us</string>
     <string name="title_rice_bar">Rice</string>
     <string name="title_corn_bar">Corn</string>
     <string name="title_banana_bar">Banana</string>
@@ -27,6 +27,7 @@
     <string name="title_item">Information</string>
     <string name="drawer_open">Open</string>
     <string name="drawer_close">Close</string>
+    <string name="about_link">See more at: <a href="http://sarai.ph/about-us">http://sarai.ph/about-us</a></string>
 
     <!--Pest Details-->
 
@@ -607,5 +608,11 @@
         <item>Prevention and avoidance: Avoid wounding palm trunks at all stages of growth, maintenance, and during their harvest and transport for installation in a landscape. Do not drive stakes into palm trunks to secure them to trucks. Avoid contact of wounded palm stems with soil. Do not install sprinkler irrigation emitters that spray water on coconut trunks. Place irrigation emitters at least 12 inches from a coconut palm and direct them away from the trunk. Inspect plants for symptoms regularly; early treatment carries the best chance for success. Minimize stress by providing the palm with adequate nutrition, maintaining equable levels of soil moisture, and avoiding unnecessary cosmetic pruning. Avoid using spikes to climb the palms for pruning maintence. Treatment: For early infections, chisel or scrape out the rotten portion. Treat wounded or infected areas with fungicide and tar (for example, Bordeaux paste, mancozeb, or copper oxychloride), followed by sealing with coal tar two days later. Burn or destroy the chiseled pieces. Apply neem cake to the base of affected plants. Advanced symptoms may be virtually untreatable, requiring palm removal and destruction. Weakened coconut palms with rotting stems may be a toppling hazard in high winds</item>
     </string-array>
 
+    <string name="about_connect">Connect With Us</string>
     <string name="link_site">To see more info, please visit our <a href="http://www.sarai.ph">site</a></string>
+    <string name="about_location">SESAM UPLB, College, Laguna Philippines 4031</string>
+    <string name="about_copyright">Copyright 2017 - Project SARAi</string>
+    <string name="about_email">sarai@uplb.edu.ph</string>
+    <string name="about_contactno">+63 (049) 536 2836, +63 (049) 536 3080</string>
+    <string name="about_content">Project SARAi aims to develop a national crop forecasting and monitoring system for first six priority crops: rice, corn, banana, coconut, coffee, cacao. This project is funded by DOST-PCAARRD.</string>
 </resources>

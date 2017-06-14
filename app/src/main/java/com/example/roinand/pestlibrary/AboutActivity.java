@@ -1,28 +1,37 @@
 package com.example.roinand.pestlibrary;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
+import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
-public class MainActivity extends AppCompatActivity {
+public class AboutActivity extends AppCompatActivity {
 
+    private Toolbar toolbar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setContentView(R.layout.activity_about);
+
+        toolbar = (Toolbar) findViewById(R.id.app_bar);
         setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        DrawerFragment drawerFragment = (DrawerFragment)
+                getSupportFragmentManager().findFragmentById(R.id.fragment_drawer);
+        drawerFragment.setUp(R.id.fragment_drawer, (DrawerLayout) findViewById(R.id.drawer_layout), toolbar);
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
+        getMenuInflater().inflate(R.menu.menu_home, menu);
+        //Set true if you want to see menu option
+        return false;
     }
 
     @Override
@@ -34,18 +43,14 @@ public class MainActivity extends AppCompatActivity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
-            startActivity(new Intent(this, AboutActivity.class));
             return true;
         }
 
         return super.onOptionsItemSelected(item);
     }
 
-    public void browsePest(View view){
-        startActivity(new Intent(this, BrowseActivity.class));
-    }
-
-    public void browseDiseases(View view){
-        startActivity(new Intent(this, BrowseDiseasesActivity.class));
+    public void seeMore(View view) {
+        Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://sarai.ph/about-us"));
+        startActivity(browserIntent);
     }
 }
