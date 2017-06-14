@@ -34,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
+            startActivity(new Intent(this, AboutActivity.class));
             return true;
         }
 
@@ -42,5 +43,9 @@ public class MainActivity extends AppCompatActivity {
 
     public void browsePest(View view){
         startActivity(new Intent(this, BrowseActivity.class));
+    }
+
+    public void browseDiseases(View view){
+        startActivity(new Intent(this, BrowseDiseasesActivity.class));
     }
 }

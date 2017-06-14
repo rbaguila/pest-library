@@ -16,16 +16,21 @@ import java.util.List;
  */
 public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ItemViewHolder> {
     List<Item> data = Collections.emptyList();
+    private int type;
     private LayoutInflater inflater;
 
     private ClickListener clickListenerRice;
     private ClickListener clickListenerCorn;
+    private ClickListener clickListenerBanana;
+    private ClickListener clickListenerCacao;
+    private ClickListener clickListenerCoffee;
+    private ClickListener clickListenerCoco;
 
-    public ItemAdapter (Context context, List<Item> data) {
+    public ItemAdapter (Context context, List<Item> data, int type) {
         inflater = LayoutInflater.from(context);
         this.data = data;
+        this.type = type;
     }
-
 
     public void setClickListenerRice (ClickListener clickListenerRice) {
         this.clickListenerRice = clickListenerRice;
@@ -33,6 +38,22 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ItemViewHolder
 
     public void setClickListenerCorn (ClickListener clickListenerCorn) {
         this.clickListenerCorn = clickListenerCorn;
+    }
+
+    public void setClickListenerBanana (ClickListener clickListenerBanana) {
+        this.clickListenerBanana = clickListenerBanana;
+    }
+
+    public void setClickListenerCacao (ClickListener clickListenerCacao) {
+        this.clickListenerCacao = clickListenerCacao;
+    }
+
+    public void setClickListenerCoffee (ClickListener clickListenerCoffee) {
+        this.clickListenerCoffee = clickListenerCoffee;
+    }
+
+    public void setClickListenerCoco (ClickListener clickListenerCoco) {
+        this.clickListenerCoco = clickListenerCoco;
     }
 
 
@@ -46,7 +67,8 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ItemViewHolder
     @Override
     public void onBindViewHolder(ItemViewHolder holder, int position) {
         Item current = data.get(position);
-        holder.name.setText(current.pestName);
+        if (type == 1) holder.name.setText(current.pestName);
+        else if (type == 2) holder.name.setText(current.diseaseName);
         holder.screenshot.setImageResource(current.imageId);
     }
 
@@ -76,11 +98,31 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ItemViewHolder
             if (clickListenerCorn != null) {
                 clickListenerCorn.itemClickCorn(v, name.getText().toString());
             }
+
+            if (clickListenerBanana != null) {
+                clickListenerBanana.itemClickBanana(v, name.getText().toString());
+            }
+
+            if (clickListenerCacao != null) {
+                clickListenerCacao.itemClickCacao(v, name.getText().toString());
+            }
+
+            if (clickListenerCoffee != null) {
+                clickListenerCoffee.itemClickCoffee(v, name.getText().toString());
+            }
+
+            if (clickListenerCoco != null) {
+                clickListenerCoco.itemClickCoco(v, name.getText().toString());
+            }
         }
     }
 
     public interface ClickListener {
         public void itemClickRice (View view, String name);
         public void itemClickCorn (View view, String name);
+        public void itemClickBanana (View view, String name);
+        public void itemClickCacao (View view, String name);
+        public void itemClickCoffee (View view, String name);
+        public void itemClickCoco (View view, String name);
     }
 }
