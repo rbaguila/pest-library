@@ -2,17 +2,27 @@ package com.example.roinand.pestlibrary;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Environment;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
+import java.io.File;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        File myDir = new File(Environment.getExternalStorageDirectory()
+                +  File.separator + "/Android/data/com.projectsarai.pestlibrary/csv");
+        if (!myDir.exists()) {
+            myDir.mkdirs();
+        }
+
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
