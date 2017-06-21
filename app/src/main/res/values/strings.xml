@@ -615,4 +615,6 @@
     <string name="about_email">sarai@uplb.edu.ph</string>
     <string name="about_contactno">+63 (049) 536 2836, +63 (049) 536 3080</string>
     <string name="about_content">Project SARAi aims to develop a national crop forecasting and monitoring system for first six priority crops: rice, corn, banana, coconut, coffee, cacao. This project is funded by DOST-PCAARRD.</string>
+    <string name="sysdev_title">Systems Developers</string>
+    <string name="sysdev">Kenneth Lloyd Verastigue\nJuan Carlo Mangaliag\nProf. Roinand Aguila\nProf. Concepcion Khan</string>
 </resources>

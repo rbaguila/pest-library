@@ -3,8 +3,6 @@ package com.example.roinand.pestlibrary;
 import android.os.AsyncTask;
 import android.os.Environment;
 
-import java.io.BufferedInputStream;
-import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -14,14 +12,11 @@ import java.net.InetSocketAddress;
 import java.net.Socket;
 import java.net.SocketAddress;
 import java.net.URL;
-import java.net.URLConnection;
 
 /**
  * Created by ics-user on 6/20/17.
  */
 class DownloadCSVTask extends AsyncTask<String, Void, Boolean> {
-    private Exception exception;
-
     protected Boolean doInBackground(String... urls) {
         try {
             //check if there is an internet
@@ -46,11 +41,6 @@ class DownloadCSVTask extends AsyncTask<String, Void, Boolean> {
             //this will be used in reading the data from the internet
             InputStream inputStream = urlConnection.getInputStream();
 
-            //this is the total size of the file
-            int totalSize = urlConnection.getContentLength();
-            //variable to store total downloaded bytes
-            int downloadedSize = 0;
-
             //create a buffer...
             byte[] buffer = new byte[1024];
             int bufferLength = 0; //used to store a temporary size of the buffer
@@ -59,8 +49,6 @@ class DownloadCSVTask extends AsyncTask<String, Void, Boolean> {
             while ( (bufferLength = inputStream.read(buffer)) > 0 ) {
                 //add the data in the buffer to the file in the file output stream (the file on the sd card
                 fileOutput.write(buffer, 0, bufferLength);
-                //add up the size so we know how much is downloaded
-                downloadedSize += bufferLength;
 
             }
             //close the output stream when done

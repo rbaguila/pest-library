@@ -66,13 +66,37 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="@string/sysdev_title"
+                android:textStyle="bold"
+                android:id="@+id/about_sysdev"
+                android:textColor="@color/secondary_text_default_material_light"
+                android:layout_alignParentTop="false"
+                android:layout_marginTop="450dp"
+                android:layout_alignParentBottom="false"
+                android:gravity="center_horizontal" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="@string/sysdev"
+                android:id="@+id/about_sysdevs"
+                android:textColor="@color/secondary_text_default_material_light"
+                android:layout_alignParentTop="false"
+                android:layout_marginTop="480dp"
+                android:layout_alignParentBottom="false"
+                android:gravity="center_horizontal" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/about_sysdev"
+                android:textAppearance="?android:attr/textAppearanceMedium"
                 android:text="@string/about_copyright"
                 android:id="@+id/about_copyright"
                 android:textColor="@color/secondary_text_default_material_light"
                 android:layout_alignParentTop="true"
-                android:layout_alignParentStart="false"
-                android:layout_marginTop="450dp"
-                android:layout_alignParentEnd="false"
+                android:layout_marginTop="620dp"
                 android:layout_alignParentBottom="true"
                 android:gravity="center_horizontal" />
 
