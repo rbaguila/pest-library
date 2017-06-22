@@ -38,7 +38,7 @@ public class CornActivity extends AppCompatActivity implements ItemAllAdapter.Cl
         LinearLayoutManager cornLinearLayout = new LinearLayoutManager(this);
         cornLinearLayout.setOrientation(LinearLayoutManager.VERTICAL);
         cornRecycler.setLayoutManager(cornLinearLayout);
-        cornAdapter = new ItemAllAdapter(this, new ItemData(this).getAllCornItemData());
+        cornAdapter = new ItemAllAdapter(this, new ItemData(this).getAllCornItemData(), 1);
         cornAdapter.setClickListener(this);
         cornRecycler.setAdapter(cornAdapter);
     }
@@ -70,7 +70,7 @@ public class CornActivity extends AppCompatActivity implements ItemAllAdapter.Cl
     public void itemClick(View view, String name) {
         Intent intent = new Intent(this, ItemTrackActivity.class);
         intent.putExtra("pestName", name);
-        intent.putExtra("pestType", "corn_");
+        intent.putExtra("type", "corn_");
         startActivity(intent);
     }
 }

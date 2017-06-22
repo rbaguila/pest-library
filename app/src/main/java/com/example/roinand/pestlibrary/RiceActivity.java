@@ -36,7 +36,7 @@ public class RiceActivity extends AppCompatActivity implements ItemAllAdapter.Cl
         LinearLayoutManager riceLinearLayout = new LinearLayoutManager(this);
         riceLinearLayout.setOrientation(LinearLayoutManager.VERTICAL);
         riceRecycler.setLayoutManager(riceLinearLayout);
-        riceAdapter = new ItemAllAdapter(this, new ItemData(this).getAllRiceItemData());
+        riceAdapter = new ItemAllAdapter(this, new ItemData(this).getAllRiceItemData(), 1);
         riceAdapter.setClickListener(this);
         riceRecycler.setAdapter(riceAdapter);
     }
@@ -67,7 +67,7 @@ public class RiceActivity extends AppCompatActivity implements ItemAllAdapter.Cl
     public void itemClick(View view, String name) {
         Intent intent = new Intent(this, ItemTrackActivity.class);
         intent.putExtra("pestName", name);
-        intent.putExtra("pestType", "rice_");
+        intent.putExtra("type", "rice_");
         startActivity(intent);
     }
 }

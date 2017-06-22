@@ -27,6 +27,14 @@
                 android:value="com.example.roinand.pestlibrary.MainActivity" />
         </activity>
         <activity
+            android:name=".BrowseDiseasesActivity"
+            android:label="@string/browse_activity_main2"
+            android:parentActivityName=".MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.roinand.pestlibrary.MainActivity" />
+        </activity>
+        <activity
             android:name=".RiceActivity"
             android:label="@string/title_activity_rice"
             android:parentActivityName=".BrowseActivity" >
@@ -35,12 +43,92 @@
                 android:value="com.example.roinand.pestlibrary.BrowseActivity" />
         </activity>
         <activity
+            android:name=".DriceActivity"
+            android:label="@string/title_activity_rice2"
+            android:parentActivityName=".BrowseDiseasesActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.roinand.pestlibrary.BrowseDiseasesActivity" />
+        </activity>
+        <activity
             android:name=".CornActivity"
             android:label="@string/title_activity_corn"
             android:parentActivityName=".BrowseActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.roinand.pestlibrary.BrowseActivity" />
+        </activity>
+        <activity
+            android:name=".DcornActivity"
+            android:label="@string/title_activity_corn2"
+            android:parentActivityName=".BrowseDiseasesActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.roinand.pestlibrary.BrowseDiseasesActivity" />
+        </activity>
+        <activity
+            android:name=".BananaActivity"
+            android:label="@string/title_activity_banana"
+            android:parentActivityName=".BrowseActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.roinand.pestlibrary.BrowseActivity" />
+        </activity>
+        <activity
+            android:name=".DbananaActivity"
+            android:label="@string/title_activity_banana2"
+            android:parentActivityName=".BrowseDiseasesActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.roinand.pestlibrary.BrowseDiseasesActivity" />
+        </activity>
+        <activity
+            android:name=".CacaoActivity"
+            android:label="@string/title_activity_cacao"
+            android:parentActivityName=".BrowseActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.roinand.pestlibrary.BrowseActivity" />
+        </activity>
+        <activity
+            android:name=".DcacaoActivity"
+            android:label="@string/title_activity_cacao2"
+            android:parentActivityName=".BrowseDiseasesActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.roinand.pestlibrary.BrowseDiseasesActivity" />
+        </activity>
+        <activity
+            android:name=".CoffeeActivity"
+            android:label="@string/title_activity_coffee"
+            android:parentActivityName=".BrowseActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.roinand.pestlibrary.BrowseActivity" />
+        </activity>
+        <activity
+            android:name=".DcoffeeActivity"
+            android:label="@string/title_activity_coffee2"
+            android:parentActivityName=".BrowseDiseasesActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.roinand.pestlibrary.BrowseDiseasesActivity" />
+        </activity>
+        <activity
+            android:name=".CocoActivity"
+            android:label="@string/title_activity_coco"
+            android:parentActivityName=".BrowseActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.roinand.pestlibrary.BrowseActivity" />
+        </activity>
+        <activity
+            android:name=".DcocoActivity"
+            android:label="@string/title_activity_coco2"
+            android:parentActivityName=".BrowseDiseasesActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.roinand.pestlibrary.BrowseDiseasesActivity" />
         </activity>
         <activity
             android:name=".ItemTrackActivity"

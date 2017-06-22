@@ -6,5 +6,6 @@ package com.example.roinand.pestlibrary;
 public class ItemAll {
     int imageId;
     String pestName;
+    String diseaseName;
     String commonNames;
 }
