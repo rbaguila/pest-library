@@ -126,26 +126,32 @@ public class BrowseActivity extends AppCompatActivity implements ItemAdapter.Cli
     }
 
     public void redirectRice(View view){
+        new DownloadCSVTask().execute("https://dl.dropboxusercontent.com/s/f258pyh6q4o4t7j/pests-rice.csv?dl=0","pests-rice.csv");
         startActivity(new Intent(this, RiceActivity.class));
     }
 
     public void redirectCorn(View view){
+        new DownloadCSVTask().execute("https://dl.dropboxusercontent.com/s/ytmllcaezwrkl95/pests-corn.csv?dl=0","pests-corn.csv");
         startActivity(new Intent(this, CornActivity.class));
     }
 
     public void redirectBanana(View view){
+        new DownloadCSVTask().execute("https://dl.dropboxusercontent.com/s/9u8l4q4szb35kmb/pests-banana.csv?dl=0","pests-banana.csv");
         startActivity(new Intent(this, BananaActivity.class));
     }
 
     public void redirectCacao(View view){
+        new DownloadCSVTask().execute("https://dl.dropboxusercontent.com/s/n8q01n563msq3rz/pests-cacao.csv?dl=0","pests-cacao.csv");
         startActivity(new Intent(this, CacaoActivity.class));
     }
 
     public void redirectCoffee(View view){
+        new DownloadCSVTask().execute("https://dl.dropboxusercontent.com/s/ob0q0cati9nx4lr/pests-coffee.csv?dl=0","pests-coffee.csv");
         startActivity(new Intent(this, CoffeeActivity.class));
     }
 
     public void redirectCoco(View view){
+        new DownloadCSVTask().execute("https://dl.dropboxusercontent.com/s/40cccr06p2o92o7/pests-coconut.csv?dl=0","pests-coconut.csv");
         startActivity(new Intent(this, CocoActivity.class));
     }
 
