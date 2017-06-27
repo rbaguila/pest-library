@@ -68,7 +68,7 @@ public class CoffeeActivity extends AppCompatActivity implements ItemAllAdapter.
 
     @Override
     public void itemClick(View view, String name) {
-        Intent intent = new Intent(this, ItemTrackActivity.class);
+        Intent intent = new Intent(this, ItemTrackActivity2.class);
         intent.putExtra("pestName", name);
         intent.putExtra("type", "coff_");
         startActivity(intent);

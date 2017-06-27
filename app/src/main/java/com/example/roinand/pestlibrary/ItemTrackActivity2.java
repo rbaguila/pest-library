@@ -46,7 +46,95 @@ public class ItemTrackActivity2 extends AppCompatActivity{
                 }
             }
         }
-        //TODO: Add else ifs for all crops
+        else if (getIntent().getStringExtra("type").equals("rice_")) {
+            items = new ItemData(this).getAllRiceItemData();
+            for (ItemAll item: items) {
+                if (getIntent().getStringExtra("pestName").equals(item.name)) {
+                    current = item;
+                }
+            }
+        }
+        else if (getIntent().getStringExtra("type").equals("dcorn_")) {
+            items = new ItemData(this).getAllDcornItemData();
+            for (ItemAll item: items) {
+                if (getIntent().getStringExtra("pestName").equals(item.name)) {
+                    current = item;
+                }
+            }
+        }
+        else if (getIntent().getStringExtra("type").equals("corn_")) {
+            items = new ItemData(this).getAllCornItemData();
+            for (ItemAll item: items) {
+                if (getIntent().getStringExtra("pestName").equals(item.name)) {
+                    current = item;
+                }
+            }
+        }
+        else if (getIntent().getStringExtra("type").equals("dban_")) {
+            items = new ItemData(this).getAllDbananaItemData();
+            for (ItemAll item: items) {
+                if (getIntent().getStringExtra("pestName").equals(item.name)) {
+                    current = item;
+                }
+            }
+        }
+        else if (getIntent().getStringExtra("type").equals("ban_")) {
+            items = new ItemData(this).getAllBananaItemData();
+            for (ItemAll item: items) {
+                if (getIntent().getStringExtra("pestName").equals(item.name)) {
+                    current = item;
+                }
+            }
+        }
+        else if (getIntent().getStringExtra("type").equals("dcoff_")) {
+            items = new ItemData(this).getAllDcoffeeItemData();
+            for (ItemAll item: items) {
+                if (getIntent().getStringExtra("pestName").equals(item.name)) {
+                    current = item;
+                }
+            }
+        }
+        else if (getIntent().getStringExtra("type").equals("coff_")) {
+            items = new ItemData(this).getAllCoffeeItemData();
+            for (ItemAll item: items) {
+                if (getIntent().getStringExtra("pestName").equals(item.name)) {
+                    current = item;
+                }
+            }
+        }
+        else if (getIntent().getStringExtra("type").equals("dcac_")) {
+            items = new ItemData(this).getAllDcacaoItemData();
+            for (ItemAll item: items) {
+                if (getIntent().getStringExtra("pestName").equals(item.name)) {
+                    current = item;
+                }
+            }
+        }
+        else if (getIntent().getStringExtra("type").equals("cac_")) {
+            items = new ItemData(this).getAllCacaoItemData();
+            for (ItemAll item: items) {
+                if (getIntent().getStringExtra("pestName").equals(item.name)) {
+                    current = item;
+                }
+            }
+        }
+        else if (getIntent().getStringExtra("type").equals("dcoco_")) {
+            items = new ItemData(this).getAllDcocoItemData();
+            for (ItemAll item: items) {
+                if (getIntent().getStringExtra("pestName").equals(item.name)) {
+                    current = item;
+                }
+            }
+        }
+        else if (getIntent().getStringExtra("type").equals("coco_")) {
+            items = new ItemData(this).getAllCocoItemData();
+            for (ItemAll item: items) {
+                if (getIntent().getStringExtra("pestName").equals(item.name)) {
+                    current = item;
+                }
+            }
+        }
+
 
         setActivityContents(getStringArrayName(getIntent().getStringExtra("pestName")));
     }
