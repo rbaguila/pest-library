@@ -1,5 +1,7 @@
 package com.example.roinand.pestlibrary;
 
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
@@ -10,6 +12,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import java.io.File;
 import java.util.List;
 
 /**
@@ -52,20 +56,19 @@ public class ItemTrackActivity2 extends AppCompatActivity{
     }
 
     public void setActivityContents(String stringArrayName){
-        /*String itemType = getIntent().getStringExtra("type");
-        ((ImageView) findViewById(R.id.item_image)).setImageResource(getResources().getIdentifier(itemType + stringArrayName.toLowerCase(),"drawable", getPackageName()));
+        File file = ImageStorage.getImage(stringArrayName + ".jpg");
+        String path = file.getAbsolutePath();
+        Bitmap b = BitmapFactory.decodeFile(path);
 
-        String[] details = getResources().getStringArray(getResources().getIdentifier(stringArrayName,"array", getPackageName()));
-        ((TextView) findViewById(R.id.item_name)).setText(details[0].equals("")? "Not available" : details[0]);
-        ((TextView) findViewById(R.id.item_common_name)).setText(details[1].equals("")? "Not available" : details[1]);
-        ((TextView) findViewById(R.id.item_filipino_name)).setText(details[2].equals("")? "Not available" : details[2]);
-        ((TextView) findViewById(R.id.item_scientific_name)).setText(details[3].equals("")? "Not available" : details[3]);
-        ((TextView) findViewById(R.id.item_identification_signs)).setText(details[4].equals("")? "Not available" : details[4]);
-        ((TextView) findViewById(R.id.item_management_practice)).setText(details[5].equals("")? "Not available" : details[5]);
+        ((ImageView) findViewById(R.id.item_image)).setImageBitmap(b);
+        ((TextView) findViewById(R.id.item_name)).setText(current.name.equals("")? "Not available" : current.name);
+        ((TextView) findViewById(R.id.item_common_name)).setText(current.commonNames.equals("")? "Not available" : current.commonNames);
+        ((TextView) findViewById(R.id.item_filipino_name)).setText(current.filName.equals("")? "Not available" : current.filName);
+        ((TextView) findViewById(R.id.item_scientific_name)).setText(current.sciName.equals("")? "Not available" : current.sciName);
+        ((TextView) findViewById(R.id.item_identification_signs)).setText(current.signs.equals("")? "Not available" : current.signs);
+        ((TextView) findViewById(R.id.item_management_practice)).setText(current.mgt.equals("")? "Not available" : current.mgt);
 
-        ((TextView) findViewById(R.id.visit_site)).setMovementMethod(LinkMovementMethod.getInstance());*/
-        (ImageView) findViewById(R.id.item_image).
-
+        ((TextView) findViewById(R.id.visit_site)).setMovementMethod(LinkMovementMethod.getInstance());
     }
 
 
