@@ -1,7 +1,15 @@
 package com.example.roinand.pestlibrary;
 
 import android.content.Context;
+import android.os.Environment;
+import android.util.Log;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -57,6 +65,11 @@ public class ItemData {
     public int[] dcocoIcons;
     public String[] dcocoNames;
     public String[] dcocoCommonNames;
+
+    //dynamic
+    private static final String TAG = ">";
+    public ArrayList<ArrayList<String>> driceItems = new ArrayList<ArrayList<String>>();
+
 
     public ItemData(Context context){
         this.context = context;
@@ -148,6 +161,35 @@ public class ItemData {
                 context.getResources().getStringArray(R.array.Bakanae)[1],
                 context.getResources().getStringArray(R.array.BrownSpot)[1]
         };
+    }
+
+    public void readDriceCSV() throws FileNotFoundException {
+        String baseDir = Environment.getExternalStorageDirectory().getAbsolutePath();
+        String pathDir = baseDir + "/Android/data/com.projectsarai.pestlibrary/csv";
+        File csvFile = new File(pathDir,"diseases-rice.csv");
+        if (csvFile.exists()) {
+            InputStream targetStream = new FileInputStream(csvFile);
+            BufferedReader reader = new BufferedReader(new InputStreamReader(targetStream));
+            try {
+                String line;
+                line = reader.readLine(); //remove the headers
+                while ((line = reader.readLine()) != null) {
+                    ArrayList<String> driceItem = new ArrayList<String>();
+                    String[] tokens = line.split(",(?=(?:[^\"]*\"[^\"]*\")*[^\"]*$)", -1);
+                    for(String t : tokens) {
+                        t = t.replaceAll("^\"|\"$", "");
+                        driceItem.add(t);
+                    }
+                    driceItems.add(driceItem);
+                }
+            }
+            catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        else {
+            Log.d(TAG,"File does not exist");
+        }
     }
 
     public void initCornData(){
@@ -551,14 +593,27 @@ public class ItemData {
     }
 
     public List<ItemAll> getAllDriceItemData() {
-        initDriceData();
+        try {
+            readDriceCSV();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+
         List<ItemAll> data = new ArrayList<>();
 
-        for (int i=0; i<driceNames.length && i<driceIcons.length; i++) {
+        for (int i=0; i<driceItems.size(); i++) {
             ItemAll current = new ItemAll();
-            current.imageId = driceIcons[i];
-            current.diseaseName = driceNames[i];
-            current.commonNames = driceCommonNames[i];
+            ArrayList<String> entry = driceItems.get(i);
+
+            current.name = entry.get(1);
+            current.diseaseName = entry.get(1);
+            current.commonNames = entry.get(2);
+            current.filName = entry.get(3);
+            current.sciName = entry.get(4);
+            current.signs = entry.get(5);
+            current.mgt = entry.get(6);
+            current.imageUrl = entry.get(7);
+
             data.add(current);
         }
         return data;
