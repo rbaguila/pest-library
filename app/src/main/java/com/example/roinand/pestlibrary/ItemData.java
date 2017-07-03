@@ -68,21 +68,7 @@ public class ItemData {
 
     //dynamic
     private static final String TAG = ">";
-    //pests
-    public ArrayList<ArrayList<String>> riceItems = new ArrayList<ArrayList<String>>();
-    public ArrayList<ArrayList<String>> cornItems = new ArrayList<ArrayList<String>>();
-    public ArrayList<ArrayList<String>> bananaItems = new ArrayList<ArrayList<String>>();
-    public ArrayList<ArrayList<String>> coffeeItems = new ArrayList<ArrayList<String>>();
-    public ArrayList<ArrayList<String>> cacaoItems = new ArrayList<ArrayList<String>>();
-    public ArrayList<ArrayList<String>> cocoItems = new ArrayList<ArrayList<String>>();
-    //diseases
-    public ArrayList<ArrayList<String>> driceItems = new ArrayList<ArrayList<String>>();
-    public ArrayList<ArrayList<String>> dcornItems = new ArrayList<ArrayList<String>>();
-    public ArrayList<ArrayList<String>> dbananaItems = new ArrayList<ArrayList<String>>();
-    public ArrayList<ArrayList<String>> dcoffeeItems = new ArrayList<ArrayList<String>>();
-    public ArrayList<ArrayList<String>> dcacaoItems = new ArrayList<ArrayList<String>>();
-    public ArrayList<ArrayList<String>> dcocoItems = new ArrayList<ArrayList<String>>();
-
+    public ArrayList<ArrayList<String>> items = new ArrayList<ArrayList<String>>();
 
     public ItemData(Context context){
         this.context = context;
@@ -152,7 +138,10 @@ public class ItemData {
 
         cornCommonNames = new String[]{
                 context.getResources().getStringArray(R.array.CornSemilooperadult)[1],
-                context.getResources().getStringArray(R.array.AsianCornboreradult)[1],
+                context.getResources(
+
+
+                ).getStringArray(R.array.AsianCornboreradult)[1],
                 context.getResources().getStringArray(R.array.CornEarwormadult)[1],
                 context.getResources().getStringArray(R.array.CornFleaBeetle)[1]
         };
@@ -359,11 +348,10 @@ public class ItemData {
         };
     }
 
-    //pests
-    public void readRiceCSV() throws FileNotFoundException {
+    public void readCSV(String filename) throws FileNotFoundException {
         String baseDir = Environment.getExternalStorageDirectory().getAbsolutePath();
         String pathDir = baseDir + "/Android/data/com.projectsarai.pestlibrary/csv";
-        File csvFile = new File(pathDir,"pests-rice.csv");
+        File csvFile = new File(pathDir,filename);
         if (csvFile.exists()) {
             InputStream targetStream = new FileInputStream(csvFile);
             BufferedReader reader = new BufferedReader(new InputStreamReader(targetStream));
@@ -371,334 +359,13 @@ public class ItemData {
                 String line;
                 line = reader.readLine(); //remove the headers
                 while ((line = reader.readLine()) != null) {
-                    ArrayList<String> riceItem = new ArrayList<String>();
+                    ArrayList<String> item = new ArrayList<String>();
                     String[] tokens = line.split(",(?=(?:[^\"]*\"[^\"]*\")*[^\"]*$)", -1);
                     for(String t : tokens) {
                         t = t.replaceAll("^\"|\"$", "");
-                        riceItem.add(t);
+                        item.add(t);
                     }
-                    riceItems.add(riceItem);
-                }
-            }
-            catch (Exception e) {
-                e.printStackTrace();
-            }
-        }
-        else {
-            Log.d(TAG,"File does not exist");
-        }
-    }
-
-    public void readCornCSV() throws FileNotFoundException {
-        String baseDir = Environment.getExternalStorageDirectory().getAbsolutePath();
-        String pathDir = baseDir + "/Android/data/com.projectsarai.pestlibrary/csv";
-        File csvFile = new File(pathDir,"pests-corn.csv");
-        if (csvFile.exists()) {
-            InputStream targetStream = new FileInputStream(csvFile);
-            BufferedReader reader = new BufferedReader(new InputStreamReader(targetStream));
-            try {
-                String line;
-                line = reader.readLine(); //remove the headers
-                while ((line = reader.readLine()) != null) {
-                    ArrayList<String> cornItem = new ArrayList<String>();
-                    String[] tokens = line.split(",(?=(?:[^\"]*\"[^\"]*\")*[^\"]*$)", -1);
-                    for(String t : tokens) {
-                        t = t.replaceAll("^\"|\"$", "");
-                        cornItem.add(t);
-                    }
-                    cornItems.add(cornItem);
-                }
-            }
-            catch (Exception e) {
-                e.printStackTrace();
-            }
-        }
-        else {
-            Log.d(TAG,"File does not exist");
-        }
-    }
-
-    public void readBananaCSV() throws FileNotFoundException {
-        String baseDir = Environment.getExternalStorageDirectory().getAbsolutePath();
-        String pathDir = baseDir + "/Android/data/com.projectsarai.pestlibrary/csv";
-        File csvFile = new File(pathDir,"pests-banana.csv");
-        if (csvFile.exists()) {
-            InputStream targetStream = new FileInputStream(csvFile);
-            BufferedReader reader = new BufferedReader(new InputStreamReader(targetStream));
-            try {
-                String line;
-                line = reader.readLine(); //remove the headers
-                while ((line = reader.readLine()) != null) {
-                    ArrayList<String> bananaItem = new ArrayList<String>();
-                    String[] tokens = line.split(",(?=(?:[^\"]*\"[^\"]*\")*[^\"]*$)", -1);
-                    for(String t : tokens) {
-                        t = t.replaceAll("^\"|\"$", "");
-                        bananaItem.add(t);
-                    }
-                    bananaItems.add(bananaItem);
-                }
-            }
-            catch (Exception e) {
-                e.printStackTrace();
-            }
-        }
-        else {
-            Log.d(TAG,"File does not exist");
-        }
-    }
-
-    public void readCoffeeCSV() throws FileNotFoundException {
-        String baseDir = Environment.getExternalStorageDirectory().getAbsolutePath();
-        String pathDir = baseDir + "/Android/data/com.projectsarai.pestlibrary/csv";
-        File csvFile = new File(pathDir,"pests-coffee.csv");
-        if (csvFile.exists()) {
-            InputStream targetStream = new FileInputStream(csvFile);
-            BufferedReader reader = new BufferedReader(new InputStreamReader(targetStream));
-            try {
-                String line;
-                line = reader.readLine(); //remove the headers
-                while ((line = reader.readLine()) != null) {
-                    ArrayList<String> coffeeItem = new ArrayList<String>();
-                    String[] tokens = line.split(",(?=(?:[^\"]*\"[^\"]*\")*[^\"]*$)", -1);
-                    for(String t : tokens) {
-                        t = t.replaceAll("^\"|\"$", "");
-                        coffeeItem.add(t);
-                    }
-                    coffeeItems.add(coffeeItem);
-                }
-            }
-            catch (Exception e) {
-                e.printStackTrace();
-            }
-        }
-        else {
-            Log.d(TAG,"File does not exist");
-        }
-    }
-
-    public void readCacaoCSV() throws FileNotFoundException {
-        String baseDir = Environment.getExternalStorageDirectory().getAbsolutePath();
-        String pathDir = baseDir + "/Android/data/com.projectsarai.pestlibrary/csv";
-        File csvFile = new File(pathDir,"pests-cacao.csv");
-        if (csvFile.exists()) {
-            InputStream targetStream = new FileInputStream(csvFile);
-            BufferedReader reader = new BufferedReader(new InputStreamReader(targetStream));
-            try {
-                String line;
-                line = reader.readLine(); //remove the headers
-                while ((line = reader.readLine()) != null) {
-                    ArrayList<String> cacaoItem = new ArrayList<String>();
-                    String[] tokens = line.split(",(?=(?:[^\"]*\"[^\"]*\")*[^\"]*$)", -1);
-                    for(String t : tokens) {
-                        t = t.replaceAll("^\"|\"$", "");
-                        cacaoItem.add(t);
-                    }
-                    cacaoItems.add(cacaoItem);
-                }
-            }
-            catch (Exception e) {
-                e.printStackTrace();
-            }
-        }
-        else {
-            Log.d(TAG,"File does not exist");
-        }
-    }
-
-    public void readCocoCSV() throws FileNotFoundException {
-        String baseDir = Environment.getExternalStorageDirectory().getAbsolutePath();
-        String pathDir = baseDir + "/Android/data/com.projectsarai.pestlibrary/csv";
-        File csvFile = new File(pathDir,"pests-coconut.csv");
-        if (csvFile.exists()) {
-            InputStream targetStream = new FileInputStream(csvFile);
-            BufferedReader reader = new BufferedReader(new InputStreamReader(targetStream));
-            try {
-                String line;
-                line = reader.readLine(); //remove the headers
-                while ((line = reader.readLine()) != null) {
-                    ArrayList<String> cocoItem = new ArrayList<String>();
-                    String[] tokens = line.split(",(?=(?:[^\"]*\"[^\"]*\")*[^\"]*$)", -1);
-                    for(String t : tokens) {
-                        t = t.replaceAll("^\"|\"$", "");
-                        cocoItem.add(t);
-                    }
-                    cocoItems.add(cocoItem);
-                }
-            }
-            catch (Exception e) {
-                e.printStackTrace();
-            }
-        }
-        else {
-            Log.d(TAG,"File does not exist");
-        }
-    }
-
-
-    //diseases
-    public void readDriceCSV() throws FileNotFoundException {
-        String baseDir = Environment.getExternalStorageDirectory().getAbsolutePath();
-        String pathDir = baseDir + "/Android/data/com.projectsarai.pestlibrary/csv";
-        File csvFile = new File(pathDir,"diseases-rice.csv");
-        if (csvFile.exists()) {
-            InputStream targetStream = new FileInputStream(csvFile);
-            BufferedReader reader = new BufferedReader(new InputStreamReader(targetStream));
-            try {
-                String line;
-                line = reader.readLine(); //remove the headers
-                while ((line = reader.readLine()) != null) {
-                    ArrayList<String> driceItem = new ArrayList<String>();
-                    String[] tokens = line.split(",(?=(?:[^\"]*\"[^\"]*\")*[^\"]*$)", -1);
-                    for(String t : tokens) {
-                        t = t.replaceAll("^\"|\"$", "");
-                        driceItem.add(t);
-                    }
-                    driceItems.add(driceItem);
-                }
-            }
-            catch (Exception e) {
-                e.printStackTrace();
-            }
-        }
-        else {
-            Log.d(TAG,"File does not exist");
-        }
-    }
-
-    public void readDcornCSV() throws FileNotFoundException {
-        String baseDir = Environment.getExternalStorageDirectory().getAbsolutePath();
-        String pathDir = baseDir + "/Android/data/com.projectsarai.pestlibrary/csv";
-        File csvFile = new File(pathDir,"diseases-corn.csv");
-        if (csvFile.exists()) {
-            InputStream targetStream = new FileInputStream(csvFile);
-            BufferedReader reader = new BufferedReader(new InputStreamReader(targetStream));
-            try {
-                String line;
-                line = reader.readLine(); //remove the headers
-                while ((line = reader.readLine()) != null) {
-                    ArrayList<String> dcornItem = new ArrayList<String>();
-                    String[] tokens = line.split(",(?=(?:[^\"]*\"[^\"]*\")*[^\"]*$)", -1);
-                    for(String t : tokens) {
-                        t = t.replaceAll("^\"|\"$", "");
-                        dcornItem.add(t);
-                    }
-                    dcornItems.add(dcornItem);
-                }
-            }
-            catch (Exception e) {
-                e.printStackTrace();
-            }
-        }
-        else {
-            Log.d(TAG,"File does not exist");
-        }
-    }
-
-    public void readDbananaCSV() throws FileNotFoundException {
-        String baseDir = Environment.getExternalStorageDirectory().getAbsolutePath();
-        String pathDir = baseDir + "/Android/data/com.projectsarai.pestlibrary/csv";
-        File csvFile = new File(pathDir,"diseases-banana.csv");
-        if (csvFile.exists()) {
-            InputStream targetStream = new FileInputStream(csvFile);
-            BufferedReader reader = new BufferedReader(new InputStreamReader(targetStream));
-            try {
-                String line;
-                line = reader.readLine(); //remove the headers
-                while ((line = reader.readLine()) != null) {
-                    ArrayList<String> dbananaItem = new ArrayList<String>();
-                    String[] tokens = line.split(",(?=(?:[^\"]*\"[^\"]*\")*[^\"]*$)", -1);
-                    for(String t : tokens) {
-                        t = t.replaceAll("^\"|\"$", "");
-                        dbananaItem.add(t);
-                    }
-                    dbananaItems.add(dbananaItem);
-                }
-            }
-            catch (Exception e) {
-                e.printStackTrace();
-            }
-        }
-        else {
-            Log.d(TAG,"File does not exist");
-        }
-    }
-
-    public void readDcoffeeCSV() throws FileNotFoundException {
-        String baseDir = Environment.getExternalStorageDirectory().getAbsolutePath();
-        String pathDir = baseDir + "/Android/data/com.projectsarai.pestlibrary/csv";
-        File csvFile = new File(pathDir,"diseases-coffee.csv");
-        if (csvFile.exists()) {
-            InputStream targetStream = new FileInputStream(csvFile);
-            BufferedReader reader = new BufferedReader(new InputStreamReader(targetStream));
-            try {
-                String line;
-                line = reader.readLine(); //remove the headers
-                while ((line = reader.readLine()) != null) {
-                    ArrayList<String> dcoffeeItem = new ArrayList<String>();
-                    String[] tokens = line.split(",(?=(?:[^\"]*\"[^\"]*\")*[^\"]*$)", -1);
-                    for(String t : tokens) {
-                        t = t.replaceAll("^\"|\"$", "");
-                        dcoffeeItem.add(t);
-                    }
-                    dcoffeeItems.add(dcoffeeItem);
-                }
-            }
-            catch (Exception e) {
-                e.printStackTrace();
-            }
-        }
-        else {
-            Log.d(TAG,"File does not exist");
-        }
-    }
-
-    public void readDcacaoCSV() throws FileNotFoundException {
-        String baseDir = Environment.getExternalStorageDirectory().getAbsolutePath();
-        String pathDir = baseDir + "/Android/data/com.projectsarai.pestlibrary/csv";
-        File csvFile = new File(pathDir,"diseases-cacao.csv");
-        if (csvFile.exists()) {
-            InputStream targetStream = new FileInputStream(csvFile);
-            BufferedReader reader = new BufferedReader(new InputStreamReader(targetStream));
-            try {
-                String line;
-                line = reader.readLine(); //remove the headers
-                while ((line = reader.readLine()) != null) {
-                    ArrayList<String> dcacaoItem = new ArrayList<String>();
-                    String[] tokens = line.split(",(?=(?:[^\"]*\"[^\"]*\")*[^\"]*$)", -1);
-                    for(String t : tokens) {
-                        t = t.replaceAll("^\"|\"$", "");
-                        dcacaoItem.add(t);
-                    }
-                    dcacaoItems.add(dcacaoItem);
-                }
-            }
-            catch (Exception e) {
-                e.printStackTrace();
-            }
-        }
-        else {
-            Log.d(TAG,"File does not exist");
-        }
-    }
-
-    public void readDcocoCSV() throws FileNotFoundException {
-        String baseDir = Environment.getExternalStorageDirectory().getAbsolutePath();
-        String pathDir = baseDir + "/Android/data/com.projectsarai.pestlibrary/csv";
-        File csvFile = new File(pathDir,"diseases-coconut.csv");
-        if (csvFile.exists()) {
-            InputStream targetStream = new FileInputStream(csvFile);
-            BufferedReader reader = new BufferedReader(new InputStreamReader(targetStream));
-            try {
-                String line;
-                line = reader.readLine(); //remove the headers
-                while ((line = reader.readLine()) != null) {
-                    ArrayList<String> dcocoItem = new ArrayList<String>();
-                    String[] tokens = line.split(",(?=(?:[^\"]*\"[^\"]*\")*[^\"]*$)", -1);
-                    for(String t : tokens) {
-                        t = t.replaceAll("^\"|\"$", "");
-                        dcocoItem.add(t);
-                    }
-                    dcocoItems.add(dcocoItem);
+                    items.add(item);
                 }
             }
             catch (Exception e) {
@@ -866,22 +533,20 @@ public class ItemData {
         return data;
     }
 
-    //all items
-    public List<ItemAll> getAllRiceItemData() {
+    public List<ItemAll> getPestsData(String filename) {
         try {
-            readRiceCSV();
+            readCSV(filename);
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
 
         List<ItemAll> data = new ArrayList<>();
 
-        for (int i=0; i<riceItems.size(); i++) {
+        for (int i=0; i<items.size(); i++) {
             ItemAll current = new ItemAll();
-            ArrayList<String> entry = riceItems.get(i);
+            ArrayList<String> entry = items.get(i);
 
             current.name = entry.get(1);
-            current.pestName = entry.get(1);
             current.commonNames = entry.get(2);
             current.filName = entry.get(3);
             current.sciName = entry.get(4);
@@ -892,302 +557,80 @@ public class ItemData {
             data.add(current);
         }
         return data;
+    }
+
+    public List<ItemAll> getDiseasesData(String filename) {
+        try {
+            readCSV(filename);
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+
+        List<ItemAll> data = new ArrayList<>();
+
+        for (int i=0; i<items.size(); i++) {
+            ItemAll current = new ItemAll();
+            ArrayList<String> entry = items.get(i);
+
+            current.name = entry.get(1);
+            current.commonNames = entry.get(2);
+            current.filName = entry.get(3);
+            current.sciName = entry.get(4);
+            current.signs = entry.get(5);
+            current.mgt = entry.get(6);
+            current.imageUrl = entry.get(7);
+
+            data.add(current);
+        }
+        return data;
+    }
+
+    //all items
+    public List<ItemAll> getAllRiceItemData() {
+        return getPestsData("pests-rice.csv");
     }
 
     public List<ItemAll> getAllDriceItemData() {
-        try {
-            readDriceCSV();
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
-
-        List<ItemAll> data = new ArrayList<>();
-
-        for (int i=0; i<driceItems.size(); i++) {
-            ItemAll current = new ItemAll();
-            ArrayList<String> entry = driceItems.get(i);
-
-            current.name = entry.get(1);
-            current.diseaseName = entry.get(1);
-            current.commonNames = entry.get(2);
-            current.filName = entry.get(3);
-            current.sciName = entry.get(4);
-            current.signs = entry.get(5);
-            current.mgt = entry.get(6);
-            current.imageUrl = entry.get(7);
-
-            data.add(current);
-        }
-        return data;
+        return getDiseasesData("diseases-rice.csv");
     }
 
     public List<ItemAll> getAllCornItemData() {
-        try {
-            readCornCSV();
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
-
-        List<ItemAll> data = new ArrayList<>();
-
-        for (int i=0; i<cornItems.size(); i++) {
-            ItemAll current = new ItemAll();
-            ArrayList<String> entry = cornItems.get(i);
-
-            current.name = entry.get(1);
-            current.pestName = entry.get(1);
-            current.commonNames = entry.get(2);
-            current.filName = entry.get(3);
-            current.sciName = entry.get(4);
-            current.signs = entry.get(5);
-            current.mgt = entry.get(6);
-            current.imageUrl = entry.get(7);
-
-            data.add(current);
-        }
-        return data;
+        return getPestsData("pests-corn.csv");
     }
 
     public List<ItemAll> getAllDcornItemData() {
-        try {
-            readDcornCSV();
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
-
-        List<ItemAll> data = new ArrayList<>();
-
-        for (int i=0; i<dcornItems.size(); i++) {
-            ItemAll current = new ItemAll();
-            ArrayList<String> entry = dcornItems.get(i);
-
-            current.name = entry.get(1);
-            current.diseaseName = entry.get(1);
-            current.commonNames = entry.get(2);
-            current.filName = entry.get(3);
-            current.sciName = entry.get(4);
-            current.signs = entry.get(5);
-            current.mgt = entry.get(6);
-            current.imageUrl = entry.get(7);
-
-            data.add(current);
-        }
-        return data;
+        return getDiseasesData("diseases-corn.csv");
     }
 
     public List<ItemAll> getAllBananaItemData() {
-        try {
-            readBananaCSV();
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
-
-        List<ItemAll> data = new ArrayList<>();
-
-        for (int i=0; i<bananaItems.size(); i++) {
-            ItemAll current = new ItemAll();
-            ArrayList<String> entry = bananaItems.get(i);
-
-            current.name = entry.get(1);
-            current.pestName = entry.get(1);
-            current.commonNames = entry.get(2);
-            current.filName = entry.get(3);
-            current.sciName = entry.get(4);
-            current.signs = entry.get(5);
-            current.mgt = entry.get(6);
-            current.imageUrl = entry.get(7);
-
-            data.add(current);
-        }
-        return data;
+        return getPestsData("pests-banana.csv");
     }
 
     public List<ItemAll> getAllDbananaItemData() {
-        try {
-            readDbananaCSV();
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
-
-        List<ItemAll> data = new ArrayList<>();
-
-        for (int i=0; i<dbananaItems.size(); i++) {
-            ItemAll current = new ItemAll();
-            ArrayList<String> entry = dbananaItems.get(i);
-
-            current.name = entry.get(1);
-            current.diseaseName = entry.get(1);
-            current.commonNames = entry.get(2);
-            current.filName = entry.get(3);
-            current.sciName = entry.get(4);
-            current.signs = entry.get(5);
-            current.mgt = entry.get(6);
-            current.imageUrl = entry.get(7);
-
-            data.add(current);
-        }
-        return data;
+        return getDiseasesData("diseases-banana.csv");
     }
 
     public List<ItemAll> getAllCacaoItemData() {
-        try {
-            readCacaoCSV();
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
-
-        List<ItemAll> data = new ArrayList<>();
-
-        for (int i=0; i<cacaoItems.size(); i++) {
-            ItemAll current = new ItemAll();
-            ArrayList<String> entry = cacaoItems.get(i);
-
-            current.name = entry.get(1);
-            current.pestName = entry.get(1);
-            current.commonNames = entry.get(2);
-            current.filName = entry.get(3);
-            current.sciName = entry.get(4);
-            current.signs = entry.get(5);
-            current.mgt = entry.get(6);
-            current.imageUrl = entry.get(7);
-
-            data.add(current);
-        }
-        return data;
+        return getPestsData("pests-cacao.csv");
     }
 
     public List<ItemAll> getAllDcacaoItemData() {
-        try {
-            readDcacaoCSV();
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
-
-        List<ItemAll> data = new ArrayList<>();
-
-        for (int i=0; i<dcacaoItems.size(); i++) {
-            ItemAll current = new ItemAll();
-            ArrayList<String> entry = dcacaoItems.get(i);
-
-            current.name = entry.get(1);
-            current.diseaseName = entry.get(1);
-            current.commonNames = entry.get(2);
-            current.filName = entry.get(3);
-            current.sciName = entry.get(4);
-            current.signs = entry.get(5);
-            current.mgt = entry.get(6);
-            current.imageUrl = entry.get(7);
-
-            data.add(current);
-        }
-        return data;
+        return getDiseasesData("diseases-cacao.csv");
     }
 
     public List<ItemAll> getAllCoffeeItemData() {
-        try {
-            readCoffeeCSV();
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
-
-        List<ItemAll> data = new ArrayList<>();
-
-        for (int i=0; i<coffeeItems.size(); i++) {
-            ItemAll current = new ItemAll();
-            ArrayList<String> entry = coffeeItems.get(i);
-
-            current.name = entry.get(1);
-            current.pestName = entry.get(1);
-            current.commonNames = entry.get(2);
-            current.filName = entry.get(3);
-            current.sciName = entry.get(4);
-            current.signs = entry.get(5);
-            current.mgt = entry.get(6);
-            current.imageUrl = entry.get(7);
-
-            data.add(current);
-        }
-        return data;
+        return getPestsData("pests-coffee.csv");
     }
 
     public List<ItemAll> getAllDcoffeeItemData() {
-        try {
-            readDcoffeeCSV();
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
-
-        List<ItemAll> data = new ArrayList<>();
-
-        for (int i=0; i<dcoffeeItems.size(); i++) {
-            ItemAll current = new ItemAll();
-            ArrayList<String> entry = dcoffeeItems.get(i);
-
-            current.name = entry.get(1);
-            current.diseaseName = entry.get(1);
-            current.commonNames = entry.get(2);
-            current.filName = entry.get(3);
-            current.sciName = entry.get(4);
-            current.signs = entry.get(5);
-            current.mgt = entry.get(6);
-            current.imageUrl = entry.get(7);
-
-            data.add(current);
-        }
-        return data;
+        return getDiseasesData("diseases-coffee.csv");
     }
 
     public List<ItemAll> getAllCocoItemData() {
-        try {
-            readCocoCSV();
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
-
-        List<ItemAll> data = new ArrayList<>();
-
-        for (int i=0; i<cocoItems.size(); i++) {
-            ItemAll current = new ItemAll();
-            ArrayList<String> entry = cocoItems.get(i);
-
-            current.name = entry.get(1);
-            current.pestName = entry.get(1);
-            current.commonNames = entry.get(2);
-            current.filName = entry.get(3);
-            current.sciName = entry.get(4);
-            current.signs = entry.get(5);
-            current.mgt = entry.get(6);
-            current.imageUrl = entry.get(7);
-
-            data.add(current);
-        }
-        return data;
+        return getPestsData("pests-coconut.csv");
     }
 
     public List<ItemAll> getAllDcocoItemData() {
-        try {
-            readDcocoCSV();
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
-
-        List<ItemAll> data = new ArrayList<>();
-
-        for (int i=0; i<dcocoItems.size(); i++) {
-            ItemAll current = new ItemAll();
-            ArrayList<String> entry = dcocoItems.get(i);
-
-            current.name = entry.get(1);
-            current.diseaseName = entry.get(1);
-            current.commonNames = entry.get(2);
-            current.filName = entry.get(3);
-            current.sciName = entry.get(4);
-            current.signs = entry.get(5);
-            current.mgt = entry.get(6);
-            current.imageUrl = entry.get(7);
-
-            data.add(current);
-        }
-        return data;
+        return getDiseasesData("diseases-coconut.csv");
     }
 }

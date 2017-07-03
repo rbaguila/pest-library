@@ -47,28 +47,23 @@ public class ItemAllAdapter extends RecyclerView.Adapter<ItemAllAdapter.AllItemV
     public void onBindViewHolder(AllItemViewHolder holder, int position) {
         ItemAll current = data.get(position);
         String filename;
-        //get current image
-        if (type == 1) {
-            holder.screenshot.setImageResource(current.imageId);
-            holder.name.setText(current.pestName);
-        }
-        else if (type == 2) {
-            filename = current.diseaseName.replaceAll(" ","");
-            if (ImageStorage.checkifImageExists(filename + ".jpg")) {
-                Log.d(TAG, "Image already exists");
-                File file = ImageStorage.getImage(filename + ".jpg");
-                String path = file.getAbsolutePath();
 
-                Bitmap b = BitmapFactory.decodeFile(path);
-                holder.screenshot.setImageBitmap(b);
-                Log.d(TAG, "Image successfully shown");
-            }
-            else {
-                Log.d(TAG, "Image does not exist");
-                new GetImages(current.imageUrl, filename + ".jpg").execute(holder.screenshot);
-                //TODO: since this will download the image and save to sd card, read that image then set to view
-            }
-            holder.name.setText(current.diseaseName);
+        filename = current.name.replaceAll(" ","");
+        holder.name.setText(current.name);
+
+        if (ImageStorage.checkifImageExists(filename + ".jpg")) {
+            Log.d(TAG, "Image already exists");
+            File file = ImageStorage.getImage(filename + ".jpg");
+            String path = file.getAbsolutePath();
+
+            Bitmap b = BitmapFactory.decodeFile(path);
+            holder.screenshot.setImageBitmap(b);
+            Log.d(TAG, "Image successfully shown");
+        }
+        else {
+            Log.d(TAG, "Image does not exist");
+            new GetImages(current.imageUrl, filename + ".jpg").execute(holder.screenshot);
+            //TODO: since this will download the image and save to sd card, read that image then set to view
         }
 
         holder.commonNames.setText(current.commonNames);

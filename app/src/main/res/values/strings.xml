@@ -617,4 +617,5 @@
     <string name="about_content">Project SARAi aims to develop a national crop forecasting and monitoring system for first six priority crops: rice, corn, banana, coconut, coffee, cacao. This project is funded by DOST-PCAARRD.</string>
     <string name="sysdev_title">Systems Developers</string>
     <string name="sysdev">Kenneth Lloyd Verastigue\nJuan Carlo Mangaliag\nProf. Roinand Aguila\nProf. Concepcion Khan</string>
+    <string name="loading_please_wait">Loading... Please wait</string>
 </resources>
