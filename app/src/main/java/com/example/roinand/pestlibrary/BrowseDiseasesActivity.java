@@ -1,6 +1,7 @@
 package com.example.roinand.pestlibrary;
 
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Environment;
 import android.support.v4.widget.DrawerLayout;
@@ -12,15 +13,12 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
-import java.io.BufferedInputStream;
-import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
-import java.net.URLConnection;
 
 public class BrowseDiseasesActivity extends AppCompatActivity implements ItemAdapter.ClickListener{
     private RecyclerView driceRecycler; //for diseases
@@ -133,34 +131,76 @@ public class BrowseDiseasesActivity extends AppCompatActivity implements ItemAda
         return super.onOptionsItemSelected(item);
     }
 
+    public void showNoConnection() {
+        Intent intent = new Intent(this, LoadActivity.class);
+        intent.putExtra("status", "false");
+        startActivity(intent);
+    }
+
     public void redirectRice(View view){
-        new DownloadCSVTask().execute("https://dl.dropboxusercontent.com/s/rfu0wgdofskpkve/diseases-rice.csv?dl=0","diseases-rice.csv");
-        startActivity(new Intent(this, DriceActivity.class));
+        new CSVTask().execute("https://dl.dropboxusercontent.com/s/rfu0wgdofskpkve/diseases-rice.csv?dl=0","diseases-rice.csv");
     }
 
     public void redirectCorn(View view){
-        new DownloadCSVTask().execute("https://dl.dropboxusercontent.com/s/oguj8tv7rooapgl/diseases-corn.csv?dl=0","diseases-corn.csv");
-        startActivity(new Intent(this, DcornActivity.class));
+        new CSVTask().execute("https://dl.dropboxusercontent.com/s/oguj8tv7rooapgl/diseases-corn.csv?dl=0","diseases-corn.csv");
     }
 
     public void redirectBanana(View view){
-        new DownloadCSVTask().execute("https://dl.dropboxusercontent.com/s/p4rf0q4o5oc1e1p/diseases-banana.csv?dl=0","diseases-banana.csv");
-        startActivity(new Intent(this, DbananaActivity.class));
+        new CSVTask().execute("https://dl.dropboxusercontent.com/s/p4rf0q4o5oc1e1p/diseases-banana.csv?dl=0","diseases-banana.csv");
     }
 
     public void redirectCacao(View view){
-        new DownloadCSVTask().execute("https://dl.dropboxusercontent.com/s/59eijtse3s57ce7/diseases-cacao.csv?dl=0","diseases-cacao.csv");
-        startActivity(new Intent(this, DcacaoActivity.class));
+        new CSVTask().execute("https://dl.dropboxusercontent.com/s/59eijtse3s57ce7/diseases-cacao.csv?dl=0","diseases-cacao.csv");
     }
 
     public void redirectCoffee(View view){
-        new DownloadCSVTask().execute("https://dl.dropboxusercontent.com/s/6akgkq98c3or9e0/diseases-coffee.csv?dl=0","diseases-coffee.csv");
-        startActivity(new Intent(this, DcoffeeActivity.class));
+        new CSVTask().execute("https://dl.dropboxusercontent.com/s/6akgkq98c3or9e0/diseases-coffee.csv?dl=0","diseases-coffee.csv");
     }
 
     public void redirectCoco(View view){
-        new DownloadCSVTask().execute("https://dl.dropboxusercontent.com/s/bd2u1jhtf83abpg/diseases-coconut.csv?dl=0","diseases-coconut.csv");
-        startActivity(new Intent(this, DcocoActivity.class));
+        new CSVTask().execute("https://dl.dropboxusercontent.com/s/bd2u1jhtf83abpg/diseases-coconut.csv?dl=0","diseases-coconut.csv");
+    }
+
+    public void callRice() {
+        Intent intent = new Intent(this, LoadActivity.class);
+        intent.putExtra("status", "true");
+        intent.putExtra("type", "drice");
+        startActivity(intent);
+    }
+
+    public void callCorn() {
+        Intent intent = new Intent(this, LoadActivity.class);
+        intent.putExtra("status", "true");
+        intent.putExtra("type", "dcorn");
+        startActivity(intent);
+    }
+
+    public void callBanana() {
+        Intent intent = new Intent(this, LoadActivity.class);
+        intent.putExtra("status", "true");
+        intent.putExtra("type", "dbanana");
+        startActivity(intent);
+    }
+
+    public void callCacao() {
+        Intent intent = new Intent(this, LoadActivity.class);
+        intent.putExtra("status", "true");
+        intent.putExtra("type", "dcacao");
+        startActivity(intent);
+    }
+
+    public void callCoffee() {
+        Intent intent = new Intent(this, LoadActivity.class);
+        intent.putExtra("status", "true");
+        intent.putExtra("type", "dcoffee");
+        startActivity(intent);
+    }
+
+    public void callCoconut() {
+        Intent intent = new Intent(this, LoadActivity.class);
+        intent.putExtra("status", "true");
+        intent.putExtra("type", "dcoconut");
+        startActivity(intent);
     }
 
     @Override
@@ -211,93 +251,81 @@ public class BrowseDiseasesActivity extends AppCompatActivity implements ItemAda
         startActivity(intent);
     }
 
-    public void downloadCSV() {
-        try {
+    private class CSVTask extends AsyncTask<String, Void, Boolean> {
+        String filename, baseDir, pathDir;
 
-            //set the path where we want to save the file
-            //in this case, going to save it on the root directory of the
-            //sd card.
-            //File SDCardRoot = Environment.getExternalStorageDirectory() + "/Android/data/com.projectsarai.pestlibrary/csv";
+        protected Boolean doInBackground(String... urls) {
+            try {
+                baseDir = Environment.getExternalStorageDirectory().getAbsolutePath();
+                pathDir = baseDir + "/Android/data/com.projectsarai.pestlibrary/csv";
+                filename = urls[1];
 
-            String baseDir = Environment.getExternalStorageDirectory().getAbsolutePath();
-            String pathDir = baseDir + "/Android/data/com.projectsarai.pestlibrary/csv";
-            //create a new file, specifying the path, and the filename
-            //which we want to save the file as.
-            File file = new File(pathDir,"diseases-rice.csv");
+                if (!new File(pathDir,urls[1]).exists()) {
+                    URL url1 = new URL("http://dropbox.com");   // Change to "http://google.com" for www  test.
+                    HttpURLConnection urlc = (HttpURLConnection) url1.openConnection();
+                    urlc.setConnectTimeout(1500);
+                    urlc.connect();
+                }
+                else return false;
 
-            //set the download URL, a url that points to a file on the internet
-            //this is the file to be downloaded
-            URL url = new URL("https://dl.dropboxusercontent.com/s/rfu0wgdofskpkve/diseases-rice.csv?dl=0");
+                File file = new File(pathDir,urls[1]);
+                URL url = new URL(urls[0]);
 
-            //create the new connection
-            HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
+                //create the new connection
+                HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
 
-            //set up some things on the connection
-           // urlConnection.setRequestMethod("GET");
-           // urlConnection.setDoOutput(true);
+                FileOutputStream fileOutput = new FileOutputStream(file);
 
-            //and connect!
-           // urlConnection.connect();
+                //this will be used in reading the data from the internet
+                InputStream inputStream = urlConnection.getInputStream();
 
-            //this will be used to write the downloaded data into the file we created
-            FileOutputStream fileOutput = new FileOutputStream(file);
+                //create a buffer...
+                byte[] buffer = new byte[1024];
+                int bufferLength = 0; //used to store a temporary size of the buffer
 
-            //this will be used in reading the data from the internet
-            InputStream inputStream = urlConnection.getInputStream();
+                //now, read through the input buffer and write the contents to the file
+                while ( (bufferLength = inputStream.read(buffer)) > 0 ) {
+                    //add the data in the buffer to the file in the file output stream (the file on the sd card
+                    fileOutput.write(buffer, 0, bufferLength);
 
-            //this is the total size of the file
-            int totalSize = urlConnection.getContentLength();
-            //variable to store total downloaded bytes
-            int downloadedSize = 0;
+                }
+                //close the output stream when done
+                fileOutput.close();
 
-            //create a buffer...
-            byte[] buffer = new byte[1024];
-            int bufferLength = 0; //used to store a temporary size of the buffer
+                return true;
 
-            //now, read through the input buffer and write the contents to the file
-            while ( (bufferLength = inputStream.read(buffer)) > 0 ) {
-                //add the data in the buffer to the file in the file output stream (the file on the sd card
-                fileOutput.write(buffer, 0, bufferLength);
-                //add up the size so we know how much is downloaded
-                downloadedSize += bufferLength;
-                //this is where you would do something to report the prgress, like this maybe
-                //updateProgress(downloadedSize, totalSize);
-
+            } catch (IOException e) { //no internet
+                e.printStackTrace();
+                return false;
             }
-            //close the output stream when done
-            fileOutput.close();
-
-        //catch some possible errors...
-        } catch (IOException e) {
-            e.printStackTrace();
         }
-        /*try {
-            File dir = new File(Environment.getExternalStorageDirectory() + "/"
-                    + "Android/data/com.projectsarai.pestlibrary/csv");
-            if (dir.exists() == false) {
-                dir.mkdirs();
+
+        @Override
+        protected void onPostExecute(Boolean result) {
+            File csvFile = new File(pathDir,filename);
+
+            if ((result && filename.equals("diseases-rice.csv")) || filename.equals("diseases-rice.csv") && csvFile.exists()) {
+                callRice();
             }
-
-            URL url = new URL("https://dl.dropboxusercontent.com/s/oguj8tv7rooapgl/diseases-corn.csv?dl=0");
-            File file = new File(dir, "diseases-corn.csv");
-
-            URLConnection ucon = url.openConnection();
-            InputStream is = ucon.getInputStream();
-            BufferedInputStream bis = new BufferedInputStream(is);
-            ByteArrayOutputStream buffer = new ByteArrayOutputStream();
-            //We create an array of bytes
-            byte[] data = new byte[50];
-            int current = 0;
-
-            while((current = bis.read(data,0,data.length)) != -1){
-                buffer.write(data,0,current);
+            else if ((result && filename.equals("diseases-corn.csv")) || filename.equals("diseases-corn.csv") && csvFile.exists()) {
+                callCorn();
             }
-
-            FileOutputStream fos = new FileOutputStream(file);
-            fos.write(buffer.toByteArray());
-            fos.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }*/
+            else if ((result && filename.equals("diseases-banana.csv")) || filename.equals("diseases-banana.csv") && csvFile.exists()) {
+                callBanana();
+            }
+            else if ((result && filename.equals("diseases-coffee.csv")) || filename.equals("diseases-coffee.csv") && csvFile.exists()) {
+                callCoffee();
+            }
+            else if ((result && filename.equals("diseases-cacao.csv")) || filename.equals("diseases-cacao.csv") && csvFile.exists()) {
+                callCacao();
+            }
+            else if ((result && filename.equals("diseases-coconut.csv")) || filename.equals("diseases-coconut.csv") && csvFile.exists()) {
+                callCoconut();
+            }
+            else {
+                showNoConnection();
+            }
+        }
     }
+
 }

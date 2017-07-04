@@ -16,14 +16,24 @@
             android:id="@+id/app_bar"
             layout="@layout/app_bar" />
 
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="100dp"
+            android:id="@+id/nonet"
+            android:src="@drawable/nonet"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true" />
+
         <TextView
             android:layout_centerHorizontal="true"
-            android:layout_margin="16dp"
             android:textSize="16dp"
-            android:layout_below="@id/app_bar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="No Data Available. Please go back to Home"/>
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+            android:layout_below="@id/nonet"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Error. No internet connection available."
+            android:id="@+id/textView"
+            android:gravity="center_horizontal" />
 
     </RelativeLayout>
 

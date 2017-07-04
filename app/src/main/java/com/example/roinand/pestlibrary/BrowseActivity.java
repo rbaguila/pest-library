@@ -1,7 +1,9 @@
 package com.example.roinand.pestlibrary;
 
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
+import android.os.Environment;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
@@ -10,6 +12,13 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.HttpURLConnection;
+import java.net.URL;
 
 /**
  * Created by User on 7/21/2016.
@@ -34,6 +43,7 @@ public class BrowseActivity extends AppCompatActivity implements ItemAdapter.Cli
     private ItemAdapter cocoAdapter;
 
     private Toolbar toolbar;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -125,34 +135,76 @@ public class BrowseActivity extends AppCompatActivity implements ItemAdapter.Cli
         return super.onOptionsItemSelected(item);
     }
 
+    public void showNoConnection() {
+        Intent intent = new Intent(this, LoadActivity.class);
+        intent.putExtra("status", "false");
+        startActivity(intent);
+    }
+
     public void redirectRice(View view){
-        new DownloadCSVTask().execute("https://dl.dropboxusercontent.com/s/f258pyh6q4o4t7j/pests-rice.csv?dl=0","pests-rice.csv");
-        startActivity(new Intent(this, RiceActivity.class));
+        new CSVTask().execute("https://dl.dropboxusercontent.com/s/f258pyh6q4o4t7j/pests-rice.csv?dl=0","pests-rice.csv");
     }
 
     public void redirectCorn(View view){
-        new DownloadCSVTask().execute("https://dl.dropboxusercontent.com/s/ytmllcaezwrkl95/pests-corn.csv?dl=0","pests-corn.csv");
-        startActivity(new Intent(this, CornActivity.class));
+        new CSVTask().execute("https://dl.dropboxusercontent.com/s/ytmllcaezwrkl95/pests-corn.csv?dl=0","pests-corn.csv");
     }
 
     public void redirectBanana(View view){
-        new DownloadCSVTask().execute("https://dl.dropboxusercontent.com/s/9u8l4q4szb35kmb/pests-banana.csv?dl=0","pests-banana.csv");
-        startActivity(new Intent(this, BananaActivity.class));
+        new CSVTask().execute("https://dl.dropboxusercontent.com/s/9u8l4q4szb35kmb/pests-banana.csv?dl=0","pests-banana.csv");
     }
 
     public void redirectCacao(View view){
-        new DownloadCSVTask().execute("https://dl.dropboxusercontent.com/s/n8q01n563msq3rz/pests-cacao.csv?dl=0","pests-cacao.csv");
-        startActivity(new Intent(this, CacaoActivity.class));
+        new CSVTask().execute("https://dl.dropboxusercontent.com/s/n8q01n563msq3rz/pests-cacao.csv?dl=0","pests-cacao.csv");
     }
 
     public void redirectCoffee(View view){
-        new DownloadCSVTask().execute("https://dl.dropboxusercontent.com/s/ob0q0cati9nx4lr/pests-coffee.csv?dl=0","pests-coffee.csv");
-        startActivity(new Intent(this, CoffeeActivity.class));
+        new CSVTask().execute("https://dl.dropboxusercontent.com/s/ob0q0cati9nx4lr/pests-coffee.csv?dl=0","pests-coffee.csv");
     }
 
     public void redirectCoco(View view){
-        new DownloadCSVTask().execute("https://dl.dropboxusercontent.com/s/40cccr06p2o92o7/pests-coconut.csv?dl=0","pests-coconut.csv");
-        startActivity(new Intent(this, CocoActivity.class));
+        new CSVTask().execute("https://dl.dropboxusercontent.com/s/40cccr06p2o92o7/pests-coconut.csv?dl=0","pests-coconut.csv");
+    }
+
+    public void callRice() {
+        Intent intent = new Intent(this, LoadActivity.class);
+        intent.putExtra("status", "true");
+        intent.putExtra("type", "rice");
+        startActivity(intent);
+    }
+
+    public void callCorn() {
+        Intent intent = new Intent(this, LoadActivity.class);
+        intent.putExtra("status", "true");
+        intent.putExtra("type", "corn");
+        startActivity(intent);
+    }
+
+    public void callBanana() {
+        Intent intent = new Intent(this, LoadActivity.class);
+        intent.putExtra("status", "true");
+        intent.putExtra("type", "banana");
+        startActivity(intent);
+    }
+
+    public void callCacao() {
+        Intent intent = new Intent(this, LoadActivity.class);
+        intent.putExtra("status", "true");
+        intent.putExtra("type", "cacao");
+        startActivity(intent);
+    }
+
+    public void callCoffee() {
+        Intent intent = new Intent(this, LoadActivity.class);
+        intent.putExtra("status", "true");
+        intent.putExtra("type", "coffee");
+        startActivity(intent);
+    }
+
+    public void callCoconut() {
+        Intent intent = new Intent(this, LoadActivity.class);
+        intent.putExtra("status", "true");
+        intent.putExtra("type", "coconut");
+        startActivity(intent);
     }
 
     @Override
@@ -202,4 +254,82 @@ public class BrowseActivity extends AppCompatActivity implements ItemAdapter.Cli
         intent.putExtra("type", "coco_");
         startActivity(intent);
     }
+
+    private class CSVTask extends AsyncTask<String, Void, Boolean> {
+        String filename, baseDir, pathDir;
+
+        protected Boolean doInBackground(String... urls) {
+            try {
+                baseDir = Environment.getExternalStorageDirectory().getAbsolutePath();
+                pathDir = baseDir + "/Android/data/com.projectsarai.pestlibrary/csv";
+                filename = urls[1];
+
+                if (!new File(pathDir,urls[1]).exists()) {
+                    URL url1 = new URL("http://dropbox.com");   // Change to "http://google.com" for www  test.
+                    HttpURLConnection urlc = (HttpURLConnection) url1.openConnection();
+                    urlc.setConnectTimeout(1500);
+                    urlc.connect();
+                }
+                else return false;
+
+                File file = new File(pathDir,urls[1]);
+                URL url = new URL(urls[0]);
+
+                //create the new connection
+                HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
+
+                FileOutputStream fileOutput = new FileOutputStream(file);
+
+                //this will be used in reading the data from the internet
+                InputStream inputStream = urlConnection.getInputStream();
+
+                //create a buffer...
+                byte[] buffer = new byte[1024];
+                int bufferLength = 0; //used to store a temporary size of the buffer
+
+                //now, read through the input buffer and write the contents to the file
+                while ( (bufferLength = inputStream.read(buffer)) > 0 ) {
+                    //add the data in the buffer to the file in the file output stream (the file on the sd card
+                    fileOutput.write(buffer, 0, bufferLength);
+
+                }
+                //close the output stream when done
+                fileOutput.close();
+
+                return true;
+
+            } catch (IOException e) { //no internet
+                e.printStackTrace();
+                return false;
+            }
+        }
+
+        @Override
+        protected void onPostExecute(Boolean result) {
+            File csvFile = new File(pathDir,filename);
+
+            if ((result && filename.equals("pests-rice.csv")) || filename.equals("pests-rice.csv") && csvFile.exists()) {
+                callRice();
+            }
+            else if ((result && filename.equals("pests-corn.csv")) || filename.equals("pests-corn.csv") && csvFile.exists()) {
+                callCorn();
+            }
+            else if ((result && filename.equals("pests-banana.csv")) || filename.equals("pests-banana.csv") && csvFile.exists()) {
+                callBanana();
+            }
+            else if ((result && filename.equals("pests-coffee.csv")) || filename.equals("pests-coffee.csv") && csvFile.exists()) {
+                callCoffee();
+            }
+            else if ((result && filename.equals("pests-cacao.csv")) || filename.equals("pests-cacao.csv") && csvFile.exists()) {
+                callCacao();
+            }
+            else if ((result && filename.equals("pests-coconut.csv")) || filename.equals("pests-coconut.csv") && csvFile.exists()) {
+                callCoconut();
+            }
+            else {
+                showNoConnection();
+            }
+        }
+    }
+
 }

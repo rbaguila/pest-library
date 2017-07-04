@@ -63,7 +63,7 @@ public class DriceActivity extends AppCompatActivity implements ItemAllAdapter.C
 
     @Override
     public void itemClick(View view, String name) {
-        Intent intent = new Intent(this, ItemTrackActivity.class);
+        Intent intent = new Intent(this, ItemTrackActivity2.class);
         intent.putExtra("pestName", name);
         intent.putExtra("type", "drice_");
         startActivity(intent);

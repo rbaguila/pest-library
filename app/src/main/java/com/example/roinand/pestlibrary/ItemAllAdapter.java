@@ -1,13 +1,17 @@
 package com.example.roinand.pestlibrary;
 
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.io.File;
 import java.util.Collections;
 import java.util.List;
 
@@ -18,6 +22,7 @@ public class ItemAllAdapter extends RecyclerView.Adapter<ItemAllAdapter.AllItemV
     List<ItemAll> data = Collections.emptyList();
     private LayoutInflater inflater;
     private int type;
+    private static final String TAG = ">";
 
     private ClickListener clickListener;
 
@@ -41,9 +46,25 @@ public class ItemAllAdapter extends RecyclerView.Adapter<ItemAllAdapter.AllItemV
     @Override
     public void onBindViewHolder(AllItemViewHolder holder, int position) {
         ItemAll current = data.get(position);
-        holder.screenshot.setImageResource(current.imageId);
-        if (type == 1) holder.name.setText(current.pestName);
-        else if (type == 2) holder.name.setText(current.diseaseName);
+        String filename;
+
+        filename = current.name.replaceAll(" ","");
+        holder.name.setText(current.name);
+
+        if (ImageStorage.checkifImageExists(filename + ".jpg")) {
+            Log.d(TAG, "Image already exists");
+            File file = ImageStorage.getImage(filename + ".jpg");
+            String path = file.getAbsolutePath();
+
+            Bitmap b = BitmapFactory.decodeFile(path);
+            holder.screenshot.setImageBitmap(b);
+            Log.d(TAG, "Image successfully shown");
+        }
+        else {
+            Log.d(TAG, "Image does not exist");
+            new GetImages(current.imageUrl, filename + ".jpg").execute(holder.screenshot);
+        }
+
         holder.commonNames.setText(current.commonNames);
     }
 
