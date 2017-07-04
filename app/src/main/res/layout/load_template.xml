@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:orientation="vertical" android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
     android:id="@+id/load_template"
     android:weightSum="1">
 
@@ -15,7 +15,9 @@
         android:layout_width="match_parent"
         android:layout_height="100dp"
         android:layout_marginTop="200dp"
-        android:progressDrawable="@drawable/circular_progress_bar" />
+        android:progressDrawable="@drawable/circular_progress_bar"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"/>
 
     <TextView
         android:id="@+id/loadText"
@@ -24,5 +26,4 @@
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="Loading... Please wait"
         android:gravity="center_horizontal" />
-
 </LinearLayout>

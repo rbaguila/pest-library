@@ -63,7 +63,6 @@ public class ItemAllAdapter extends RecyclerView.Adapter<ItemAllAdapter.AllItemV
         else {
             Log.d(TAG, "Image does not exist");
             new GetImages(current.imageUrl, filename + ".jpg").execute(holder.screenshot);
-            //TODO: since this will download the image and save to sd card, read that image then set to view
         }
 
         holder.commonNames.setText(current.commonNames);
