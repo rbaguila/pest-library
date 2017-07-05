@@ -2,6 +2,7 @@ package com.example.roinand.pestlibrary;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
@@ -65,7 +66,7 @@ public class RiceActivity extends AppCompatActivity implements ItemAllAdapter.Cl
 
     @Override
     public void itemClick(View view, String name) {
-        Intent intent = new Intent(this, ItemTrackActivity.class);
+        Intent intent = new Intent(this, ItemTrackActivity2.class);
         intent.putExtra("pestName", name);
         intent.putExtra("type", "rice_");
         startActivity(intent);

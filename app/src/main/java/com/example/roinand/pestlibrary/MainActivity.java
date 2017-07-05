@@ -19,8 +19,13 @@ public class MainActivity extends AppCompatActivity {
 
         File myDir = new File(Environment.getExternalStorageDirectory()
                 +  File.separator + "/Android/data/com.projectsarai.pestlibrary/csv");
+        File imgDir = new File(Environment.getExternalStorageDirectory()
+                +  File.separator + "/Android/data/com.projectsarai.pestlibrary/images");
         if (!myDir.exists()) {
             myDir.mkdirs();
+        }
+        if (!imgDir.exists()) {
+            imgDir.mkdirs();
         }
 
         setContentView(R.layout.activity_main);
