@@ -138,27 +138,27 @@ public class BrowseDiseasesActivity extends AppCompatActivity implements ItemAda
     }
 
     public void redirectRice(View view){
-        new CSVTask().execute("https://dl.dropboxusercontent.com/s/rfu0wgdofskpkve/diseases-rice.csv?dl=0","diseases-rice.csv");
+        new CSVTask().execute("https://dl.dropboxusercontent.com/s/rfu0wgdofskpkve/diseases-rice.csv?dl=0","diseases-rice.csv","http://pests.sarai.ph/diseases-rice-csv");
     }
 
     public void redirectCorn(View view){
-        new CSVTask().execute("https://dl.dropboxusercontent.com/s/oguj8tv7rooapgl/diseases-corn.csv?dl=0","diseases-corn.csv");
+        new CSVTask().execute("https://dl.dropboxusercontent.com/s/oguj8tv7rooapgl/diseases-corn.csv?dl=0","diseases-corn.csv","http://pests.sarai.ph/diseases-corn-csv");
     }
 
     public void redirectBanana(View view){
-        new CSVTask().execute("https://dl.dropboxusercontent.com/s/p4rf0q4o5oc1e1p/diseases-banana.csv?dl=0","diseases-banana.csv");
+        new CSVTask().execute("https://dl.dropboxusercontent.com/s/p4rf0q4o5oc1e1p/diseases-banana.csv?dl=0","diseases-banana.csv","http://pests.sarai.ph/diseases-banana-csv");
     }
 
     public void redirectCacao(View view){
-        new CSVTask().execute("https://dl.dropboxusercontent.com/s/59eijtse3s57ce7/diseases-cacao.csv?dl=0","diseases-cacao.csv");
+        new CSVTask().execute("https://dl.dropboxusercontent.com/s/59eijtse3s57ce7/diseases-cacao.csv?dl=0","diseases-cacao.csv","http://pests.sarai.ph/diseases-cacao-csv");
     }
 
     public void redirectCoffee(View view){
-        new CSVTask().execute("https://dl.dropboxusercontent.com/s/6akgkq98c3or9e0/diseases-coffee.csv?dl=0","diseases-coffee.csv");
+        new CSVTask().execute("https://dl.dropboxusercontent.com/s/6akgkq98c3or9e0/diseases-coffee.csv?dl=0","diseases-coffee.csv","http://pests.sarai.ph/diseases-coffee-csv");
     }
 
     public void redirectCoco(View view){
-        new CSVTask().execute("https://dl.dropboxusercontent.com/s/bd2u1jhtf83abpg/diseases-coconut.csv?dl=0","diseases-coconut.csv");
+        new CSVTask().execute("https://dl.dropboxusercontent.com/s/bd2u1jhtf83abpg/diseases-coconut.csv?dl=0","diseases-coconut.csv","http://pests.sarai.ph/diseases-coconut-csv");
     }
 
     public void callRice() {
@@ -261,7 +261,7 @@ public class BrowseDiseasesActivity extends AppCompatActivity implements ItemAda
                 filename = urls[1];
 
                 if (!new File(pathDir,urls[1]).exists()) {
-                    URL url1 = new URL("http://dropbox.com");   // Change to "http://google.com" for www  test.
+                    URL url1 = new URL("http://dropbox.com");
                     HttpURLConnection urlc = (HttpURLConnection) url1.openConnection();
                     urlc.setConnectTimeout(1500);
                     urlc.connect();
@@ -269,7 +269,7 @@ public class BrowseDiseasesActivity extends AppCompatActivity implements ItemAda
                 else return false;
 
                 File file = new File(pathDir,urls[1]);
-                URL url = new URL(urls[0]);
+                URL url = new URL(urls[2]);
 
                 //create the new connection
                 HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();

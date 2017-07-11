@@ -142,27 +142,27 @@ public class BrowseActivity extends AppCompatActivity implements ItemAdapter.Cli
     }
 
     public void redirectRice(View view){
-        new CSVTask().execute("https://dl.dropboxusercontent.com/s/f258pyh6q4o4t7j/pests-rice.csv?dl=0","pests-rice.csv");
+        new CSVTask().execute("https://dl.dropboxusercontent.com/s/f258pyh6q4o4t7j/pests-rice.csv?dl=0","pests-rice.csv","http://pests.sarai.ph/pests-rice-csv");
     }
 
     public void redirectCorn(View view){
-        new CSVTask().execute("https://dl.dropboxusercontent.com/s/ytmllcaezwrkl95/pests-corn.csv?dl=0","pests-corn.csv");
+        new CSVTask().execute("https://dl.dropboxusercontent.com/s/ytmllcaezwrkl95/pests-corn.csv?dl=0","pests-corn.csv","http://pests.sarai.ph/pests-corn-csv");
     }
 
     public void redirectBanana(View view){
-        new CSVTask().execute("https://dl.dropboxusercontent.com/s/9u8l4q4szb35kmb/pests-banana.csv?dl=0","pests-banana.csv");
+        new CSVTask().execute("https://dl.dropboxusercontent.com/s/9u8l4q4szb35kmb/pests-banana.csv?dl=0","pests-banana.csv","http://pests.sarai.ph/pests-banana-csv");
     }
 
     public void redirectCacao(View view){
-        new CSVTask().execute("https://dl.dropboxusercontent.com/s/n8q01n563msq3rz/pests-cacao.csv?dl=0","pests-cacao.csv");
+        new CSVTask().execute("https://dl.dropboxusercontent.com/s/n8q01n563msq3rz/pests-cacao.csv?dl=0","pests-cacao.csv","http://pests.sarai.ph/pests-cacao-csv");
     }
 
     public void redirectCoffee(View view){
-        new CSVTask().execute("https://dl.dropboxusercontent.com/s/ob0q0cati9nx4lr/pests-coffee.csv?dl=0","pests-coffee.csv");
+        new CSVTask().execute("https://dl.dropboxusercontent.com/s/ob0q0cati9nx4lr/pests-coffee.csv?dl=0","pests-coffee.csv","http://pests.sarai.ph/pests-coffee-csv");
     }
 
     public void redirectCoco(View view){
-        new CSVTask().execute("https://dl.dropboxusercontent.com/s/40cccr06p2o92o7/pests-coconut.csv?dl=0","pests-coconut.csv");
+        new CSVTask().execute("https://dl.dropboxusercontent.com/s/40cccr06p2o92o7/pests-coconut.csv?dl=0","pests-coconut.csv","http://pests.sarai.ph/pests-coconut-csv");
     }
 
     public void callRice() {
@@ -265,7 +265,7 @@ public class BrowseActivity extends AppCompatActivity implements ItemAdapter.Cli
                 filename = urls[1];
 
                 if (!new File(pathDir,urls[1]).exists()) {
-                    URL url1 = new URL("http://dropbox.com");   // Change to "http://google.com" for www  test.
+                    URL url1 = new URL("http://dropbox.com");
                     HttpURLConnection urlc = (HttpURLConnection) url1.openConnection();
                     urlc.setConnectTimeout(1500);
                     urlc.connect();
@@ -273,7 +273,7 @@ public class BrowseActivity extends AppCompatActivity implements ItemAdapter.Cli
                 else return false;
 
                 File file = new File(pathDir,urls[1]);
-                URL url = new URL(urls[0]);
+                URL url = new URL(urls[2]);
 
                 //create the new connection
                 HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
