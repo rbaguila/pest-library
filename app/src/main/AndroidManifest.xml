@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.roinand.pestlibrary">
+    package="ph.sarai.pestlibrary">
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
@@ -28,7 +28,7 @@
             android:parentActivityName=".MainActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.roinand.pestlibrary.MainActivity" />
+                android:value="ph.sarai.pestlibrary.MainActivity" />
         </activity>
         <activity
             android:name=".BrowseDiseasesActivity"
@@ -36,7 +36,7 @@
             android:parentActivityName=".MainActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.roinand.pestlibrary.MainActivity" />
+                android:value="ph.sarai.pestlibrary.MainActivity" />
         </activity>
         <activity
             android:name=".RiceActivity"
@@ -44,7 +44,7 @@
             android:parentActivityName=".BrowseActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.roinand.pestlibrary.BrowseActivity" />
+                android:value="ph.sarai.pestlibrary.BrowseActivity" />
         </activity>
         <activity
             android:name=".DriceActivity"
@@ -52,7 +52,7 @@
             android:parentActivityName=".BrowseDiseasesActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.roinand.pestlibrary.BrowseDiseasesActivity" />
+                android:value="ph.sarai.pestlibrary.BrowseDiseasesActivity" />
         </activity>
         <activity
             android:name=".CornActivity"
@@ -60,7 +60,7 @@
             android:parentActivityName=".BrowseActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.roinand.pestlibrary.BrowseActivity" />
+                android:value="ph.sarai.pestlibrary.BrowseActivity" />
         </activity>
         <activity
             android:name=".DcornActivity"
@@ -68,7 +68,7 @@
             android:parentActivityName=".BrowseDiseasesActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.roinand.pestlibrary.BrowseDiseasesActivity" />
+                android:value="ph.sarai.pestlibrary.BrowseDiseasesActivity" />
         </activity>
         <activity
             android:name=".BananaActivity"
@@ -76,7 +76,7 @@
             android:parentActivityName=".BrowseActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.roinand.pestlibrary.BrowseActivity" />
+                android:value="ph.sarai.pestlibrary.BrowseActivity" />
         </activity>
         <activity
             android:name=".DbananaActivity"
@@ -84,7 +84,7 @@
             android:parentActivityName=".BrowseDiseasesActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.roinand.pestlibrary.BrowseDiseasesActivity" />
+                android:value="ph.sarai.pestlibrary.BrowseDiseasesActivity" />
         </activity>
         <activity
             android:name=".CacaoActivity"
@@ -92,7 +92,7 @@
             android:parentActivityName=".BrowseActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.roinand.pestlibrary.BrowseActivity" />
+                android:value="ph.sarai.pestlibrary.BrowseActivity" />
         </activity>
         <activity
             android:name=".DcacaoActivity"
@@ -100,7 +100,7 @@
             android:parentActivityName=".BrowseDiseasesActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.roinand.pestlibrary.BrowseDiseasesActivity" />
+                android:value="ph.sarai.pestlibrary.BrowseDiseasesActivity" />
         </activity>
         <activity
             android:name=".CoffeeActivity"
@@ -108,7 +108,7 @@
             android:parentActivityName=".BrowseActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.roinand.pestlibrary.BrowseActivity" />
+                android:value="ph.sarai.pestlibrary.BrowseActivity" />
         </activity>
         <activity
             android:name=".DcoffeeActivity"
@@ -116,7 +116,7 @@
             android:parentActivityName=".BrowseDiseasesActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.roinand.pestlibrary.BrowseDiseasesActivity" />
+                android:value="ph.sarai.pestlibrary.BrowseDiseasesActivity" />
         </activity>
         <activity
             android:name=".CocoActivity"
@@ -124,7 +124,7 @@
             android:parentActivityName=".BrowseActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.roinand.pestlibrary.BrowseActivity" />
+                android:value="ph.sarai.pestlibrary.BrowseActivity" />
         </activity>
         <activity
             android:name=".DcocoActivity"
@@ -132,7 +132,7 @@
             android:parentActivityName=".BrowseDiseasesActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.roinand.pestlibrary.BrowseDiseasesActivity" />
+                android:value="ph.sarai.pestlibrary.BrowseDiseasesActivity" />
         </activity>
         <activity
             android:name=".ItemTrackActivity"
@@ -140,7 +140,7 @@
             android:parentActivityName=".BrowseActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.roinand.pestlibrary.BrowseActivity" />
+                android:value="ph.sarai.pestlibrary.BrowseActivity" />
         </activity>
         <activity
             android:name=".ItemTrackActivity2"
@@ -148,7 +148,7 @@
             android:parentActivityName=".BrowseActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.roinand.pestlibrary.BrowseActivity" />
+                android:value="ph.sarai.pestlibrary.BrowseActivity" />
         </activity>
         <activity
             android:name=".NoDataActivity"
@@ -156,7 +156,7 @@
             android:parentActivityName=".BrowseActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.roinand.pestlibrary.BrowseActivity" />
+                android:value="ph.sarai.pestlibrary.BrowseActivity" />
         </activity>
         <activity
             android:name=".LoadActivity"
@@ -164,7 +164,7 @@
             android:parentActivityName=".MainActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.roinand.pestlibrary.MainActivity" />
+                android:value="ph.sarai.pestlibrary.MainActivity" />
         </activity>
         <activity
             android:name=".AboutActivity"
@@ -172,7 +172,7 @@
             android:parentActivityName=".MainActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.roinand.pestlibrary.MainActivity" />
+                android:value="ph.sarai.pestlibrary.MainActivity" />
         </activity>
     </application>
 

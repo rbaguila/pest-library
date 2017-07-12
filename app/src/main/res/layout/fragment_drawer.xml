@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     android:background="@color/colorLight"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="com.example.roinand.pestlibrary.DrawerFragment">
+    tools:context="ph.sarai.pestlibrary.DrawerFragment">
 
     <RelativeLayout
         android:id="@+id/drawer_container"

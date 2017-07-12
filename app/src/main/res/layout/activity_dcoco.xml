@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/colorLight"
-        tools:context="com.example.roinand.pestlibrary.DcocoActivity">
+        tools:context="ph.sarai.pestlibrary.DcocoActivity">
 
         <include
             android:id="@+id/pest_template"
@@ -21,7 +21,7 @@
 
     <fragment
         android:id="@+id/fragment_drawer"
-        android:name="com.example.roinand.pestlibrary.DrawerFragment"
+        android:name="ph.sarai.pestlibrary.DrawerFragment"
         android:layout_width="@dimen/nav_drawer"
         android:layout_height="match_parent"
         android:layout_gravity="start"
