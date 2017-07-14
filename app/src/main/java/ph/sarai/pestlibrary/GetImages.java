@@ -37,6 +37,7 @@ public class GetImages extends AsyncTask<ImageView, Object, Bitmap> {
 
             URL url = new URL(requestUrl);
             URLConnection conn = url.openConnection();
+
             bitmap = BitmapFactory.decodeStream(conn.getInputStream());
 
             ImageStorage.saveToSdCard(bitmap, imgName);

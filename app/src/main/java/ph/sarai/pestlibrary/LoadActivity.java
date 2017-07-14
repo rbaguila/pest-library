@@ -32,7 +32,7 @@ public class LoadActivity extends AppCompatActivity {
         drawerFragment.setUp(R.id.fragment_drawer, (DrawerLayout) findViewById(R.id.drawer_layout), toolbar);
 
         if (getIntent().getStringExtra("status").equals("false")) {
-            new CountDownTimer(3000, 1000) {
+            new CountDownTimer(5000, 1000) {
 
                 public void onTick(long millisUntilFinished) {
                 }
@@ -43,7 +43,7 @@ public class LoadActivity extends AppCompatActivity {
             }.start();
         }
         else {
-            new CountDownTimer(3000, 1000) {
+            new CountDownTimer(5000, 1000) {
 
                 public void onTick(long millisUntilFinished) {
                 }
